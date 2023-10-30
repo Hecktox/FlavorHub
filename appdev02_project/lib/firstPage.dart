@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/secondPage.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -8,7 +9,6 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-
   bool isMenuOpen = false;
 
   @override
@@ -49,7 +49,7 @@ class _MainPageState extends State<MainPage> {
             ),
           ),
           if (isMenuOpen)
-          // Menu Container with options
+            // Menu Container with options
             Container(
               child: Column(
                 children: <Widget>[
@@ -62,135 +62,200 @@ class _MainPageState extends State<MainPage> {
               ),
               padding: EdgeInsets.fromLTRB(20, 100, 0, 0),
             ),
-         Center(
-           child: Column(
-             mainAxisAlignment: MainAxisAlignment.center, // Vertically align the buttons to the center
-             children: [
-               Text("What country do you wnat to select?", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-               SizedBox(height: 30),
-               TextButton(
-                 onPressed: () {
-                   // Define the action to be taken when the button is pressed.
-                 },
-                 child: Text('Spanish Food', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-                 style: TextButton.styleFrom(
-                   primary: Colors.white, // Text color
-                   backgroundColor: Colors.blue, // Button color
-                   padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12), // Padding
-                   shape: RoundedRectangleBorder(
-                     borderRadius: BorderRadius.circular(8), // Button shape
-                   ),
-                 ), // Text displayed on the button.
-               ),
-               SizedBox(height: 30), // Add space between the buttons
-               TextButton(
-                 onPressed: () {
-                   // Define the action to be taken when the button is pressed.
-                 },
-                 child: Text('Bulgarian Food', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-                 style: TextButton.styleFrom(
-                   primary: Colors.white, // Text color
-                   backgroundColor: Colors.blue, // Button color
-                   padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12), // Padding
-                   shape: RoundedRectangleBorder(
-                     borderRadius: BorderRadius.circular(8), // Button shape
-                   ),
-                 ), // Text displayed on the button.
-               ),
-               SizedBox(height: 30), // Add space between the buttons
-               TextButton(
-                 onPressed: () {
-                   // Define the action to be taken when the button is pressed.
-                 },
-                 child: Text('Greek Food', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-                 style: TextButton.styleFrom(
-                   primary: Colors.white, // Text color
-                   backgroundColor: Colors.blue, // Button color
-                   padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12), // Padding
-                   shape: RoundedRectangleBorder(
-                     borderRadius: BorderRadius.circular(8), // Button shape
-                   ),
-                 ), // Text displayed on the button.
-               ),
-               SizedBox(height: 30), // Add space between the buttons
-               TextButton(
-                 onPressed: () {
-                   // Define the action to be taken when the button is pressed.
-                 },
-                 child: Text('France Food', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-                 style: TextButton.styleFrom(
-                   primary: Colors.white, // Text color
-                   backgroundColor: Colors.blue, // Button color
-                   padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12), // Padding
-                   shape: RoundedRectangleBorder(
-                     borderRadius: BorderRadius.circular(8), // Button shape
-                   ),
-                 ), // Text displayed on the button.
-               ),
-               SizedBox(height: 30), // Add space between the buttons
-               TextButton(
-                 onPressed: () {
-                   // Define the action to be taken when the button is pressed.
-                 },
-                 child: Text('USA Food', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-                 style: TextButton.styleFrom(
-                   primary: Colors.white, // Text color
-                   backgroundColor: Colors.blue, // Button color
-                   padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12), // Padding
-                   shape: RoundedRectangleBorder(
-                     borderRadius: BorderRadius.circular(8), // Button shape
-                   ),
-                 ), // Text displayed on the button.
-               ),
-               SizedBox(height: 30), // Add space between the buttons
-               TextButton(
-                 onPressed: () {
-                   // Define the action to be taken when the button is pressed.
-                 },
-                 child: Text('Indian Food', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-                 style: TextButton.styleFrom(
-                   primary: Colors.white, // Text color
-                   backgroundColor: Colors.blue, // Button color
-                   padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12), // Padding
-                   shape: RoundedRectangleBorder(
-                     borderRadius: BorderRadius.circular(8), // Button shape
-                   ),
-                 ), // Text displayed on the button.
-               ),
-             ],
-           ),
-         ),
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              // Vertically align the buttons to the center
+              children: [
+                Text(
+                  "What country do you wnat to select?",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 30),
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => secondPage("spain")),
+                    );
+                  },
+                  child: Text('Spanish Food',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+                  style: TextButton.styleFrom(
+                    primary: Colors.white,
+                    // Text color
+                    backgroundColor: Colors.blue,
+                    // Button color
+                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    // Padding
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8), // Button shape
+                    ),
+                  ), // Text displayed on the button.
+                ),
+                SizedBox(height: 30), // Add space between the buttons
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => secondPage("bulgarian")),
+                    );
+                  },
+                  child: Text('Bulgarian Food',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+                  style: TextButton.styleFrom(
+                    primary: Colors.white,
+                    backgroundColor: Colors.blue,
+                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 30), // Add space between the buttons
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => secondPage("greek")),
+                    );
+                  },
+                  child: Text('Greek Food',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+                  style: TextButton.styleFrom(
+                    primary: Colors.white,
+                    // Text color
+                    backgroundColor: Colors.blue,
+                    // Button color
+                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    // Padding
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8), // Button shape
+                    ),
+                  ), // Text displayed on the button.
+                ),
+                SizedBox(height: 30), // Add space between the buttons
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => secondPage("france")),
+                    );
+                  },
+                  child: Text('France Food',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+                  style: TextButton.styleFrom(
+                    primary: Colors.white,
+                    // Text color
+                    backgroundColor: Colors.blue,
+                    // Button color
+                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    // Padding
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8), // Button shape
+                    ),
+                  ), // Text displayed on the button.
+                ),
+                SizedBox(height: 30), // Add space between the buttons
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => secondPage("usa")),
+                    );
+                  },
+                  child: Text('USA Food',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+                  style: TextButton.styleFrom(
+                    primary: Colors.white,
+                    // Text color
+                    backgroundColor: Colors.blue,
+                    // Button color
+                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    // Padding
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8), // Button shape
+                    ),
+                  ), // Text displayed on the button.
+                ),
+                SizedBox(height: 30), // Add space between the buttons
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => secondPage("india")),
+                    );
+                  },
+                  child: Text('Indian Food',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+                  style: TextButton.styleFrom(
+                    primary: Colors.white,
+                    // Text color
+                    backgroundColor: Colors.blue,
+                    // Button color
+                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    // Padding
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8), // Button shape
+                    ),
+                  ), // Text displayed on the button.
+                ),
+              ],
+            ),
+          ),
           Stack(
             children: [
               Positioned(
-                top: 440,
-                left: 50,
-                  child: Image.asset('asset/francia.png',scale: 5,)
-              ),
+                  top: 440,
+                  left: 50,
+                  child: Image.asset(
+                    'asset/francia.png',
+                    scale: 5,
+                  )),
               Positioned(
                   top: 285,
                   left: 50,
-                  child: Image.asset('asset/bulgaria.png',scale: 5,)
-              ),Positioned(
+                  child: Image.asset(
+                    'asset/bulgaria.png',
+                    scale: 5,
+                  )),
+              Positioned(
                   top: 360,
                   left: 50,
-                  child: Image.asset('asset/grecia.png',scale: 5,)
-              ),
+                  child: Image.asset(
+                    'asset/grecia.png',
+                    scale: 5,
+                  )),
               Positioned(
                   top: 517,
                   left: 50,
-                  child: Image.asset('asset/usa.png',scale: 5,)
-              ),
+                  child: Image.asset(
+                    'asset/usa.png',
+                    scale: 5,
+                  )),
               Positioned(
                   top: 595,
                   left: 50,
-                  child: Image.asset('asset/india.png',scale: 5,)
-              ),
+                  child: Image.asset(
+                    'asset/india.png',
+                    scale: 5,
+                  )),
               Positioned(
                   top: 203,
                   left: 50,
-                  child: Image.asset('asset/spain.png',scale: 2)
-              ),
+                  child: Image.asset('asset/spain.png', scale: 2)),
             ],
           ),
         ],
@@ -198,3 +263,4 @@ class _MainPageState extends State<MainPage> {
     );
   }
 }
+
