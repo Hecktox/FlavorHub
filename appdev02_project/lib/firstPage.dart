@@ -62,200 +62,158 @@ class _MainPageState extends State<MainPage> {
               ),
               padding: EdgeInsets.fromLTRB(20, 100, 0, 0),
             ),
-          Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              // Vertically align the buttons to the center
-              children: [
-                Text(
-                  "What country do you wnat to select?",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(height: 30),
-                TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => secondPage("spain")),
-                    );
-                  },
-                  child: Text('Spanish Food',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-                  style: TextButton.styleFrom(
-                    primary: Colors.white,
-                    // Text color
-                    backgroundColor: Colors.blue,
-                    // Button color
-                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                    // Padding
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8), // Button shape
-                    ),
-                  ), // Text displayed on the button.
-                ),
-                SizedBox(height: 30), // Add space between the buttons
-                TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => secondPage("bulgarian")),
-                    );
-                  },
-                  child: Text('Bulgarian Food',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-                  style: TextButton.styleFrom(
-                    primary: Colors.white,
-                    backgroundColor: Colors.blue,
-                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
+          Stack(
+            children: [
+              Positioned(
+                  top: 140,
+                  left: 30,
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => secondPage("spain")),
+                      );
+                    },
+                    child: Container(
+                      width: 150, // Set the width as needed
+                      height: 100, // Set the height as needed
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('asset/spain.png'),
+                          // Replace with your image asset
+                          fit: BoxFit.cover, // Adjust the fit as needed
+                        ),
+                      ),
                     ),
                   ),
-                ),
-                SizedBox(height: 30), // Add space between the buttons
-                TextButton(
-                  onPressed: () {
+              ),
+              Positioned(
+                top: 140,
+                left: 200,
+                child: InkWell(
+                  onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) => secondPage("greek")),
                     );
                   },
-                  child: Text('Greek Food',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-                  style: TextButton.styleFrom(
-                    primary: Colors.white,
-                    // Text color
-                    backgroundColor: Colors.blue,
-                    // Button color
-                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                    // Padding
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8), // Button shape
+                  child: Container(
+                    width: 150, // Set the width as needed
+                    height: 100, // Set the height as needed
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('asset/greek.png'),
+                        // Replace with your image asset
+                        fit: BoxFit.cover, // Adjust the fit as needed
+                      ),
                     ),
-                  ), // Text displayed on the button.
+                  ),
                 ),
-                SizedBox(height: 30), // Add space between the buttons
-                TextButton(
-                  onPressed: () {
+              ),
+              Positioned(
+                top: 300,
+                left: 30,
+                child: InkWell(
+                  onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => secondPage("france")),
+                          builder: (context) => secondPage("bulgarian")),
                     );
                   },
-                  child: Text('France Food',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-                  style: TextButton.styleFrom(
-                    primary: Colors.white,
-                    // Text color
-                    backgroundColor: Colors.blue,
-                    // Button color
-                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                    // Padding
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8), // Button shape
+                  child: Container(
+                    width: 150, // Set the width as needed
+                    height: 100, // Set the height as needed
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('asset/bulgaria.png'),
+                        // Replace with your image asset
+                        fit: BoxFit.cover, // Adjust the fit as needed
+                      ),
                     ),
-                  ), // Text displayed on the button.
+                  ),
                 ),
-                SizedBox(height: 30), // Add space between the buttons
-                TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => secondPage("usa")),
-                    );
-                  },
-                  child: Text('USA Food',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-                  style: TextButton.styleFrom(
-                    primary: Colors.white,
-                    // Text color
-                    backgroundColor: Colors.blue,
-                    // Button color
-                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                    // Padding
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8), // Button shape
-                    ),
-                  ), // Text displayed on the button.
-                ),
-                SizedBox(height: 30), // Add space between the buttons
-                TextButton(
-                  onPressed: () {
+              ),
+              Positioned(
+                top: 300,
+                left: 200,
+                child: InkWell(
+                  onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) => secondPage("india")),
                     );
                   },
-                  child: Text('Indian Food',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-                  style: TextButton.styleFrom(
-                    primary: Colors.white,
-                    // Text color
-                    backgroundColor: Colors.blue,
-                    // Button color
-                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                    // Padding
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8), // Button shape
+                  child: Container(
+                    width: 150, // Set the width as needed
+                    height: 100, // Set the height as needed
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('asset/india.png'),
+                        // Replace with your image asset
+                        fit: BoxFit.cover, // Adjust the fit as needed
+                      ),
                     ),
-                  ), // Text displayed on the button.
+                  ),
                 ),
-              ],
-            ),
-          ),
-          Stack(
-            children: [
+              ),
               Positioned(
-                  top: 440,
-                  left: 50,
-                  child: Image.asset(
-                    'asset/francia.png',
-                    scale: 5,
-                  )),
+                top: 450,
+                left: 100,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => secondPage("usa")),
+                    );
+                  },
+                  child: Container(
+                    width: 150, // Set the width as needed
+                    height: 100, // Set the height as needed
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('asset/usa.png'),
+                        // Replace with your image asset
+                        fit: BoxFit.cover, // Adjust the fit as needed
+                      ),
+                    ),
+                  ),
+                ),
+              ),
               Positioned(
-                  top: 285,
-                  left: 50,
-                  child: Image.asset(
-                    'asset/bulgaria.png',
-                    scale: 5,
-                  )),
+                top: 80,
+                left: 100,
+                child: Text("Select A Country",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+              ),
               Positioned(
-                  top: 360,
-                  left: 50,
-                  child: Image.asset(
-                    'asset/grecia.png',
-                    scale: 5,
-                  )),
+                top: 250,
+                left: 75,
+                child: Text("Spain",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+              ),
               Positioned(
-                  top: 517,
-                  left: 50,
-                  child: Image.asset(
-                    'asset/usa.png',
-                    scale: 5,
-                  )),
+                top: 250,
+                left: 235,
+                child: Text("Greece",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+              ),
               Positioned(
-                  top: 595,
-                  left: 50,
-                  child: Image.asset(
-                    'asset/india.png',
-                    scale: 5,
-                  )),
+                top: 410,
+                left: 60,
+                child: Text("Bulgaria",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+              ),
               Positioned(
-                  top: 203,
-                  left: 50,
-                  child: Image.asset('asset/spain.png', scale: 2)),
+                top: 410,
+                left: 250,
+                child: Text("India",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+              ),
+              Positioned(
+                top: 570,
+                left: 155,
+                child: Text("USA",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+              ),
             ],
           ),
         ],
@@ -263,4 +221,3 @@ class _MainPageState extends State<MainPage> {
     );
   }
 }
-

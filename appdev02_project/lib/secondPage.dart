@@ -78,15 +78,234 @@ class _secondPageState extends State<secondPage> {
               ),
               padding: EdgeInsets.fromLTRB(20, 100, 0, 0),
             ),
-          Container(
-            child: InkWell(
-              onTap: (){
-                
-              },
-              child: Image.asset('asset/spnFood1.png',
-              width: 100,
-              height: 100,),
-            ),
+          Stack(
+            children: [
+              Positioned(
+                top: 80,
+                  left: 150,
+                  child: Center(
+                    child: Text("Breakfast", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+                  )
+              ),
+
+              Positioned(
+                  top: 130,
+                  left: 30,
+                  child: Center(
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => secondPage("spain")),
+                        );
+                      },
+                      child: Container(
+                        width: 150, // Set the width as needed
+                        height: 100, // Set the height as needed
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('asset/croissantalmendra.jpg'),
+                            // Replace with your image asset
+                            fit: BoxFit.cover, // Adjust the fit as needed
+                          ),
+                        ),
+                      ),
+                    )
+                  )
+              ),
+              Positioned(
+                  top: 240,
+                  left: 30,
+                  child: Center(
+                    child: Text("Courasant De \n Almendra", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+                  )
+              ),
+
+              Positioned(
+                  top: 130,
+                  left: 210,
+                  child: Center(
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => secondPage("spain")),
+                          );
+                        },
+                        child: Container(
+                          width: 150, // Set the width as needed
+                          height: 100, // Set the height as needed
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage('asset/panTumaca.png'),
+                              // Replace with your image asset
+                              fit: BoxFit.cover, // Adjust the fit as needed
+                            ),
+                          ),
+                        ),
+                      )
+                  )
+              ),
+              Positioned(
+                  top: 240,
+                  left: 220,
+                  child: Center(
+                    child: Text("Pan Tumaca", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+                  )
+              ),
+
+              Positioned(
+                  top: 300,
+                  left: 170,
+                  child: Center(
+                    child: Text("Lunch", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+                  )
+              ),
+              Positioned(
+                  top: 340,
+                  left: 210,
+                  child: Center(
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => secondPage("spain")),
+                          );
+                        },
+                        child: Container(
+                          width: 150, // Set the width as needed
+                          height: 100, // Set the height as needed
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage('asset/migas.jpg'),
+                              // Replace with your image asset
+                              fit: BoxFit.cover, // Adjust the fit as needed
+                            ),
+                          ),
+                        ),
+                      )
+                  )
+              ),
+              Positioned(
+                  top: 450,
+                  left: 250,
+                  child: Center(
+                    child: Text("Migas", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+                  )
+              ),
+
+              Positioned(
+                  top: 340,
+                  left: 30,
+                  child: Center(
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => secondPage("spain")),
+                          );
+                        },
+                        child: Container(
+                          width: 150, // Set the width as needed
+                          height: 100, // Set the height as needed
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage('asset/bocadillos.jpg'),
+                              // Replace with your image asset
+                              fit: BoxFit.cover, // Adjust the fit as needed
+                            ),
+                          ),
+                        ),
+                      )
+                  )
+              ),
+              Positioned(
+                  top: 450,
+                  left: 30,
+                  child: Center(
+                    child: Text("Bocadillo De\nJamon", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+                  )
+              ),
+              Positioned(
+                  top: 500,
+                  left: 170,
+                  child: Center(
+                    child: Text("Diner", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+                  )
+              ),
+
+              Positioned(
+                  top: 550,
+                  left: 30,
+                  child: Center(
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => secondPage("spain")),
+                          );
+                        },
+                        child: Container(
+                          width: 150, // Set the width as needed
+                          height: 100, // Set the height as needed
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage('asset/huevosrotos.jpg'),
+                              // Replace with your image asset
+                              fit: BoxFit.cover, // Adjust the fit as needed
+                            ),
+                          ),
+                        ),
+                      )
+                  )
+              ),
+              Positioned(
+                  top: 660,
+                  left: 75,
+                  child: Center(
+                    child: Text("Migas", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+                  )
+              ),
+
+              Positioned(
+                  top: 550,
+                  left: 210,
+                  child: Center(
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => secondPage("spain")),
+                          );
+                        },
+                        child: Container(
+                          width: 150, // Set the width as needed
+                          height: 100, // Set the height as needed
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage('asset/gazpacho.jpg'),
+                              // Replace with your image asset
+                              fit: BoxFit.cover, // Adjust the fit as needed
+                            ),
+                          ),
+                        ),
+                      )
+                  )
+              ),
+              Positioned(
+                  top: 660,
+                  left: 250,
+                  child: Center(
+                    child: Text("Gazpacho", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+                  )
+              ),
+            ],
           ),
         ],
       ),

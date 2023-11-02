@@ -59,9 +59,33 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+     - asset/spain.png
+     - asset/greek.png
+     - asset/india.png
+     - asset/france.png
+     - asset/bulgaria.png
+     - asset/usa.png
+     - asset/spnFood1.png
+     - asset/huevosrotos.jpg
+     - asset/albondigas.jpg
+     - asset/bocadillos.jpg
+     - asset/calamari.jpg
+     - asset/croissantalmendra.jpg
+     - asset/fideua.jpg
+     - asset/gazpacho.jpg
+     - asset/greekgyro.jpg
+     - asset/greekomelette.jpg
+     - asset/greekporcsticks.jpg
+     - asset/greeksalad.jpg
+     - asset/greekxorta.jpg
+     - asset/greekyogurt.jpg
+     - asset/migas.jpg
+     - asset/pastitsio.jpg
+     - asset/patates.jpg
+     - asset/sfakianopita.jpg
+     - asset/spanishempanadas.jpg
+     - asset/panTumaca.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
