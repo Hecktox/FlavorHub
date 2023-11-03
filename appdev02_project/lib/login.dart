@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'register.dart'; // Import the RegisterPage
+import 'firstPage.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -15,10 +16,7 @@ class _LoginPageState extends State<LoginPage> {
           Container(
             alignment: Alignment.center,
             margin: EdgeInsets.only(top: 50),
-            child: CircleAvatar(
-              radius: 50,
-              backgroundImage: AssetImage('your_logo_image.png'), // Replace with your logo image
-            ),
+              child: Image.asset('asset/logo.png',scale: 2,)
           ),
           SizedBox(height: 20),
           Text(
@@ -71,7 +69,11 @@ class _LoginPageState extends State<LoginPage> {
           SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {
-              // Implement login logic
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => MainPage()),
+              );
             },
             style: ElevatedButton.styleFrom(
               primary: Colors.black,

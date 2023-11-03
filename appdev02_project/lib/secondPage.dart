@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'login.dart';
 
 class secondPage extends StatefulWidget {
   final String type;
@@ -46,7 +47,11 @@ class _secondPageState extends State<secondPage> {
             child: IconButton(
               icon: Icon(Icons.supervised_user_circle_outlined, size: 40),
               onPressed: () {
-                // Define the action when the user icon is pressed
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => LoginPage()),
+                );
               },
               padding: EdgeInsets.fromLTRB(330, 15, 0, 0),
             ),
@@ -234,7 +239,7 @@ class _secondPageState extends State<secondPage> {
                   top: 500,
                   left: 170,
                   child: Center(
-                    child: Text("Diner", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+                    child: Text("Dinner", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
                   )
               ),
 

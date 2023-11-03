@@ -9,11 +9,9 @@ class RegisterPage extends StatelessWidget {
           Container(
             alignment: Alignment.center,
             margin: EdgeInsets.only(top: 50),
-            child: CircleAvatar(
-              radius: 50,
-              backgroundImage: AssetImage('your_logo_image.png'),
+            child: Image.asset('asset/logo.png',scale: 2,),
             ),
-          ),
+
           SizedBox(height: 20),
           Text(
             'FlavorHub',
