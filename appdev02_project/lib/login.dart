@@ -12,6 +12,9 @@ class _LoginPageState extends State<LoginPage> {
   final Mydb database = Mydb(); // Use Mydb class for database operations
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController fNameController = TextEditingController();
+  final TextEditingController lNameController = TextEditingController();
 
   @override
   void initState() {
@@ -57,7 +60,12 @@ class _LoginPageState extends State<LoginPage> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => MainPage(), // Replace with the appropriate page
+            builder: (context) => MainPage(
+              email: user['email'],
+              username: usernameController.text,
+              firstName: user['first_name'],
+              lastName: user['last_name'],
+            ),
           ),
         );
       } else {
