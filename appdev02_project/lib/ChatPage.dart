@@ -1,7 +1,7 @@
-import 'dart:convert';
+import 'package:dialog_flowtter/dialog_flowtter.dart';
 import 'package:flutter/material.dart';
 import 'firstPage.dart';
-import 'package:http/http.dart' as http;
+import 'Messages.dart';
 
 class ChatPage extends StatefulWidget {
   final String username;
@@ -22,43 +22,16 @@ class ChatPage extends StatefulWidget {
 }
 
 class _ChatPageState extends State<ChatPage> {
-  final TextEditingController _messageController = TextEditingController();
-  List<Map<String, String>> _chatMessages = [];
+late DialogFlowtter dialogFlowtter;
+final TextEditingController _controller = TextEditingController();
 
-  Future<void> _sendMessage(String message) async {
-    // Replace with your actual Dialogflow credentials and endpoint
-    const String dialogflowEndpoint =
-        'https://dialogflow.googleapis.com/v2/projects/YOUR_PROJECT_ID/agent/sessions/YOUR_SESSION_ID:detectIntent';
-    const String dialogflowApiKey = 'YOUR_DIALOGFLOW_API_KEY';
+List<Map<String, dynamic>> messages = [];
 
-    final Uri uri = Uri.parse('$dialogflowEndpoint?key=$dialogflowApiKey');
-    final Map<String, dynamic> requestData = {
-      'queryInput': {'text': {'text': message, 'languageCode': 'en'}},
-    };
-
-    try {
-      final http.Response response = await http.post(
-        uri,
-        body: jsonEncode(requestData),
-        headers: {'Content-Type': 'application/json'},
-      );
-
-      print('Response: ${response.body}'); // Debug print
-
-      if (response.statusCode == 200) {
-        String botReply = 'Bot: ' + response.body;
-        setState(() {
-          _chatMessages.add({'type': 'You', 'message': message});
-          _chatMessages.add({'type': 'Bot', 'message': botReply});
-        });
-      } else {
-        print('Error: ${response.statusCode}');
-      }
-    } catch (error) {
-      print('Error: $error');
-    }
-  }
-
+@override
+void initState() {
+  DialogFlowtter.fromFile().then((instance) => dialogFlowtter = instance);
+  super.initState();
+}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,43 +42,28 @@ class _ChatPageState extends State<ChatPage> {
         ),
       ),
       body: Column(
-        children: [
-          Expanded(
-            child: ListView.builder(
-              itemCount: _chatMessages.length,
-              itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text('${_chatMessages[index]['type']}: ${_chatMessages[index]['message']}'),
-                );
-              },
+          children: [
+            Expanded(child: MessagesScreen(messages: messages)),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+              color: Colors.blue,
+              child: Row(
+                children: [
+                  Expanded(
+                      child: TextField(
+                        controller: _controller,
+                        style: TextStyle(color: Colors.black),
+                      )),
+                  IconButton(
+                      onPressed: () {
+                        sendMessage(_controller.text);
+                        _controller.clear();
+                      },
+                      icon: Icon(Icons.send))
+                ],
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              children: [
-                Expanded(
-                  child: TextField(
-                    controller: _messageController,
-                    decoration: InputDecoration(
-                      hintText: 'Type a message...',
-                    ),
-                  ),
-                ),
-                IconButton(
-                  icon: Icon(Icons.send),
-                  onPressed: () {
-                    String message = _messageController.text;
-                    if (message.isNotEmpty) {
-                      _sendMessage(message);
-                      _messageController.clear();
-                    }
-                  },
-                ),
-              ],
-            ),
-          ),
-        ],
+          ],
       ),
       drawer: Drawer(
         child: ListView(
@@ -168,4 +126,26 @@ class _ChatPageState extends State<ChatPage> {
       ),
     );
   }
+
+sendMessage(String text) async {
+  if (text.isEmpty) {
+    print('Message is empty');
+  } else {
+    setState(() {
+      addMessage(Message(text: DialogText(text: [text])), true);
+    });
+
+    DetectIntentResponse response = await dialogFlowtter.detectIntent(
+        queryInput: QueryInput(text: TextInput(text: text)));
+    if (response.message == null) return;
+    setState(() {
+      addMessage(response.message!);
+    });
+  }
 }
+
+addMessage(Message message, [bool isUserMessage = false]) {
+  messages.add({'message': message, 'isUserMessage': isUserMessage});
+}
+}
+
