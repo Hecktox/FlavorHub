@@ -27,7 +27,7 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Flavor Hub",
+        title: const Text("Flavor Hub",
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),),
       ),
       body: Center(
@@ -50,7 +50,7 @@ class _MainPageState extends State<MainPage> {
                       child: Container(
                         width: 150, // Set the width as needed
                         height: 100, // Set the height as needed
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage('asset/spain.png'),
                             // Replace with your image asset
@@ -74,7 +74,7 @@ class _MainPageState extends State<MainPage> {
                       child: Container(
                         width: 150, // Set the width as needed
                         height: 100, // Set the height as needed
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage('asset/greek.png'),
                             // Replace with your image asset
@@ -98,7 +98,7 @@ class _MainPageState extends State<MainPage> {
                       child: Container(
                         width: 150, // Set the width as needed
                         height: 100, // Set the height as needed
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage('asset/bulgaria.png'),
                             // Replace with your image asset
@@ -122,7 +122,7 @@ class _MainPageState extends State<MainPage> {
                       child: Container(
                         width: 150, // Set the width as needed
                         height: 100, // Set the height as needed
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage('asset/india.png'),
                             // Replace with your image asset
@@ -146,7 +146,7 @@ class _MainPageState extends State<MainPage> {
                       child: Container(
                         width: 150, // Set the width as needed
                         height: 100, // Set the height as needed
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage('asset/usa.png'),
                             // Replace with your image asset
@@ -156,32 +156,32 @@ class _MainPageState extends State<MainPage> {
                       ),
                     ),
                   ),
-                  Positioned(
+                  const Positioned(
                     top: 80,
                     left: 100,
                     child: Text("Select A Country",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
                   ),
-                  Positioned(
+                  const Positioned(
                     top: 250,
                     left: 75,
                     child: Text("Spain",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
                   ),
-                  Positioned(
+                  const Positioned(
                     top: 250,
                     left: 235,
                     child: Text("Greece",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
                   ),
-                  Positioned(
+                  const Positioned(
                     top: 410,
                     left: 60,
                     child: Text("Bulgaria",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
                   ),
-                  Positioned(
+                  const Positioned(
                     top: 410,
                     left: 250,
                     child: Text("India",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
                   ),
-                  Positioned(
+                  const Positioned(
                     top: 570,
                     left: 155,
                     child: Text("USA",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
@@ -204,24 +204,24 @@ class _MainPageState extends State<MainPage> {
                 backgroundColor: Colors.orange,
                 child: Text(
                   widget.firstName[0] + widget.lastName[0],
-                  style: TextStyle(fontSize: 40),
+                  style: const TextStyle(fontSize: 40),
                 ),
               ),
             ),
             ListTile(
-              leading: Icon(Icons.settings), title: Text('Settings'),
+              leading: const Icon(Icons.settings), title: const Text('Settings'),
               onTap: (){
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              leading: Icon(Icons.home), title: Text('Home'),
+              leading: const Icon(Icons.home), title: const Text('Home'),
               onTap: (){
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              leading: Icon(Icons.chat), title: Text('IA Help'),
+              leading: const Icon(Icons.chat), title: const Text('IA Help'),
               onTap: () {
                 // Navigate to another page using Navigator.push
                 Navigator.push(
