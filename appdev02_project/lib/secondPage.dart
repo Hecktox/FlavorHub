@@ -1,10 +1,24 @@
 import 'package:flutter/material.dart';
 import 'login.dart';
+import 'firstPage.dart';
+import 'Settings.dart';
+import 'ChatPage.dart';
 
 class secondPage extends StatefulWidget {
+  final String username;
+  final String email;
+  final String firstName;
+  final String lastName;
   final String type;
 
-  secondPage(this.type, {Key? key}) : super(key: key);
+  const secondPage({
+    Key? key,
+    required this.email,
+    required this.username,
+    required this.firstName,
+    required this.lastName,
+    required this.type,
+  }) : super(key: key);
 
   @override
   _secondPageState createState() => _secondPageState();
@@ -32,288 +46,333 @@ class _secondPageState extends State<secondPage> {
 
   Scaffold buildSpainPage() {
     return Scaffold(
-      body: Stack(
+      appBar: AppBar(
+        title: Text(
+          "Flavor Hub",
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+      ),
+      body:Stack(
         children: [
-          Container(
-            // Flavor Hub Text Container
-            child: Text(
-              "Flavor Hub",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-            padding: EdgeInsets.fromLTRB(150, 30, 120, 0),
-          ),
-          Container(
-            // User Icon Container
-            child: IconButton(
-              icon: Icon(Icons.supervised_user_circle_outlined, size: 40),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => LoginPage()),
-                );
-              },
-              padding: EdgeInsets.fromLTRB(330, 15, 0, 0),
-            ),
-          ),
-          Container(
-            // Menu Icon Container
-            child: IconButton(
-              icon: Icon(Icons.menu, size: 40),
-              onPressed: () {
-                // Toggle the menu open or closed
-                setState(() {
-                  isMenuOpen = !isMenuOpen;
-                });
-              },
-              padding: EdgeInsets.fromLTRB(0, 15, 0, 0),
-            ),
-          ),
-          if (isMenuOpen)
-          // Menu Container with options
-            Container(
-              child: Column(
-                children: <Widget>[
-                  // Put your menu options here
-                  // Example:
-                  Text("Option 1"),
-                  Text("Option 2"),
-                  Text("Option 3"),
-                ],
-              ),
-              padding: EdgeInsets.fromLTRB(20, 100, 0, 0),
-            ),
           Stack(
             children: [
-              Positioned(
-                top: 80,
-                  left: 150,
-                  child: Center(
-                    child: Text("Breakfast", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-                  )
-              ),
-
-              Positioned(
-                  top: 130,
-                  left: 30,
-                  child: Center(
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => secondPage("spain")),
-                        );
-                      },
-                      child: Container(
-                        width: 150, // Set the width as needed
-                        height: 100, // Set the height as needed
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('asset/croissantalmendra.jpg'),
-                            // Replace with your image asset
-                            fit: BoxFit.cover, // Adjust the fit as needed
-                          ),
-                        ),
-                      ),
-                    )
-                  )
-              ),
-              Positioned(
-                  top: 240,
-                  left: 30,
-                  child: Center(
-                    child: Text("Courasant De \n Almendra", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-                  )
-              ),
-
-              Positioned(
-                  top: 130,
-                  left: 210,
-                  child: Center(
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => secondPage("spain")),
-                          );
-                        },
-                        child: Container(
-                          width: 150, // Set the width as needed
-                          height: 100, // Set the height as needed
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage('asset/panTumaca.png'),
-                              // Replace with your image asset
-                              fit: BoxFit.cover, // Adjust the fit as needed
-                            ),
-                          ),
-                        ),
+              Stack(
+                children: [
+                  Positioned(
+                      top: 80,
+                      left: 150,
+                      child: Center(
+                        child: Text("Breakfast", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
                       )
-                  )
-              ),
-              Positioned(
-                  top: 240,
-                  left: 220,
-                  child: Center(
-                    child: Text("Pan Tumaca", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-                  )
-              ),
+                  ),
 
-              Positioned(
-                  top: 300,
-                  left: 170,
-                  child: Center(
-                    child: Text("Lunch", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-                  )
-              ),
-              Positioned(
-                  top: 340,
-                  left: 210,
-                  child: Center(
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => secondPage("spain")),
-                          );
-                        },
-                        child: Container(
-                          width: 150, // Set the width as needed
-                          height: 100, // Set the height as needed
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage('asset/migas.jpg'),
-                              // Replace with your image asset
-                              fit: BoxFit.cover, // Adjust the fit as needed
+                  Positioned(
+                      top: 130,
+                      left: 30,
+                      child: Center(
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => secondPage(firstName: widget.firstName,
+                                      lastName: widget.lastName,
+                                      email: widget.email,
+                                      username: widget.username,
+                                      type: "spain",)),
+                              );
+                            },
+                            child: Container(
+                              width: 150, // Set the width as needed
+                              height: 100, // Set the height as needed
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage('asset/croissantalmendra.jpg'),
+                                  // Replace with your image asset
+                                  fit: BoxFit.cover, // Adjust the fit as needed
+                                ),
+                              ),
                             ),
-                          ),
-                        ),
+                          )
                       )
-                  )
-              ),
-              Positioned(
-                  top: 450,
-                  left: 250,
-                  child: Center(
-                    child: Text("Migas", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-                  )
-              ),
+                  ),
+                  Positioned(
+                      top: 240,
+                      left: 30,
+                      child: Center(
+                        child: Text("Courasant De \n Almendra", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+                      )
+                  ),
 
-              Positioned(
-                  top: 340,
-                  left: 30,
-                  child: Center(
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => secondPage("spain")),
-                          );
-                        },
-                        child: Container(
-                          width: 150, // Set the width as needed
-                          height: 100, // Set the height as needed
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage('asset/bocadillos.jpg'),
-                              // Replace with your image asset
-                              fit: BoxFit.cover, // Adjust the fit as needed
+                  Positioned(
+                      top: 130,
+                      left: 210,
+                      child: Center(
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => secondPage(firstName: widget.firstName,
+                                      lastName: widget.lastName,
+                                      email: widget.email,
+                                      username: widget.username,
+                                      type: "spain",)),
+                              );
+                            },
+                            child: Container(
+                              width: 150, // Set the width as needed
+                              height: 100, // Set the height as needed
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage('asset/panTumaca.png'),
+                                  // Replace with your image asset
+                                  fit: BoxFit.cover, // Adjust the fit as needed
+                                ),
+                              ),
                             ),
-                          ),
-                        ),
+                          )
                       )
-                  )
-              ),
-              Positioned(
-                  top: 450,
-                  left: 30,
-                  child: Center(
-                    child: Text("Bocadillo De\nJamon", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-                  )
-              ),
-              Positioned(
-                  top: 500,
-                  left: 170,
-                  child: Center(
-                    child: Text("Dinner", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-                  )
-              ),
+                  ),
+                  Positioned(
+                      top: 240,
+                      left: 220,
+                      child: Center(
+                        child: Text("Pan Tumaca", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+                      )
+                  ),
 
-              Positioned(
-                  top: 550,
-                  left: 30,
-                  child: Center(
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => secondPage("spain")),
-                          );
-                        },
-                        child: Container(
-                          width: 150, // Set the width as needed
-                          height: 100, // Set the height as needed
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage('asset/huevosrotos.jpg'),
-                              // Replace with your image asset
-                              fit: BoxFit.cover, // Adjust the fit as needed
-                            ),
-                          ),
-                        ),
+                  Positioned(
+                      top: 300,
+                      left: 170,
+                      child: Center(
+                        child: Text("Lunch", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
                       )
-                  )
-              ),
-              Positioned(
-                  top: 660,
-                  left: 75,
-                  child: Center(
-                    child: Text("Migas", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-                  )
-              ),
+                  ),
+                  Positioned(
+                      top: 340,
+                      left: 210,
+                      child: Center(
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => secondPage(firstName: widget.firstName,
+                                      lastName: widget.lastName,
+                                      email: widget.email,
+                                      username: widget.username,
+                                      type: "spain",)),
+                              );
+                            },
+                            child: Container(
+                              width: 150, // Set the width as needed
+                              height: 100, // Set the height as needed
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage('asset/migas.jpg'),
+                                  // Replace with your image asset
+                                  fit: BoxFit.cover, // Adjust the fit as needed
+                                ),
+                              ),
+                            ),
+                          )
+                      )
+                  ),
+                  Positioned(
+                      top: 450,
+                      left: 250,
+                      child: Center(
+                        child: Text("Migas", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+                      )
+                  ),
 
-              Positioned(
-                  top: 550,
-                  left: 210,
-                  child: Center(
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => secondPage("spain")),
-                          );
-                        },
-                        child: Container(
-                          width: 150, // Set the width as needed
-                          height: 100, // Set the height as needed
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage('asset/gazpacho.jpg'),
-                              // Replace with your image asset
-                              fit: BoxFit.cover, // Adjust the fit as needed
+                  Positioned(
+                      top: 340,
+                      left: 30,
+                      child: Center(
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => secondPage(firstName: widget.firstName,
+                                      lastName: widget.lastName,
+                                      email: widget.email,
+                                      username: widget.username,
+                                      type: "spain",)),
+                              );
+                            },
+                            child: Container(
+                              width: 150, // Set the width as needed
+                              height: 100, // Set the height as needed
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage('asset/bocadillos.jpg'),
+                                  // Replace with your image asset
+                                  fit: BoxFit.cover, // Adjust the fit as needed
+                                ),
+                              ),
                             ),
-                          ),
-                        ),
+                          )
                       )
-                  )
-              ),
-              Positioned(
-                  top: 660,
-                  left: 250,
-                  child: Center(
-                    child: Text("Gazpacho", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-                  )
+                  ),
+                  Positioned(
+                      top: 450,
+                      left: 30,
+                      child: Center(
+                        child: Text("Bocadillo De\nJamon", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+                      )
+                  ),
+                  Positioned(
+                      top: 500,
+                      left: 170,
+                      child: Center(
+                        child: Text("Dinner", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+                      )
+                  ),
+
+                  Positioned(
+                      top: 550,
+                      left: 30,
+                      child: Center(
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => secondPage(firstName: widget.firstName,
+                                      lastName: widget.lastName,
+                                      email: widget.email,
+                                      username: widget.username,
+                                      type: "spain",)),
+                              );
+                            },
+                            child: Container(
+                              width: 150, // Set the width as needed
+                              height: 100, // Set the height as needed
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage('asset/huevosrotos.jpg'),
+                                  // Replace with your image asset
+                                  fit: BoxFit.cover, // Adjust the fit as needed
+                                ),
+                              ),
+                            ),
+                          )
+                      )
+                  ),
+                  Positioned(
+                      top: 660,
+                      left: 75,
+                      child: Center(
+                        child: Text("Migas", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+                      )
+                  ),
+
+                  Positioned(
+                      top: 550,
+                      left: 210,
+                      child: Center(
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => secondPage(firstName: widget.firstName,
+                                      lastName: widget.lastName,
+                                      email: widget.email,
+                                      username: widget.username,
+                                      type: "spain",)),
+                              );
+                            },
+                            child: Container(
+                              width: 150, // Set the width as needed
+                              height: 100, // Set the height as needed
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage('asset/gazpacho.jpg'),
+                                  // Replace with your image asset
+                                  fit: BoxFit.cover, // Adjust the fit as needed
+                                ),
+                              ),
+                            ),
+                          )
+                      )
+                  ),
+                  Positioned(
+                      top: 660,
+                      left: 250,
+                      child: Center(
+                        child: Text("Gazpacho", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+                      )
+                  ),
+                ],
               ),
             ],
           ),
         ],
       ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text("${widget.firstName} ${widget.lastName}"),
+              accountEmail: Text(widget.email),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.orange,
+                child: Text(
+                  widget.firstName[0] + widget.lastName[0],
+                  style: TextStyle(fontSize: 40),
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Settings'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MainPage(
+                      firstName: widget.firstName,
+                      lastName: widget.lastName,
+                      email: widget.email,
+                      username: widget.username,
+                    ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.chat),
+              title: Text('IA Help'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ChatPage(
+                      firstName: widget.firstName,
+                      lastName: widget.lastName,
+                      email: widget.email,
+                      username: widget.username,
+                    ),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+
     );
   }
 
@@ -343,33 +402,6 @@ class _secondPageState extends State<secondPage> {
               padding: EdgeInsets.fromLTRB(330, 15, 0, 0),
             ),
           ),
-          Container(
-            // Menu Icon Container
-            child: IconButton(
-              icon: Icon(Icons.menu, size: 40),
-              onPressed: () {
-                // Toggle the menu open or closed
-                setState(() {
-                  isMenuOpen = !isMenuOpen;
-                });
-              },
-              padding: EdgeInsets.fromLTRB(0, 15, 0, 0),
-            ),
-          ),
-          if (isMenuOpen)
-          // Menu Container with options
-            Container(
-              child: Column(
-                children: <Widget>[
-                  // Put your menu options here
-                  // Example:
-                  Text("Option 1"),
-                  Text("Option 2"),
-                  Text("Option 3"),
-                ],
-              ),
-              padding: EdgeInsets.fromLTRB(20, 100, 0, 0),
-            ),
           Stack(
             children: [
               Positioned(
@@ -389,7 +421,11 @@ class _secondPageState extends State<secondPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => secondPage("spain")),
+                                builder: (context) => secondPage(firstName: widget.firstName,
+                                  lastName: widget.lastName,
+                                  email: widget.email,
+                                  username: widget.username,
+                                  type: "spain",)),
                           );
                         },
                         child: Container(
@@ -423,7 +459,11 @@ class _secondPageState extends State<secondPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => secondPage("spain")),
+                                builder: (context) => secondPage(firstName: widget.firstName,
+                                  lastName: widget.lastName,
+                                  email: widget.email,
+                                  username: widget.username,
+                                  type: "spain",)),
                           );
                         },
                         child: Container(
@@ -464,7 +504,11 @@ class _secondPageState extends State<secondPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => secondPage("spain")),
+                                builder: (context) => secondPage(firstName: widget.firstName,
+                                  lastName: widget.lastName,
+                                  email: widget.email,
+                                  username: widget.username,
+                                  type: "spain",)),
                           );
                         },
                         child: Container(
@@ -498,7 +542,11 @@ class _secondPageState extends State<secondPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => secondPage("spain")),
+                                builder: (context) => secondPage(firstName: widget.firstName,
+                                  lastName: widget.lastName,
+                                  email: widget.email,
+                                  username: widget.username,
+                                  type: "spain",)),
                           );
                         },
                         child: Container(
@@ -539,7 +587,11 @@ class _secondPageState extends State<secondPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => secondPage("spain")),
+                                builder: (context) => secondPage(firstName: widget.firstName,
+                                  lastName: widget.lastName,
+                                  email: widget.email,
+                                  username: widget.username,
+                                  type: "spain",)),
                           );
                         },
                         child: Container(
@@ -573,7 +625,11 @@ class _secondPageState extends State<secondPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => secondPage("spain")),
+                                builder: (context) => secondPage(firstName: widget.firstName,
+                                  lastName: widget.lastName,
+                                  email: widget.email,
+                                  username: widget.username,
+                                  type: "spain",)),
                           );
                         },
                         child: Container(
@@ -608,13 +664,78 @@ class _secondPageState extends State<secondPage> {
     int _currentIndex = 0;
 
     final List<Widget> _pages = [
-      BreakfastPage(),
-      LunchPage(),
-      DinnerPage()
+      BreakfastPageGreek(),
+      LunchPageGreek(),
+      DinnerPageGreek()
     ];
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Flavor Hub",
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+      ),
       body: Center(),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text("${widget.firstName} ${widget.lastName}"),
+              accountEmail: Text(widget.email),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.orange,
+                child: Text(
+                  widget.firstName[0] + widget.lastName[0],
+                  style: TextStyle(fontSize: 40),
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Settings'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MainPage(
+                      firstName: widget.firstName,
+                      lastName: widget.lastName,
+                      email: widget.email,
+                      username: widget.username,
+                    ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.chat),
+              title: Text('IA Help'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ChatPage(
+                      firstName: widget.firstName,
+                      lastName: widget.lastName,
+                      email: widget.email,
+                      username: widget.username,
+                    ),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.blue, // Change the background color
         selectedItemColor: Colors.deepPurple, // Change the selected item color
@@ -624,25 +745,35 @@ class _secondPageState extends State<secondPage> {
         onTap: (int index) {
           setState(() {
             _currentIndex = index;
-            if (_currentIndex == 1) {
+            if (_currentIndex == 0) {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => BreakfastPage()),
+                MaterialPageRoute(builder: (context) => buildGreekPage()),
+              );
+            }
+            else if (_currentIndex == 1) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => BreakfastPageGreek()),
               );
             } else if (_currentIndex == 2) {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => LunchPage()),
+                MaterialPageRoute(builder: (context) => LunchPageGreek()),
               );
             } else if (_currentIndex == 3) {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => DinnerPage()),
+                MaterialPageRoute(builder: (context) => DinnerPageGreek()),
               );
             } else if (_currentIndex == 3) {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => secondPage("Home")),
+                MaterialPageRoute(builder: (context) => secondPage(firstName: widget.firstName,
+                  lastName: widget.lastName,
+                  email: widget.email,
+                  username: widget.username,
+                  type: " ",)),
               );
             }
           });
@@ -687,8 +818,16 @@ class _secondPageState extends State<secondPage> {
     );
   }
 
-  Scaffold BreakfastPage() {
+  Scaffold BreakfastPageGreek() {
+    int _currentIndex = 1;
+
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Flavor Hub",
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+      ),
       body: Stack(
         children: [
           Positioned(
@@ -710,7 +849,11 @@ class _secondPageState extends State<secondPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => secondPage("greek"),
+                      builder: (context) => secondPage(firstName: widget.firstName,
+                        lastName: widget.lastName,
+                        email: widget.email,
+                        username: widget.username,
+                        type: "greek",),
                     ),
                   );
                 },
@@ -746,7 +889,11 @@ class _secondPageState extends State<secondPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => secondPage("greek"),
+                      builder: (context) => secondPage(firstName: widget.firstName,
+                        lastName: widget.lastName,
+                        email: widget.email,
+                        username: widget.username,
+                        type: "greek",),
                     ),
                   );
                 },
@@ -775,11 +922,139 @@ class _secondPageState extends State<secondPage> {
           ),
         ],
       ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text("${widget.firstName} ${widget.lastName}"),
+              accountEmail: Text(widget.email),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.orange,
+                child: Text(
+                  widget.firstName[0] + widget.lastName[0],
+                  style: TextStyle(fontSize: 40),
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Settings'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MainPage(
+                      firstName: widget.firstName,
+                      lastName: widget.lastName,
+                      email: widget.email,
+                      username: widget.username,
+                    ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.chat),
+              title: Text('IA Help'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ChatPage(
+                      firstName: widget.firstName,
+                      lastName: widget.lastName,
+                      email: widget.email,
+                      username: widget.username,
+                    ),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.blue, // Change the background color
+        selectedItemColor: Colors.deepPurple, // Change the selected item color
+        unselectedItemColor: Colors.grey, // Change the unselected item color
+        elevation: 10, // Add elevation
+        currentIndex: _currentIndex,
+        onTap: (int index) {
+          setState(() {
+            _currentIndex = index;
+            if (_currentIndex == 0) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => buildGreekPage()),
+              );
+            }
+            else if (_currentIndex == 1) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => BreakfastPageGreek()),
+              );
+            } else if (_currentIndex == 2) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => LunchPageGreek()),
+              );
+            } else if (_currentIndex == 3) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DinnerPageGreek()),
+              );
+            } else if (_currentIndex == 3) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => secondPage(firstName: widget.firstName,
+                  lastName: widget.lastName,
+                  email: widget.email,
+                  username: widget.username,
+                  type: " ",)),
+              );
+            }
+          });
+        },
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.wb_sunny),
+            label: 'Breakfast',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.restaurant),
+            label: 'Lunch',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.nights_stay),
+            label: 'Dinner',
+          ),
+        ],
+      ),
     );
   }
 
-  Scaffold LunchPage() {
+  Scaffold LunchPageGreek() {
+    int _currentIndex = 2;
+
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Flavor Hub",
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+      ),
       body: Stack(
         children: [
           Positioned(
@@ -801,7 +1076,11 @@ class _secondPageState extends State<secondPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => secondPage("greek"),
+                      builder: (context) => secondPage(firstName: widget.firstName,
+                        lastName: widget.lastName,
+                        email: widget.email,
+                        username: widget.username,
+                        type: "greek",),
                     ),
                   );
                 },
@@ -827,7 +1106,11 @@ class _secondPageState extends State<secondPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => secondPage("greek"),
+                      builder: (context) => secondPage(firstName: widget.firstName,
+                        lastName: widget.lastName,
+                        email: widget.email,
+                        username: widget.username,
+                        type: "greek",),
                     ),
                   );
                 },
@@ -866,11 +1149,139 @@ class _secondPageState extends State<secondPage> {
           ),
         ],
       ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text("${widget.firstName} ${widget.lastName}"),
+              accountEmail: Text(widget.email),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.orange,
+                child: Text(
+                  widget.firstName[0] + widget.lastName[0],
+                  style: TextStyle(fontSize: 40),
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Settings'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MainPage(
+                      firstName: widget.firstName,
+                      lastName: widget.lastName,
+                      email: widget.email,
+                      username: widget.username,
+                    ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.chat),
+              title: Text('IA Help'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ChatPage(
+                      firstName: widget.firstName,
+                      lastName: widget.lastName,
+                      email: widget.email,
+                      username: widget.username,
+                    ),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.blue, // Change the background color
+        selectedItemColor: Colors.deepPurple, // Change the selected item color
+        unselectedItemColor: Colors.grey, // Change the unselected item color
+        elevation: 10, // Add elevation
+        currentIndex: _currentIndex,
+        onTap: (int index) {
+          setState(() {
+            _currentIndex = index;
+            if (_currentIndex == 0) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => buildGreekPage()),
+              );
+            }
+            else if (_currentIndex == 1) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => BreakfastPageGreek()),
+              );
+            } else if (_currentIndex == 2) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => LunchPageGreek()),
+              );
+            } else if (_currentIndex == 3) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DinnerPageGreek()),
+              );
+            } else if (_currentIndex == 3) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => secondPage(firstName: widget.firstName,
+                  lastName: widget.lastName,
+                  email: widget.email,
+                  username: widget.username,
+                  type: " ",)),
+              );
+            }
+          });
+        },
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.wb_sunny),
+            label: 'Breakfast',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.restaurant),
+            label: 'Lunch',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.nights_stay),
+            label: 'Dinner',
+          ),
+        ],
+      ),
     );
   }
 
-  Scaffold DinnerPage() {
+  Scaffold DinnerPageGreek() {
+    int _currentIndex = 3;
+
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Flavor Hub",
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+      ),
       body: Stack(
         children: [
           Positioned(
@@ -892,7 +1303,11 @@ class _secondPageState extends State<secondPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => secondPage("greek"),
+                      builder: (context) => secondPage(firstName: widget.firstName,
+                        lastName: widget.lastName,
+                        email: widget.email,
+                        username: widget.username,
+                        type: "greek",),
                     ),
                   );
                 },
@@ -918,7 +1333,11 @@ class _secondPageState extends State<secondPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => secondPage("greek"),
+                      builder: (context) => secondPage(firstName: widget.firstName,
+                        lastName: widget.lastName,
+                        email: widget.email,
+                        username: widget.username,
+                        type: "greek",),
                     ),
                   );
                 },
@@ -954,6 +1373,126 @@ class _secondPageState extends State<secondPage> {
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
             ),
+          ),
+        ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text("${widget.firstName} ${widget.lastName}"),
+              accountEmail: Text(widget.email),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.orange,
+                child: Text(
+                  widget.firstName[0] + widget.lastName[0],
+                  style: TextStyle(fontSize: 40),
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Settings'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MainPage(
+                      firstName: widget.firstName,
+                      lastName: widget.lastName,
+                      email: widget.email,
+                      username: widget.username,
+                    ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.chat),
+              title: Text('IA Help'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ChatPage(
+                      firstName: widget.firstName,
+                      lastName: widget.lastName,
+                      email: widget.email,
+                      username: widget.username,
+                    ),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.blue, // Change the background color
+        selectedItemColor: Colors.deepPurple, // Change the selected item color
+        unselectedItemColor: Colors.grey, // Change the unselected item color
+        elevation: 10, // Add elevation
+        currentIndex: _currentIndex,
+        onTap: (int index) {
+          setState(() {
+            _currentIndex = index;
+            if (_currentIndex == 0) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => buildGreekPage()),
+              );
+            }
+            else if (_currentIndex == 1) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => BreakfastPageGreek()),
+              );
+            } else if (_currentIndex == 2) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => LunchPageGreek()),
+              );
+            } else if (_currentIndex == 3) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DinnerPageGreek()),
+              );
+            } else if (_currentIndex == 3) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => secondPage(firstName: widget.firstName,
+                  lastName: widget.lastName,
+                  email: widget.email,
+                  username: widget.username,
+                  type: " ",)),
+              );
+            }
+          });
+        },
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.wb_sunny),
+            label: 'Breakfast',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.restaurant),
+            label: 'Lunch',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.nights_stay),
+            label: 'Dinner',
           ),
         ],
       ),

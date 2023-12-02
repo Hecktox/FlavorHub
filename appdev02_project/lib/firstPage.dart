@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'secondPage.dart';
 import 'login.dart';
 import 'ChatPage.dart';
+import 'Settings.dart';
 
 class MainPage extends StatefulWidget {
   final String username;
@@ -22,220 +23,172 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Flavor Hub",
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),),
-      ),
-      body: Center(
-        child: Scaffold(
-          body: Stack(
-            children: [
-              Stack(
-                children: [
-                  Positioned(
-                    top: 140,
-                    left: 30,
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => secondPage("spain")),
-                        );
-                      },
-                      child: Container(
-                        width: 150, // Set the width as needed
-                        height: 100, // Set the height as needed
-                        decoration: const BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('asset/spain.png'),
-                            // Replace with your image asset
-                            fit: BoxFit.cover, // Adjust the fit as needed
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    top: 140,
-                    left: 200,
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => secondPage("greek")),
-                        );
-                      },
-                      child: Container(
-                        width: 150, // Set the width as needed
-                        height: 100, // Set the height as needed
-                        decoration: const BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('asset/greek.png'),
-                            // Replace with your image asset
-                            fit: BoxFit.cover, // Adjust the fit as needed
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    top: 300,
-                    left: 30,
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => secondPage("bulgarian")),
-                        );
-                      },
-                      child: Container(
-                        width: 150, // Set the width as needed
-                        height: 100, // Set the height as needed
-                        decoration: const BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('asset/bulgaria.png'),
-                            // Replace with your image asset
-                            fit: BoxFit.cover, // Adjust the fit as needed
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    top: 300,
-                    left: 200,
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => secondPage("india")),
-                        );
-                      },
-                      child: Container(
-                        width: 150, // Set the width as needed
-                        height: 100, // Set the height as needed
-                        decoration: const BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('asset/india.png'),
-                            // Replace with your image asset
-                            fit: BoxFit.cover, // Adjust the fit as needed
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    top: 450,
-                    left: 100,
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => secondPage("usa")),
-                        );
-                      },
-                      child: Container(
-                        width: 150, // Set the width as needed
-                        height: 100, // Set the height as needed
-                        decoration: const BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('asset/usa.png'),
-                            // Replace with your image asset
-                            fit: BoxFit.cover, // Adjust the fit as needed
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  const Positioned(
-                    top: 80,
-                    left: 100,
-                    child: Text("Select A Country",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
-                  ),
-                  const Positioned(
-                    top: 250,
-                    left: 75,
-                    child: Text("Spain",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
-                  ),
-                  const Positioned(
-                    top: 250,
-                    left: 235,
-                    child: Text("Greece",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
-                  ),
-                  const Positioned(
-                    top: 410,
-                    left: 60,
-                    child: Text("Bulgaria",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
-                  ),
-                  const Positioned(
-                    top: 410,
-                    left: 250,
-                    child: Text("India",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
-                  ),
-                  const Positioned(
-                    top: 570,
-                    left: 155,
-                    child: Text("USA",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
-                  ),
-                ],
-              ),
-            ],
-          ),
+        title: Text(
+          "Flavor Hub",
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
       ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          //important : remove any paddig from the listview
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            UserAccountsDrawerHeader(
-              accountName: Text("${widget.firstName} ${widget.lastName}"),
-              accountEmail: Text(widget.email),
-              currentAccountPicture: CircleAvatar(
-                backgroundColor: Colors.orange,
-                child: Text(
-                  widget.firstName[0] + widget.lastName[0],
-                  style: const TextStyle(fontSize: 40),
+            Text(
+              "Select A Country",
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 20),
+            Expanded(
+              child: GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 16,
+                  mainAxisSpacing: 16,
+                  childAspectRatio: 1.2,
                 ),
+                itemCount: countries.length,
+                itemBuilder: (context, index) {
+                  return buildCountryCard(countries[index]);
+                },
               ),
             ),
-            ListTile(
-              leading: const Icon(Icons.settings), title: const Text('Settings'),
-              onTap: (){
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.home), title: const Text('Home'),
-              onTap: (){
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.chat), title: const Text('IA Help'),
-              onTap: () {
-                // Navigate to another page using Navigator.push
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ChatPage(firstName: widget.firstName,lastName: widget.lastName,email: widget.email,username: widget.username,), // Replace AnotherPage with the actual page you want to navigate to
-                  ),
-                );
-              },
-            ),
+          ],
+        ),
+      ),
+      drawer: buildDrawer(),
+    );
+  }
 
+  Widget buildCountryCard(Country country) {
+    return InkWell(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => secondPage(firstName: widget.firstName,
+            lastName: widget.lastName,
+            email: widget.email,
+            username: widget.username,
+            type: country.route,)),
+        );
+      },
+      child: Card(
+        elevation: 4,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        color: Colors.white, // Set the card background color
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                color: Colors.grey[200], // Set the flag background color
+              ),
+              padding: EdgeInsets.all(8),
+              child: Image.asset(
+                country.imagePath,
+                height: 80,
+                width: 130,
+                fit: BoxFit.cover,
+              ),
+            ),
+            SizedBox(height: 8),
+            Text(
+              country.name,
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
           ],
         ),
       ),
     );
   }
+
+  Widget buildDrawer() {
+    return Drawer(
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          UserAccountsDrawerHeader(
+            accountName: Text("${widget.firstName} ${widget.lastName}"),
+            accountEmail: Text(widget.email),
+            currentAccountPicture: CircleAvatar(
+              backgroundColor: Colors.orange,
+              child: Text(
+                widget.firstName[0] + widget.lastName[0],
+                style: TextStyle(fontSize: 40),
+              ),
+            ),
+          ),
+          buildDrawerItem(Icon(Icons.settings), 'Settings', () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => SettingsPage(
+                  firstName: widget.firstName,
+                  lastName: widget.lastName,
+                  email: widget.email,
+                  username: widget.username,
+                ),
+              ),
+            );
+          }),
+          buildDrawerItem(Icon(Icons.home), 'Home', () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => MainPage(
+                  firstName: widget.firstName,
+                  lastName: widget.lastName,
+                  email: widget.email,
+                  username: widget.username,
+                ),
+              ),
+            );
+          }),
+          buildDrawerItem(Icon(Icons.chat), 'IA Help', () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ChatPage(
+                  firstName: widget.firstName,
+                  lastName: widget.lastName,
+                  email: widget.email,
+                  username: widget.username,
+                ),
+              ),
+            );
+          }),
+        ],
+      ),
+    );
+  }
+
+  Widget buildDrawerItem(Icon icon, String title, Function onTap) {
+    return ListTile(
+      leading: icon,
+      title: Text(title),
+      onTap: () {
+        onTap();
+      },
+    );
+  }
 }
+
+class Country {
+  final String name;
+  final String imagePath;
+  final String route;
+
+  Country({required this.name, required this.imagePath, required this.route});
+}
+
+List<Country> countries = [
+  Country(name: 'Spain', imagePath: 'asset/spain.png', route: 'spain'),
+  Country(name: 'Greece', imagePath: 'asset/greek.png', route: 'greek'),
+  Country(name: 'Bulgaria', imagePath: 'asset/bulgaria.png', route: 'bulgarian'),
+  Country(name: 'India', imagePath: 'asset/india.png', route: 'india'),
+  Country(name: 'USA', imagePath: 'asset/usa.png', route: 'usa'),
+];
