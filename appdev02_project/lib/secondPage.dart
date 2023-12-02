@@ -45,6 +45,14 @@ class _secondPageState extends State<secondPage> {
   }
 
   Scaffold buildSpainPage() {
+    int _currentIndex = 0;
+
+    final List<Widget> _pages = [
+      BreakfastPageGreek(),
+      LunchPageGreek(),
+      DinnerPageGreek()
+    ];
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -52,264 +60,274 @@ class _secondPageState extends State<secondPage> {
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
       ),
-      body:Stack(
+      body: Stack(
         children: [
-          Stack(
-            children: [
-              Stack(
-                children: [
-                  Positioned(
-                      top: 80,
-                      left: 150,
-                      child: Center(
-                        child: Text("Breakfast", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-                      )
-                  ),
+          Positioned(
+              top: 80,
+              left: 150,
+              child: Center(
+                child: Text("Breakfast", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+              )
+          ),
 
-                  Positioned(
-                      top: 130,
-                      left: 30,
-                      child: Center(
-                          child: InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => secondPage(firstName: widget.firstName,
-                                      lastName: widget.lastName,
-                                      email: widget.email,
-                                      username: widget.username,
-                                      type: "spain",)),
-                              );
-                            },
-                            child: Container(
-                              width: 150, // Set the width as needed
-                              height: 100, // Set the height as needed
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage('asset/croissantalmendra.jpg'),
-                                  // Replace with your image asset
-                                  fit: BoxFit.cover, // Adjust the fit as needed
-                                ),
-                              ),
-                            ),
-                          )
-                      )
-                  ),
-                  Positioned(
-                      top: 240,
-                      left: 30,
-                      child: Center(
-                        child: Text("Courasant De \n Almendra", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-                      )
-                  ),
+          Positioned(
+              top: 130,
+              left: 30,
+              child: Center(
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => secondPage(
+                            firstName: widget.firstName,
+                            lastName: widget.lastName,
+                            email: widget.email,
+                            username: widget.username,
+                            type: " ",
+                          ),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      width: 150, // Set the width as needed
+                      height: 100, // Set the height as needed
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('asset/croissantalmendra.jpg'),
+                          // Replace with your image asset
+                          fit: BoxFit.cover, // Adjust the fit as needed
+                        ),
+                      ),
+                    ),
+                  )
+              )
+          ),
+          Positioned(
+              top: 240,
+              left: 30,
+              child: Center(
+                child: Text("Croissant De \n Almendra", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+              )
+          ),
 
-                  Positioned(
-                      top: 130,
-                      left: 210,
-                      child: Center(
-                          child: InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => secondPage(firstName: widget.firstName,
-                                      lastName: widget.lastName,
-                                      email: widget.email,
-                                      username: widget.username,
-                                      type: "spain",)),
-                              );
-                            },
-                            child: Container(
-                              width: 150, // Set the width as needed
-                              height: 100, // Set the height as needed
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage('asset/panTumaca.png'),
-                                  // Replace with your image asset
-                                  fit: BoxFit.cover, // Adjust the fit as needed
-                                ),
-                              ),
-                            ),
-                          )
-                      )
-                  ),
-                  Positioned(
-                      top: 240,
-                      left: 220,
-                      child: Center(
-                        child: Text("Pan Tumaca", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-                      )
-                  ),
+          Positioned(
+              top: 130,
+              left: 210,
+              child: Center(
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => secondPage(
+                            firstName: widget.firstName,
+                            lastName: widget.lastName,
+                            email: widget.email,
+                            username: widget.username,
+                            type: " ",
+                          ),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      width: 150, // Set the width as needed
+                      height: 100, // Set the height as needed
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('asset/panTumaca.png'),
+                          // Replace with your image asset
+                          fit: BoxFit.cover, // Adjust the fit as needed
+                        ),
+                      ),
+                    ),
+                  )
+              )
+          ),
+          Positioned(
+              top: 240,
+              left: 220,
+              child: Center(
+                child: Text("Pan Tumaca", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+              )
+          ),
 
-                  Positioned(
-                      top: 300,
-                      left: 170,
-                      child: Center(
-                        child: Text("Lunch", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-                      )
-                  ),
-                  Positioned(
-                      top: 340,
-                      left: 210,
-                      child: Center(
-                          child: InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => secondPage(firstName: widget.firstName,
-                                      lastName: widget.lastName,
-                                      email: widget.email,
-                                      username: widget.username,
-                                      type: "spain",)),
-                              );
-                            },
-                            child: Container(
-                              width: 150, // Set the width as needed
-                              height: 100, // Set the height as needed
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage('asset/migas.jpg'),
-                                  // Replace with your image asset
-                                  fit: BoxFit.cover, // Adjust the fit as needed
-                                ),
-                              ),
-                            ),
-                          )
-                      )
-                  ),
-                  Positioned(
-                      top: 450,
-                      left: 250,
-                      child: Center(
-                        child: Text("Migas", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-                      )
-                  ),
+          Positioned(
+              top: 300,
+              left: 170,
+              child: Center(
+                child: Text("Lunch", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+              )
+          ),
+          Positioned(
+              top: 340,
+              left: 210,
+              child: Center(
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => secondPage(
+                            firstName: widget.firstName,
+                            lastName: widget.lastName,
+                            email: widget.email,
+                            username: widget.username,
+                            type: " ",
+                          ),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      width: 150, // Set the width as needed
+                      height: 100, // Set the height as needed
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('asset/migas.jpg'),
+                          // Replace with your image asset
+                          fit: BoxFit.cover, // Adjust the fit as needed
+                        ),
+                      ),
+                    ),
+                  )
+              )
+          ),
+          Positioned(
+              top: 450,
+              left: 250,
+              child: Center(
+                child: Text("Migas", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+              )
+          ),
 
-                  Positioned(
-                      top: 340,
-                      left: 30,
-                      child: Center(
-                          child: InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => secondPage(firstName: widget.firstName,
-                                      lastName: widget.lastName,
-                                      email: widget.email,
-                                      username: widget.username,
-                                      type: "spain",)),
-                              );
-                            },
-                            child: Container(
-                              width: 150, // Set the width as needed
-                              height: 100, // Set the height as needed
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage('asset/bocadillos.jpg'),
-                                  // Replace with your image asset
-                                  fit: BoxFit.cover, // Adjust the fit as needed
-                                ),
-                              ),
-                            ),
-                          )
-                      )
-                  ),
-                  Positioned(
-                      top: 450,
-                      left: 30,
-                      child: Center(
-                        child: Text("Bocadillo De\nJamon", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-                      )
-                  ),
-                  Positioned(
-                      top: 500,
-                      left: 170,
-                      child: Center(
-                        child: Text("Dinner", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-                      )
-                  ),
+          Positioned(
+              top: 340,
+              left: 30,
+              child: Center(
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => secondPage(
+                            firstName: widget.firstName,
+                            lastName: widget.lastName,
+                            email: widget.email,
+                            username: widget.username,
+                            type: " ",
+                          ),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      width: 150, // Set the width as needed
+                      height: 100, // Set the height as needed
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('asset/bocadillos.jpg'),
+                          // Replace with your image asset
+                          fit: BoxFit.cover, // Adjust the fit as needed
+                        ),
+                      ),
+                    ),
+                  )
+              )
+          ),
+          Positioned(
+              top: 450,
+              left: 30,
+              child: Center(
+                child: Text("Bocadillo De \n Jamon", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+              )
+          ),
+          Positioned(
+              top: 500,
+              left: 170,
+              child: Center(
+                child: Text("Dinner", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+              )
+          ),
 
-                  Positioned(
-                      top: 550,
-                      left: 30,
-                      child: Center(
-                          child: InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => secondPage(firstName: widget.firstName,
-                                      lastName: widget.lastName,
-                                      email: widget.email,
-                                      username: widget.username,
-                                      type: "spain",)),
-                              );
-                            },
-                            child: Container(
-                              width: 150, // Set the width as needed
-                              height: 100, // Set the height as needed
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage('asset/huevosrotos.jpg'),
-                                  // Replace with your image asset
-                                  fit: BoxFit.cover, // Adjust the fit as needed
-                                ),
-                              ),
-                            ),
-                          )
-                      )
-                  ),
-                  Positioned(
-                      top: 660,
-                      left: 75,
-                      child: Center(
-                        child: Text("Migas", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-                      )
-                  ),
+          Positioned(
+              top: 550,
+              left: 30,
+              child: Center(
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => secondPage(
+                            firstName: widget.firstName,
+                            lastName: widget.lastName,
+                            email: widget.email,
+                            username: widget.username,
+                            type: " ",
+                          ),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      width: 150, // Set the width as needed
+                      height: 100, // Set the height as needed
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('asset/huevosrotos.jpg'),
+                          // Replace with your image asset
+                          fit: BoxFit.cover, // Adjust the fit as needed
+                        ),
+                      ),
+                    ),
+                  )
+              )
+          ),
+          Positioned(
+              top: 660,
+              left: 75,
+              child: Center(
+                child: Text("Huevosrotos", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+              )
+          ),
 
-                  Positioned(
-                      top: 550,
-                      left: 210,
-                      child: Center(
-                          child: InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => secondPage(firstName: widget.firstName,
-                                      lastName: widget.lastName,
-                                      email: widget.email,
-                                      username: widget.username,
-                                      type: "spain",)),
-                              );
-                            },
-                            child: Container(
-                              width: 150, // Set the width as needed
-                              height: 100, // Set the height as needed
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage('asset/gazpacho.jpg'),
-                                  // Replace with your image asset
-                                  fit: BoxFit.cover, // Adjust the fit as needed
-                                ),
-                              ),
-                            ),
-                          )
-                      )
-                  ),
-                  Positioned(
-                      top: 660,
-                      left: 250,
-                      child: Center(
-                        child: Text("Gazpacho", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-                      )
-                  ),
-                ],
-              ),
-            ],
+          Positioned(
+              top: 550,
+              left: 210,
+              child: Center(
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => secondPage(
+                            firstName: widget.firstName,
+                            lastName: widget.lastName,
+                            email: widget.email,
+                            username: widget.username,
+                            type: " ",
+                          ),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      width: 150, // Set the width as needed
+                      height: 100, // Set the height as needed
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('asset/gazpacho.jpg'),
+                          // Replace with your image asset
+                          fit: BoxFit.cover, // Adjust the fit as needed
+                        ),
+                      ),
+                    ),
+                  )
+              )
+          ),
+          Positioned(
+              top: 660,
+              left: 250,
+              child: Center(
+                child: Text("Gazpacho", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+              )
           ),
         ],
       ),
@@ -372,7 +390,67 @@ class _secondPageState extends State<secondPage> {
           ],
         ),
       ),
-
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.blue, // Change the background color
+        selectedItemColor: Colors.deepPurple, // Change the selected item color
+        unselectedItemColor: Colors.grey, // Change the unselected item color
+        elevation: 10, // Add elevation
+        currentIndex: _currentIndex,
+        onTap: (int index) {
+          setState(() {
+            _currentIndex = index;
+            if (_currentIndex == 0) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => buildSpainPage()),
+              );
+            }
+            else if (_currentIndex == 1) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => BreakfastPageSpain()),
+              );
+            } else if (_currentIndex == 2) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => LunchPageSpain()),
+              );
+            } else if (_currentIndex == 3) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DinnerPageSpain()),
+              );
+            } else if (_currentIndex == 3) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => secondPage(firstName: widget.firstName,
+                  lastName: widget.lastName,
+                  email: widget.email,
+                  username: widget.username,
+                  type: " ",)),
+              );
+            }
+          });
+        },
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.wb_sunny),
+            label: 'Breakfast',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.restaurant),
+            label: 'Lunch',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.nights_stay),
+            label: 'Dinner',
+          ),
+        ],
+      ),
     );
   }
 
@@ -676,7 +754,277 @@ class _secondPageState extends State<secondPage> {
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
       ),
-      body: Center(),
+      body: Stack(
+        children: [
+          Positioned(
+              top: 80,
+              left: 150,
+              child: Center(
+                child: Text("Breakfast", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+              )
+          ),
+
+          Positioned(
+              top: 130,
+              left: 30,
+              child: Center(
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => secondPage(
+                            firstName: widget.firstName,
+                            lastName: widget.lastName,
+                            email: widget.email,
+                            username: widget.username,
+                            type: " ",
+                          ),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      width: 150, // Set the width as needed
+                      height: 100, // Set the height as needed
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('asset/greekyogurt.jpg'),
+                          // Replace with your image asset
+                          fit: BoxFit.cover, // Adjust the fit as needed
+                        ),
+                      ),
+                    ),
+                  )
+              )
+          ),
+          Positioned(
+              top: 240,
+              left: 30,
+              child: Center(
+                child: Text("Greek Yogurt", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+              )
+          ),
+
+          Positioned(
+              top: 130,
+              left: 210,
+              child: Center(
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => secondPage(
+                            firstName: widget.firstName,
+                            lastName: widget.lastName,
+                            email: widget.email,
+                            username: widget.username,
+                            type: " ",
+                          ),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      width: 150, // Set the width as needed
+                      height: 100, // Set the height as needed
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('asset/greekomelette.jpg'),
+                          // Replace with your image asset
+                          fit: BoxFit.cover, // Adjust the fit as needed
+                        ),
+                      ),
+                    ),
+                  )
+              )
+          ),
+          Positioned(
+              top: 240,
+              left: 220,
+              child: Center(
+                child: Text("Greek Omelette", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+              )
+          ),
+
+          Positioned(
+              top: 300,
+              left: 170,
+              child: Center(
+                child: Text("Lunch", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+              )
+          ),
+          Positioned(
+              top: 340,
+              left: 210,
+              child: Center(
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => secondPage(
+                            firstName: widget.firstName,
+                            lastName: widget.lastName,
+                            email: widget.email,
+                            username: widget.username,
+                            type: " ",
+                          ),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      width: 150, // Set the width as needed
+                      height: 100, // Set the height as needed
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('asset/calamari.jpg'),
+                          // Replace with your image asset
+                          fit: BoxFit.cover, // Adjust the fit as needed
+                        ),
+                      ),
+                    ),
+                  )
+              )
+          ),
+          Positioned(
+              top: 450,
+              left: 250,
+              child: Center(
+                child: Text("Calamari", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+              )
+          ),
+
+          Positioned(
+              top: 340,
+              left: 30,
+              child: Center(
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => secondPage(
+                            firstName: widget.firstName,
+                            lastName: widget.lastName,
+                            email: widget.email,
+                            username: widget.username,
+                            type: " ",
+                          ),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      width: 150, // Set the width as needed
+                      height: 100, // Set the height as needed
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('asset/greeksalad.jpg'),
+                          // Replace with your image asset
+                          fit: BoxFit.cover, // Adjust the fit as needed
+                        ),
+                      ),
+                    ),
+                  )
+              )
+          ),
+          Positioned(
+              top: 450,
+              left: 30,
+              child: Center(
+                child: Text("Greek Salad", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+              )
+          ),
+          Positioned(
+              top: 500,
+              left: 170,
+              child: Center(
+                child: Text("Dinner", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+              )
+          ),
+
+          Positioned(
+              top: 550,
+              left: 30,
+              child: Center(
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => secondPage(
+                            firstName: widget.firstName,
+                            lastName: widget.lastName,
+                            email: widget.email,
+                            username: widget.username,
+                            type: " ",
+                          ),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      width: 150, // Set the width as needed
+                      height: 100, // Set the height as needed
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('asset/greekporcsticks.jpg'),
+                          // Replace with your image asset
+                          fit: BoxFit.cover, // Adjust the fit as needed
+                        ),
+                      ),
+                    ),
+                  )
+              )
+          ),
+          Positioned(
+              top: 660,
+              left: 75,
+              child: Center(
+                child: Text("Greek\nPorcsticks", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+              )
+          ),
+
+          Positioned(
+              top: 550,
+              left: 210,
+              child: Center(
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => secondPage(
+                            firstName: widget.firstName,
+                            lastName: widget.lastName,
+                            email: widget.email,
+                            username: widget.username,
+                            type: " ",
+                          ),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      width: 150, // Set the width as needed
+                      height: 100, // Set the height as needed
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('asset/greekgyro.jpg'),
+                          // Replace with your image asset
+                          fit: BoxFit.cover, // Adjust the fit as needed
+                        ),
+                      ),
+                    ),
+                  )
+              )
+          ),
+          Positioned(
+              top: 660,
+              left: 250,
+              child: Center(
+                child: Text("Greek Gyro", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+              )
+          ),
+        ],
+      ),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -1498,4 +1846,685 @@ class _secondPageState extends State<secondPage> {
       ),
     );
   }
-}
+
+  Scaffold BreakfastPageSpain() {
+    int _currentIndex = 1;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Flavor Hub",
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+      ),
+      body: Stack(
+        children: [
+          Positioned(
+            top: 80,
+            left: 150,
+            child: Center(
+              child: Text(
+                "Breakfast",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 130,
+            left: 30,
+            child: Center(
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => secondPage(firstName: widget.firstName,
+                        lastName: widget.lastName,
+                        email: widget.email,
+                        username: widget.username,
+                        type: " ",),
+                    ),
+                  );
+                },
+                child: Container(
+                  width: 150,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('asset/croissantalmendra.jpg'),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 240,
+            left: 30,
+            child: Center(
+              child: Text(
+                "Croissant De \n Almendra",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 130,
+            left: 210,
+            child: Center(
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => secondPage(firstName: widget.firstName,
+                        lastName: widget.lastName,
+                        email: widget.email,
+                        username: widget.username,
+                        type: " ",),
+                    ),
+                  );
+                },
+                child: Container(
+                  width: 150,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('asset/panTumaca.png'),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 240,
+            left: 220,
+            child: Center(
+              child: Text(
+                "Pan Tumaca",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              ),
+            ),
+          ),
+        ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text("${widget.firstName} ${widget.lastName}"),
+              accountEmail: Text(widget.email),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.orange,
+                child: Text(
+                  widget.firstName[0] + widget.lastName[0],
+                  style: TextStyle(fontSize: 40),
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Settings'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MainPage(
+                      firstName: widget.firstName,
+                      lastName: widget.lastName,
+                      email: widget.email,
+                      username: widget.username,
+                    ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.chat),
+              title: Text('IA Help'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ChatPage(
+                      firstName: widget.firstName,
+                      lastName: widget.lastName,
+                      email: widget.email,
+                      username: widget.username,
+                    ),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.blue, // Change the background color
+        selectedItemColor: Colors.deepPurple, // Change the selected item color
+        unselectedItemColor: Colors.grey, // Change the unselected item color
+        elevation: 10, // Add elevation
+        currentIndex: _currentIndex,
+        onTap: (int index) {
+          setState(() {
+            _currentIndex = index;
+            if (_currentIndex == 0) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => buildSpainPage()),
+              );
+            }
+            else if (_currentIndex == 1) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => BreakfastPageSpain()),
+              );
+            } else if (_currentIndex == 2) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => LunchPageSpain()),
+              );
+            } else if (_currentIndex == 3) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DinnerPageSpain()),
+              );
+            } else if (_currentIndex == 3) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => secondPage(firstName: widget.firstName,
+                  lastName: widget.lastName,
+                  email: widget.email,
+                  username: widget.username,
+                  type: " ",)),
+              );
+            }
+          });
+        },
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.wb_sunny),
+            label: 'Breakfast',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.restaurant),
+            label: 'Lunch',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.nights_stay),
+            label: 'Dinner',
+          ),
+        ],
+      ),
+    );
+  }
+
+  Scaffold LunchPageSpain() {
+    int _currentIndex = 1;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Flavor Hub",
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+      ),
+      body: Stack(
+        children: [
+          Positioned(
+            top: 80,
+            left: 150,
+            child: Center(
+              child: Text(
+                "Lunch",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 130,
+            left: 30,
+            child: Center(
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => secondPage(firstName: widget.firstName,
+                        lastName: widget.lastName,
+                        email: widget.email,
+                        username: widget.username,
+                        type: " ",),
+                    ),
+                  );
+                },
+                child: Container(
+                  width: 150,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('asset/bocadillos.jpg'),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 240,
+            left: 30,
+            child: Center(
+              child: Text(
+                "Bocadillos",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 130,
+            left: 210,
+            child: Center(
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => secondPage(firstName: widget.firstName,
+                        lastName: widget.lastName,
+                        email: widget.email,
+                        username: widget.username,
+                        type: " ",),
+                    ),
+                  );
+                },
+                child: Container(
+                  width: 150,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('asset/migas.jpg'),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 240,
+            left: 220,
+            child: Center(
+              child: Text(
+                "Migas",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              ),
+            ),
+          ),
+        ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text("${widget.firstName} ${widget.lastName}"),
+              accountEmail: Text(widget.email),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.orange,
+                child: Text(
+                  widget.firstName[0] + widget.lastName[0],
+                  style: TextStyle(fontSize: 40),
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Settings'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MainPage(
+                      firstName: widget.firstName,
+                      lastName: widget.lastName,
+                      email: widget.email,
+                      username: widget.username,
+                    ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.chat),
+              title: Text('IA Help'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ChatPage(
+                      firstName: widget.firstName,
+                      lastName: widget.lastName,
+                      email: widget.email,
+                      username: widget.username,
+                    ),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.blue, // Change the background color
+        selectedItemColor: Colors.deepPurple, // Change the selected item color
+        unselectedItemColor: Colors.grey, // Change the unselected item color
+        elevation: 10, // Add elevation
+        currentIndex: _currentIndex,
+        onTap: (int index) {
+          setState(() {
+            _currentIndex = index;
+            if (_currentIndex == 0) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => buildSpainPage()),
+              );
+            }
+            else if (_currentIndex == 1) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => BreakfastPageSpain()),
+              );
+            } else if (_currentIndex == 2) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => LunchPageSpain()),
+              );
+            } else if (_currentIndex == 3) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DinnerPageSpain()),
+              );
+            } else if (_currentIndex == 3) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => secondPage(firstName: widget.firstName,
+                  lastName: widget.lastName,
+                  email: widget.email,
+                  username: widget.username,
+                  type: " ",)),
+              );
+            }
+          });
+        },
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.wb_sunny),
+            label: 'Breakfast',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.restaurant),
+            label: 'Lunch',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.nights_stay),
+            label: 'Dinner',
+          ),
+        ],
+      ),
+    );
+  }
+
+  Scaffold DinnerPageSpain() {
+    int _currentIndex = 1;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Flavor Hub",
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+      ),
+      body: Stack(
+        children: [
+          Positioned(
+            top: 80,
+            left: 150,
+            child: Center(
+              child: Text(
+                "Dinner",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 130,
+            left: 30,
+            child: Center(
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => secondPage(firstName: widget.firstName,
+                        lastName: widget.lastName,
+                        email: widget.email,
+                        username: widget.username,
+                        type: " ",),
+                    ),
+                  );
+                },
+                child: Container(
+                  width: 150,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('asset/huevosrotos.jpg'),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 240,
+            left: 30,
+            child: Center(
+              child: Text(
+                "Huevosrotos",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 130,
+            left: 210,
+            child: Center(
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => secondPage(firstName: widget.firstName,
+                        lastName: widget.lastName,
+                        email: widget.email,
+                        username: widget.username,
+                        type: " ",),
+                    ),
+                  );
+                },
+                child: Container(
+                  width: 150,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('asset/gazpacho.jpg'),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 240,
+            left: 220,
+            child: Center(
+              child: Text(
+                "Gazpacho",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              ),
+            ),
+          ),
+        ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text("${widget.firstName} ${widget.lastName}"),
+              accountEmail: Text(widget.email),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.orange,
+                child: Text(
+                  widget.firstName[0] + widget.lastName[0],
+                  style: TextStyle(fontSize: 40),
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Settings'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MainPage(
+                      firstName: widget.firstName,
+                      lastName: widget.lastName,
+                      email: widget.email,
+                      username: widget.username,
+                    ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.chat),
+              title: Text('IA Help'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ChatPage(
+                      firstName: widget.firstName,
+                      lastName: widget.lastName,
+                      email: widget.email,
+                      username: widget.username,
+                    ),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.blue, // Change the background color
+        selectedItemColor: Colors.deepPurple, // Change the selected item color
+        unselectedItemColor: Colors.grey, // Change the unselected item color
+        elevation: 10, // Add elevation
+        currentIndex: _currentIndex,
+        onTap: (int index) {
+          setState(() {
+            _currentIndex = index;
+            if (_currentIndex == 0) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => buildSpainPage()),
+              );
+            }
+            else if (_currentIndex == 1) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => BreakfastPageSpain()),
+              );
+            } else if (_currentIndex == 2) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => LunchPageSpain()),
+              );
+            } else if (_currentIndex == 3) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DinnerPageSpain()),
+              );
+            } else if (_currentIndex == 3) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => secondPage(firstName: widget.firstName,
+                  lastName: widget.lastName,
+                  email: widget.email,
+                  username: widget.username,
+                  type: " ",)),
+              );
+            }
+          });
+        },
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.wb_sunny),
+            label: 'Breakfast',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.restaurant),
+            label: 'Lunch',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.nights_stay),
+            label: 'Dinner',
+          ),
+        ],
+      ),
+    );
+  }
+  }
