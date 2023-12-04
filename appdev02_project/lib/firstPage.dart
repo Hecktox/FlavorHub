@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
-import 'secondPage.dart';
-import 'login.dart';
-import 'ChatPage.dart';
-import 'Settings.dart';
+import 'package:appdev02_project/secondPage.dart';
+import 'package:appdev02_project/chatPage.dart';
+import 'package:appdev02_project/settings.dart';
+import 'package:appdev02_project/db.dart';
+import 'package:appdev02_project/admin.dart';
 
 class MainPage extends StatefulWidget {
   final String username;
   final String email;
   final String firstName;
   final String lastName;
+  final bool isAdmin; // Add isAdmin parameter
 
   const MainPage({
     Key? key,
@@ -16,6 +18,7 @@ class MainPage extends StatefulWidget {
     required this.username,
     required this.firstName,
     required this.lastName,
+    required this.isAdmin, // Initialize isAdmin parameter
   }) : super(key: key);
 
   @override
@@ -23,6 +26,14 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  final Mydb database = Mydb();
+
+  @override
+  void initState() {
+    super.initState();
+    database.open();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,11 +79,16 @@ class _MainPageState extends State<MainPage> {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => secondPage(firstName: widget.firstName,
-            lastName: widget.lastName,
-            email: widget.email,
-            username: widget.username,
-            type: country.route,)),
+          MaterialPageRoute(
+            builder: (context) => secondPage(
+              firstName: widget.firstName,
+              lastName: widget.lastName,
+              email: widget.email,
+              username: widget.username,
+              isAdmin: widget.isAdmin,
+              type: country.route,
+            ),
+          ),
         );
       },
       child: Card(
@@ -131,6 +147,7 @@ class _MainPageState extends State<MainPage> {
                   lastName: widget.lastName,
                   email: widget.email,
                   username: widget.username,
+                  isAdmin: widget.isAdmin,
                 ),
               ),
             );
@@ -144,11 +161,12 @@ class _MainPageState extends State<MainPage> {
                   lastName: widget.lastName,
                   email: widget.email,
                   username: widget.username,
+                  isAdmin: widget.isAdmin,
                 ),
               ),
             );
           }),
-          buildDrawerItem(Icon(Icons.chat), 'IA Help', () {
+          buildDrawerItem(Icon(Icons.chat), 'AI Help', () {
             Navigator.push(
               context,
               MaterialPageRoute(
@@ -157,14 +175,26 @@ class _MainPageState extends State<MainPage> {
                   lastName: widget.lastName,
                   email: widget.email,
                   username: widget.username,
+                  isAdmin: widget.isAdmin,
                 ),
               ),
             );
           }),
+          if (widget.isAdmin)
+            buildDrawerItem(Icon(Icons.admin_panel_settings), 'Admin Page', () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => AdminPage(
+                  ),
+                ),
+              );
+            }),
         ],
       ),
     );
   }
+
 
   Widget buildDrawerItem(Icon icon, String title, Function onTap) {
     return ListTile(

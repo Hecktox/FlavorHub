@@ -57,6 +57,7 @@ class _LoginPageState extends State<LoginPage> {
       );
 
       if (user != null) {
+        bool isAdmin = user['isAdmin'] == 1; // Check the isAdmin field
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -65,6 +66,7 @@ class _LoginPageState extends State<LoginPage> {
               username: usernameController.text,
               firstName: user['first_name'],
               lastName: user['last_name'],
+              isAdmin: isAdmin,
             ),
           ),
         );

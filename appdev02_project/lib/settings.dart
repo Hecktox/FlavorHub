@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'ChatPage.dart';
-import 'firstPage.dart';
+import 'package:appdev02_project/chatPage.dart';
+import 'package:appdev02_project/firstPage.dart';
+import 'package:appdev02_project/admin.dart';
 
 class SettingsPage extends StatefulWidget {
   final String username;
   final String email;
   final String firstName;
   final String lastName;
+  final bool isAdmin;
 
   const SettingsPage({
     Key? key,
@@ -14,6 +16,7 @@ class SettingsPage extends StatefulWidget {
     required this.username,
     required this.firstName,
     required this.lastName,
+    required this.isAdmin,
   }) : super(key: key);
 
   @override
@@ -87,6 +90,7 @@ class _SettingsPageState extends State<SettingsPage> {
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      isAdmin: widget.isAdmin,
                     ),
                   ),
                 );
@@ -94,7 +98,7 @@ class _SettingsPageState extends State<SettingsPage> {
             ),
             ListTile(
               leading: Icon(Icons.chat),
-              title: Text('IA Help'),
+              title: Text('AI Help'),
               onTap: () {
                 Navigator.push(
                   context,
@@ -104,11 +108,26 @@ class _SettingsPageState extends State<SettingsPage> {
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      isAdmin: widget.isAdmin,
                     ),
                   ),
                 );
               },
             ),
+            if (widget.isAdmin)
+              ListTile(
+                leading: Icon(Icons.admin_panel_settings),
+                title: Text('Admin Page'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AdminPage(
+                      ),
+                    ),
+                  );
+                },
+              ),
           ],
         ),
       ),

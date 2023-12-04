@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'db.dart'; // Import the database class (Mydb)
+import 'db.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -14,10 +14,10 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmPasswordController =
-      TextEditingController();
+  TextEditingController();
 
   bool isConfirmPasswordEnabled =
-      false; // Flag to enable/disable "Confirm Password" field
+  false; // Flag to enable/disable "Confirm Password" field
 
   @override
   void initState() {
@@ -87,7 +87,7 @@ class _RegisterPageState extends State<RegisterPage> {
         email,
         username,
         password,
-        isAdmin: false,
+        isAdmin: true, // Set isAdmin to true for admin users
       );
 
       if (userId > 0) {
@@ -143,7 +143,7 @@ class _RegisterPageState extends State<RegisterPage> {
             ),
             SizedBox(height: 20),
             Text(
-              'FlavorHub',
+              'Admin Registration',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,

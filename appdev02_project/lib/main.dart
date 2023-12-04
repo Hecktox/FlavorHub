@@ -2,14 +2,18 @@ import 'package:flutter/material.dart';
 import 'login.dart';
 
 void main() {
-  runApp(LoginApp());
+  runApp(MyApp());
 }
 
-class LoginApp extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: LoginPage(), // Load the LoginPage widget from login.dart
+      title: 'Flavor Hub',
+      theme: ThemeData(
+      ),
+      home: LoginPage(),
     );
   }
 }
+

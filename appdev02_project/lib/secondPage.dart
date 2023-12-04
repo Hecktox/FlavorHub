@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'login.dart';
 import 'firstPage.dart';
-import 'Settings.dart';
-import 'ChatPage.dart';
+import 'settings.dart';
+import 'chatPage.dart';
 
 class secondPage extends StatefulWidget {
   final String username;
   final String email;
   final String firstName;
   final String lastName;
+  final bool isAdmin;
   final String type;
 
   const secondPage({
@@ -17,6 +18,7 @@ class secondPage extends StatefulWidget {
     required this.username,
     required this.firstName,
     required this.lastName,
+    required this.isAdmin,
     required this.type,
   }) : super(key: key);
 
@@ -84,6 +86,7 @@ class _secondPageState extends State<secondPage> {
                             lastName: widget.lastName,
                             email: widget.email,
                             username: widget.username,
+                            isAdmin: widget.isAdmin,
                             type: " ",
                           ),
                         ),
@@ -125,6 +128,7 @@ class _secondPageState extends State<secondPage> {
                             lastName: widget.lastName,
                             email: widget.email,
                             username: widget.username,
+                            isAdmin: widget.isAdmin,
                             type: " ",
                           ),
                         ),
@@ -173,6 +177,7 @@ class _secondPageState extends State<secondPage> {
                             lastName: widget.lastName,
                             email: widget.email,
                             username: widget.username,
+                            isAdmin: widget.isAdmin,
                             type: " ",
                           ),
                         ),
@@ -214,6 +219,7 @@ class _secondPageState extends State<secondPage> {
                             lastName: widget.lastName,
                             email: widget.email,
                             username: widget.username,
+                            isAdmin: widget.isAdmin,
                             type: " ",
                           ),
                         ),
@@ -262,6 +268,7 @@ class _secondPageState extends State<secondPage> {
                             lastName: widget.lastName,
                             email: widget.email,
                             username: widget.username,
+                            isAdmin: widget.isAdmin,
                             type: " ",
                           ),
                         ),
@@ -303,6 +310,7 @@ class _secondPageState extends State<secondPage> {
                             lastName: widget.lastName,
                             email: widget.email,
                             username: widget.username,
+                            isAdmin: widget.isAdmin,
                             type: " ",
                           ),
                         ),
@@ -365,6 +373,7 @@ class _secondPageState extends State<secondPage> {
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      isAdmin: widget.isAdmin,
                     ),
                   ),
                 );
@@ -382,6 +391,7 @@ class _secondPageState extends State<secondPage> {
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      isAdmin: widget.isAdmin,
                     ),
                   ),
                 );
@@ -427,6 +437,7 @@ class _secondPageState extends State<secondPage> {
                   lastName: widget.lastName,
                   email: widget.email,
                   username: widget.username,
+                  isAdmin: widget.isAdmin,
                   type: " ",)),
               );
             }
@@ -503,6 +514,7 @@ class _secondPageState extends State<secondPage> {
                                   lastName: widget.lastName,
                                   email: widget.email,
                                   username: widget.username,
+                                  isAdmin: widget.isAdmin,
                                   type: "spain",)),
                           );
                         },
@@ -541,6 +553,7 @@ class _secondPageState extends State<secondPage> {
                                   lastName: widget.lastName,
                                   email: widget.email,
                                   username: widget.username,
+                                  isAdmin: widget.isAdmin,
                                   type: "spain",)),
                           );
                         },
@@ -586,6 +599,7 @@ class _secondPageState extends State<secondPage> {
                                   lastName: widget.lastName,
                                   email: widget.email,
                                   username: widget.username,
+                                  isAdmin: widget.isAdmin,
                                   type: "spain",)),
                           );
                         },
@@ -624,6 +638,7 @@ class _secondPageState extends State<secondPage> {
                                   lastName: widget.lastName,
                                   email: widget.email,
                                   username: widget.username,
+                                  isAdmin: widget.isAdmin,
                                   type: "spain",)),
                           );
                         },
@@ -669,6 +684,7 @@ class _secondPageState extends State<secondPage> {
                                   lastName: widget.lastName,
                                   email: widget.email,
                                   username: widget.username,
+                                  isAdmin: widget.isAdmin,
                                   type: "spain",)),
                           );
                         },
@@ -707,6 +723,7 @@ class _secondPageState extends State<secondPage> {
                                   lastName: widget.lastName,
                                   email: widget.email,
                                   username: widget.username,
+                                  isAdmin: widget.isAdmin,
                                   type: "spain",)),
                           );
                         },
@@ -778,6 +795,7 @@ class _secondPageState extends State<secondPage> {
                             lastName: widget.lastName,
                             email: widget.email,
                             username: widget.username,
+                            isAdmin: widget.isAdmin,
                             type: " ",
                           ),
                         ),
@@ -819,6 +837,7 @@ class _secondPageState extends State<secondPage> {
                             lastName: widget.lastName,
                             email: widget.email,
                             username: widget.username,
+                            isAdmin: widget.isAdmin,
                             type: " ",
                           ),
                         ),
@@ -867,6 +886,7 @@ class _secondPageState extends State<secondPage> {
                             lastName: widget.lastName,
                             email: widget.email,
                             username: widget.username,
+                            isAdmin: widget.isAdmin,
                             type: " ",
                           ),
                         ),
@@ -908,6 +928,7 @@ class _secondPageState extends State<secondPage> {
                             lastName: widget.lastName,
                             email: widget.email,
                             username: widget.username,
+                            isAdmin: widget.isAdmin,
                             type: " ",
                           ),
                         ),
@@ -956,6 +977,7 @@ class _secondPageState extends State<secondPage> {
                             lastName: widget.lastName,
                             email: widget.email,
                             username: widget.username,
+                            isAdmin: widget.isAdmin,
                             type: " ",
                           ),
                         ),
@@ -997,6 +1019,7 @@ class _secondPageState extends State<secondPage> {
                             lastName: widget.lastName,
                             email: widget.email,
                             username: widget.username,
+                            isAdmin: widget.isAdmin,
                             type: " ",
                           ),
                         ),
@@ -1059,6 +1082,7 @@ class _secondPageState extends State<secondPage> {
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      isAdmin: widget.isAdmin,
                     ),
                   ),
                 );
@@ -1076,6 +1100,7 @@ class _secondPageState extends State<secondPage> {
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      isAdmin: widget.isAdmin,
                     ),
                   ),
                 );
@@ -1121,6 +1146,7 @@ class _secondPageState extends State<secondPage> {
                   lastName: widget.lastName,
                   email: widget.email,
                   username: widget.username,
+                  isAdmin: widget.isAdmin,
                   type: " ",)),
               );
             }
@@ -1201,6 +1227,7 @@ class _secondPageState extends State<secondPage> {
                         lastName: widget.lastName,
                         email: widget.email,
                         username: widget.username,
+                        isAdmin: widget.isAdmin,
                         type: "greek",),
                     ),
                   );
@@ -1241,6 +1268,7 @@ class _secondPageState extends State<secondPage> {
                         lastName: widget.lastName,
                         email: widget.email,
                         username: widget.username,
+                        isAdmin: widget.isAdmin,
                         type: "greek",),
                     ),
                   );
@@ -1304,6 +1332,7 @@ class _secondPageState extends State<secondPage> {
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      isAdmin: widget.isAdmin,
                     ),
                   ),
                 );
@@ -1321,6 +1350,7 @@ class _secondPageState extends State<secondPage> {
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      isAdmin: widget.isAdmin,
                     ),
                   ),
                 );
@@ -1366,6 +1396,7 @@ class _secondPageState extends State<secondPage> {
                   lastName: widget.lastName,
                   email: widget.email,
                   username: widget.username,
+                  isAdmin: widget.isAdmin,
                   type: " ",)),
               );
             }
@@ -1428,6 +1459,7 @@ class _secondPageState extends State<secondPage> {
                         lastName: widget.lastName,
                         email: widget.email,
                         username: widget.username,
+                        isAdmin: widget.isAdmin,
                         type: "greek",),
                     ),
                   );
@@ -1458,6 +1490,7 @@ class _secondPageState extends State<secondPage> {
                         lastName: widget.lastName,
                         email: widget.email,
                         username: widget.username,
+                        isAdmin: widget.isAdmin,
                         type: "greek",),
                     ),
                   );
@@ -1531,6 +1564,7 @@ class _secondPageState extends State<secondPage> {
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      isAdmin: widget.isAdmin,
                     ),
                   ),
                 );
@@ -1548,6 +1582,7 @@ class _secondPageState extends State<secondPage> {
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      isAdmin: widget.isAdmin,
                     ),
                   ),
                 );
@@ -1593,6 +1628,7 @@ class _secondPageState extends State<secondPage> {
                   lastName: widget.lastName,
                   email: widget.email,
                   username: widget.username,
+                  isAdmin: widget.isAdmin,
                   type: " ",)),
               );
             }
@@ -1655,6 +1691,7 @@ class _secondPageState extends State<secondPage> {
                         lastName: widget.lastName,
                         email: widget.email,
                         username: widget.username,
+                        isAdmin: widget.isAdmin,
                         type: "greek",),
                     ),
                   );
@@ -1685,6 +1722,7 @@ class _secondPageState extends State<secondPage> {
                         lastName: widget.lastName,
                         email: widget.email,
                         username: widget.username,
+                        isAdmin: widget.isAdmin,
                         type: "greek",),
                     ),
                   );
@@ -1758,6 +1796,7 @@ class _secondPageState extends State<secondPage> {
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      isAdmin: widget.isAdmin,
                     ),
                   ),
                 );
@@ -1775,6 +1814,7 @@ class _secondPageState extends State<secondPage> {
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      isAdmin: widget.isAdmin,
                     ),
                   ),
                 );
@@ -1820,6 +1860,7 @@ class _secondPageState extends State<secondPage> {
                   lastName: widget.lastName,
                   email: widget.email,
                   username: widget.username,
+                  isAdmin: widget.isAdmin,
                   type: " ",)),
               );
             }
@@ -1882,6 +1923,7 @@ class _secondPageState extends State<secondPage> {
                         lastName: widget.lastName,
                         email: widget.email,
                         username: widget.username,
+                        isAdmin: widget.isAdmin,
                         type: " ",),
                     ),
                   );
@@ -1922,6 +1964,7 @@ class _secondPageState extends State<secondPage> {
                         lastName: widget.lastName,
                         email: widget.email,
                         username: widget.username,
+                        isAdmin: widget.isAdmin,
                         type: " ",),
                     ),
                   );
@@ -1985,6 +2028,7 @@ class _secondPageState extends State<secondPage> {
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      isAdmin: widget.isAdmin,
                     ),
                   ),
                 );
@@ -2002,6 +2046,7 @@ class _secondPageState extends State<secondPage> {
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      isAdmin: widget.isAdmin,
                     ),
                   ),
                 );
@@ -2047,6 +2092,7 @@ class _secondPageState extends State<secondPage> {
                   lastName: widget.lastName,
                   email: widget.email,
                   username: widget.username,
+                  isAdmin: widget.isAdmin,
                   type: " ",)),
               );
             }
@@ -2109,6 +2155,7 @@ class _secondPageState extends State<secondPage> {
                         lastName: widget.lastName,
                         email: widget.email,
                         username: widget.username,
+                        isAdmin: widget.isAdmin,
                         type: " ",),
                     ),
                   );
@@ -2149,6 +2196,7 @@ class _secondPageState extends State<secondPage> {
                         lastName: widget.lastName,
                         email: widget.email,
                         username: widget.username,
+                        isAdmin: widget.isAdmin,
                         type: " ",),
                     ),
                   );
@@ -2212,6 +2260,7 @@ class _secondPageState extends State<secondPage> {
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      isAdmin: widget.isAdmin,
                     ),
                   ),
                 );
@@ -2229,6 +2278,7 @@ class _secondPageState extends State<secondPage> {
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      isAdmin: widget.isAdmin,
                     ),
                   ),
                 );
@@ -2274,6 +2324,7 @@ class _secondPageState extends State<secondPage> {
                   lastName: widget.lastName,
                   email: widget.email,
                   username: widget.username,
+                  isAdmin: widget.isAdmin,
                   type: " ",)),
               );
             }
@@ -2336,6 +2387,7 @@ class _secondPageState extends State<secondPage> {
                         lastName: widget.lastName,
                         email: widget.email,
                         username: widget.username,
+                        isAdmin: widget.isAdmin,
                         type: " ",),
                     ),
                   );
@@ -2376,6 +2428,7 @@ class _secondPageState extends State<secondPage> {
                         lastName: widget.lastName,
                         email: widget.email,
                         username: widget.username,
+                        isAdmin: widget.isAdmin,
                         type: " ",),
                     ),
                   );
@@ -2439,6 +2492,7 @@ class _secondPageState extends State<secondPage> {
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      isAdmin: widget.isAdmin,
                     ),
                   ),
                 );
@@ -2456,6 +2510,7 @@ class _secondPageState extends State<secondPage> {
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      isAdmin: widget.isAdmin,
                     ),
                   ),
                 );
@@ -2501,6 +2556,7 @@ class _secondPageState extends State<secondPage> {
                   lastName: widget.lastName,
                   email: widget.email,
                   username: widget.username,
+                  isAdmin: widget.isAdmin,
                   type: " ",)),
               );
             }
