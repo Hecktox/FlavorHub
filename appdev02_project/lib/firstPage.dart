@@ -6,18 +6,22 @@ import 'package:appdev02_project/db.dart';
 import 'package:appdev02_project/admin.dart';
 
 class MainPage extends StatefulWidget {
+  final int id;
   final String username;
   final String email;
   final String firstName;
   final String lastName;
+  final String password;
   final bool isAdmin; // Add isAdmin parameter
 
   const MainPage({
     Key? key,
+    required this.id,
     required this.email,
     required this.username,
     required this.firstName,
     required this.lastName,
+    required this.password,
     required this.isAdmin, // Initialize isAdmin parameter
   }) : super(key: key);
 
@@ -81,10 +85,12 @@ class _MainPageState extends State<MainPage> {
           context,
           MaterialPageRoute(
             builder: (context) => secondPage(
+              id: widget.id,
               firstName: widget.firstName,
               lastName: widget.lastName,
               email: widget.email,
               username: widget.username,
+              password: widget.password,
               isAdmin: widget.isAdmin,
               type: country.route,
             ),
@@ -143,10 +149,12 @@ class _MainPageState extends State<MainPage> {
               context,
               MaterialPageRoute(
                 builder: (context) => SettingsPage(
+                  id: widget.id,
                   firstName: widget.firstName,
                   lastName: widget.lastName,
                   email: widget.email,
                   username: widget.username,
+                  password: widget.password,
                   isAdmin: widget.isAdmin,
                 ),
               ),
@@ -157,10 +165,12 @@ class _MainPageState extends State<MainPage> {
               context,
               MaterialPageRoute(
                 builder: (context) => MainPage(
+                  id: widget.id,
                   firstName: widget.firstName,
                   lastName: widget.lastName,
                   email: widget.email,
                   username: widget.username,
+                  password: widget.password,
                   isAdmin: widget.isAdmin,
                 ),
               ),
@@ -171,10 +181,12 @@ class _MainPageState extends State<MainPage> {
               context,
               MaterialPageRoute(
                 builder: (context) => ChatPage(
+                  id: widget.id,
                   firstName: widget.firstName,
                   lastName: widget.lastName,
                   email: widget.email,
                   username: widget.username,
+                  password: widget.password,
                   isAdmin: widget.isAdmin,
                 ),
               ),

@@ -62,10 +62,12 @@ class _LoginPageState extends State<LoginPage> {
           context,
           MaterialPageRoute(
             builder: (context) => MainPage(
+              id: user['user_id'],
               email: user['email'],
               username: usernameController.text,
               firstName: user['first_name'],
               lastName: user['last_name'],
+              password: user['password'],
               isAdmin: isAdmin,
             ),
           ),

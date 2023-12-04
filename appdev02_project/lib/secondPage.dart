@@ -5,19 +5,23 @@ import 'settings.dart';
 import 'chatPage.dart';
 
 class secondPage extends StatefulWidget {
+  final int id;
   final String username;
   final String email;
   final String firstName;
   final String lastName;
+  final String password;
   final bool isAdmin;
   final String type;
 
   const secondPage({
     Key? key,
+    required this.id,
     required this.email,
     required this.username,
     required this.firstName,
     required this.lastName,
+    required this.password,
     required this.isAdmin,
     required this.type,
   }) : super(key: key);
@@ -82,10 +86,12 @@ class _secondPageState extends State<secondPage> {
                         context,
                         MaterialPageRoute(
                           builder: (context) => secondPage(
+                            id: widget.id,
                             firstName: widget.firstName,
                             lastName: widget.lastName,
                             email: widget.email,
                             username: widget.username,
+                            password: widget.password,
                             isAdmin: widget.isAdmin,
                             type: " ",
                           ),
@@ -124,10 +130,12 @@ class _secondPageState extends State<secondPage> {
                         context,
                         MaterialPageRoute(
                           builder: (context) => secondPage(
+                            id: widget.id,
                             firstName: widget.firstName,
                             lastName: widget.lastName,
                             email: widget.email,
                             username: widget.username,
+                            password: widget.password,
                             isAdmin: widget.isAdmin,
                             type: " ",
                           ),
@@ -173,10 +181,12 @@ class _secondPageState extends State<secondPage> {
                         context,
                         MaterialPageRoute(
                           builder: (context) => secondPage(
+                            id: widget.id,
                             firstName: widget.firstName,
                             lastName: widget.lastName,
                             email: widget.email,
                             username: widget.username,
+                            password: widget.password,
                             isAdmin: widget.isAdmin,
                             type: " ",
                           ),
@@ -215,10 +225,12 @@ class _secondPageState extends State<secondPage> {
                         context,
                         MaterialPageRoute(
                           builder: (context) => secondPage(
+                            id: widget.id,
                             firstName: widget.firstName,
                             lastName: widget.lastName,
                             email: widget.email,
                             username: widget.username,
+                            password: widget.password,
                             isAdmin: widget.isAdmin,
                             type: " ",
                           ),
@@ -264,10 +276,12 @@ class _secondPageState extends State<secondPage> {
                         context,
                         MaterialPageRoute(
                           builder: (context) => secondPage(
+                            id: widget.id,
                             firstName: widget.firstName,
                             lastName: widget.lastName,
                             email: widget.email,
                             username: widget.username,
+                            password: widget.password,
                             isAdmin: widget.isAdmin,
                             type: " ",
                           ),
@@ -306,10 +320,12 @@ class _secondPageState extends State<secondPage> {
                         context,
                         MaterialPageRoute(
                           builder: (context) => secondPage(
+                            id: widget.id,
                             firstName: widget.firstName,
                             lastName: widget.lastName,
                             email: widget.email,
                             username: widget.username,
+                            password: widget.password,
                             isAdmin: widget.isAdmin,
                             type: " ",
                           ),
@@ -369,10 +385,12 @@ class _secondPageState extends State<secondPage> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => MainPage(
+                      id: widget.id,
                       firstName: widget.firstName,
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      password: widget.password,
                       isAdmin: widget.isAdmin,
                     ),
                   ),
@@ -387,10 +405,12 @@ class _secondPageState extends State<secondPage> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => ChatPage(
+                      id: widget.id,
                       firstName: widget.firstName,
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      password: widget.password,
                       isAdmin: widget.isAdmin,
                     ),
                   ),
@@ -433,10 +453,11 @@ class _secondPageState extends State<secondPage> {
             } else if (_currentIndex == 3) {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => secondPage(firstName: widget.firstName,
+                MaterialPageRoute(builder: (context) => secondPage(id: widget.id, firstName: widget.firstName,
                   lastName: widget.lastName,
                   email: widget.email,
                   username: widget.username,
+                  password: widget.password,
                   isAdmin: widget.isAdmin,
                   type: " ",)),
               );
@@ -510,10 +531,11 @@ class _secondPageState extends State<secondPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => secondPage(firstName: widget.firstName,
+                                builder: (context) => secondPage(id: widget.id, firstName: widget.firstName,
                                   lastName: widget.lastName,
                                   email: widget.email,
                                   username: widget.username,
+                                  password: widget.password,
                                   isAdmin: widget.isAdmin,
                                   type: "spain",)),
                           );
@@ -549,10 +571,11 @@ class _secondPageState extends State<secondPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => secondPage(firstName: widget.firstName,
+                                builder: (context) => secondPage(id: widget.id, firstName: widget.firstName,
                                   lastName: widget.lastName,
                                   email: widget.email,
                                   username: widget.username,
+                                  password: widget.password,
                                   isAdmin: widget.isAdmin,
                                   type: "spain",)),
                           );
@@ -595,10 +618,11 @@ class _secondPageState extends State<secondPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => secondPage(firstName: widget.firstName,
+                                builder: (context) => secondPage(id: widget.id, firstName: widget.firstName,
                                   lastName: widget.lastName,
                                   email: widget.email,
                                   username: widget.username,
+                                  password: widget.password,
                                   isAdmin: widget.isAdmin,
                                   type: "spain",)),
                           );
@@ -634,10 +658,11 @@ class _secondPageState extends State<secondPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => secondPage(firstName: widget.firstName,
+                                builder: (context) => secondPage(id: widget.id, firstName: widget.firstName,
                                   lastName: widget.lastName,
                                   email: widget.email,
                                   username: widget.username,
+                                  password: widget.password,
                                   isAdmin: widget.isAdmin,
                                   type: "spain",)),
                           );
@@ -680,10 +705,11 @@ class _secondPageState extends State<secondPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => secondPage(firstName: widget.firstName,
+                                builder: (context) => secondPage(id: widget.id, firstName: widget.firstName,
                                   lastName: widget.lastName,
                                   email: widget.email,
                                   username: widget.username,
+                                  password: widget.password,
                                   isAdmin: widget.isAdmin,
                                   type: "spain",)),
                           );
@@ -719,10 +745,11 @@ class _secondPageState extends State<secondPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => secondPage(firstName: widget.firstName,
+                                builder: (context) => secondPage(id: widget.id, firstName: widget.firstName,
                                   lastName: widget.lastName,
                                   email: widget.email,
                                   username: widget.username,
+                                  password: widget.password,
                                   isAdmin: widget.isAdmin,
                                   type: "spain",)),
                           );
@@ -791,10 +818,12 @@ class _secondPageState extends State<secondPage> {
                         context,
                         MaterialPageRoute(
                           builder: (context) => secondPage(
+                            id: widget.id,
                             firstName: widget.firstName,
                             lastName: widget.lastName,
                             email: widget.email,
                             username: widget.username,
+                            password: widget.password,
                             isAdmin: widget.isAdmin,
                             type: " ",
                           ),
@@ -833,10 +862,12 @@ class _secondPageState extends State<secondPage> {
                         context,
                         MaterialPageRoute(
                           builder: (context) => secondPage(
+                            id: widget.id,
                             firstName: widget.firstName,
                             lastName: widget.lastName,
                             email: widget.email,
                             username: widget.username,
+                            password: widget.password,
                             isAdmin: widget.isAdmin,
                             type: " ",
                           ),
@@ -882,10 +913,12 @@ class _secondPageState extends State<secondPage> {
                         context,
                         MaterialPageRoute(
                           builder: (context) => secondPage(
+                            id: widget.id,
                             firstName: widget.firstName,
                             lastName: widget.lastName,
                             email: widget.email,
                             username: widget.username,
+                            password: widget.password,
                             isAdmin: widget.isAdmin,
                             type: " ",
                           ),
@@ -924,10 +957,12 @@ class _secondPageState extends State<secondPage> {
                         context,
                         MaterialPageRoute(
                           builder: (context) => secondPage(
+                            id: widget.id,
                             firstName: widget.firstName,
                             lastName: widget.lastName,
                             email: widget.email,
                             username: widget.username,
+                            password: widget.password,
                             isAdmin: widget.isAdmin,
                             type: " ",
                           ),
@@ -973,10 +1008,12 @@ class _secondPageState extends State<secondPage> {
                         context,
                         MaterialPageRoute(
                           builder: (context) => secondPage(
+                            id: widget.id,
                             firstName: widget.firstName,
                             lastName: widget.lastName,
                             email: widget.email,
                             username: widget.username,
+                            password: widget.password,
                             isAdmin: widget.isAdmin,
                             type: " ",
                           ),
@@ -1015,10 +1052,12 @@ class _secondPageState extends State<secondPage> {
                         context,
                         MaterialPageRoute(
                           builder: (context) => secondPage(
+                            id: widget.id,
                             firstName: widget.firstName,
                             lastName: widget.lastName,
                             email: widget.email,
                             username: widget.username,
+                            password: widget.password,
                             isAdmin: widget.isAdmin,
                             type: " ",
                           ),
@@ -1078,10 +1117,12 @@ class _secondPageState extends State<secondPage> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => MainPage(
+                      id: widget.id,
                       firstName: widget.firstName,
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      password: widget.password,
                       isAdmin: widget.isAdmin,
                     ),
                   ),
@@ -1096,10 +1137,12 @@ class _secondPageState extends State<secondPage> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => ChatPage(
+                      id: widget.id,
                       firstName: widget.firstName,
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      password: widget.password,
                       isAdmin: widget.isAdmin,
                     ),
                   ),
@@ -1142,10 +1185,11 @@ class _secondPageState extends State<secondPage> {
             } else if (_currentIndex == 3) {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => secondPage(firstName: widget.firstName,
+                MaterialPageRoute(builder: (context) => secondPage(id: widget.id, firstName: widget.firstName,
                   lastName: widget.lastName,
                   email: widget.email,
                   username: widget.username,
+                  password: widget.password,
                   isAdmin: widget.isAdmin,
                   type: " ",)),
               );
@@ -1223,10 +1267,11 @@ class _secondPageState extends State<secondPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => secondPage(firstName: widget.firstName,
+                      builder: (context) => secondPage(id: widget.id, firstName: widget.firstName,
                         lastName: widget.lastName,
                         email: widget.email,
                         username: widget.username,
+                        password: widget.password,
                         isAdmin: widget.isAdmin,
                         type: "greek",),
                     ),
@@ -1264,10 +1309,11 @@ class _secondPageState extends State<secondPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => secondPage(firstName: widget.firstName,
+                      builder: (context) => secondPage(id: widget.id, firstName: widget.firstName,
                         lastName: widget.lastName,
                         email: widget.email,
                         username: widget.username,
+                        password: widget.password,
                         isAdmin: widget.isAdmin,
                         type: "greek",),
                     ),
@@ -1328,10 +1374,12 @@ class _secondPageState extends State<secondPage> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => MainPage(
+                      id: widget.id,
                       firstName: widget.firstName,
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      password: widget.password,
                       isAdmin: widget.isAdmin,
                     ),
                   ),
@@ -1346,10 +1394,12 @@ class _secondPageState extends State<secondPage> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => ChatPage(
+                      id: widget.id,
                       firstName: widget.firstName,
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      password: widget.password,
                       isAdmin: widget.isAdmin,
                     ),
                   ),
@@ -1392,10 +1442,11 @@ class _secondPageState extends State<secondPage> {
             } else if (_currentIndex == 3) {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => secondPage(firstName: widget.firstName,
+                MaterialPageRoute(builder: (context) => secondPage(id: widget.id, firstName: widget.firstName,
                   lastName: widget.lastName,
                   email: widget.email,
                   username: widget.username,
+                  password: widget.password,
                   isAdmin: widget.isAdmin,
                   type: " ",)),
               );
@@ -1455,10 +1506,11 @@ class _secondPageState extends State<secondPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => secondPage(firstName: widget.firstName,
+                      builder: (context) => secondPage(id: widget.id, firstName: widget.firstName,
                         lastName: widget.lastName,
                         email: widget.email,
                         username: widget.username,
+                        password: widget.password,
                         isAdmin: widget.isAdmin,
                         type: "greek",),
                     ),
@@ -1486,10 +1538,11 @@ class _secondPageState extends State<secondPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => secondPage(firstName: widget.firstName,
+                      builder: (context) => secondPage(id: widget.id, firstName: widget.firstName,
                         lastName: widget.lastName,
                         email: widget.email,
                         username: widget.username,
+                        password: widget.password,
                         isAdmin: widget.isAdmin,
                         type: "greek",),
                     ),
@@ -1560,10 +1613,12 @@ class _secondPageState extends State<secondPage> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => MainPage(
+                      id: widget.id,
                       firstName: widget.firstName,
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      password: widget.password,
                       isAdmin: widget.isAdmin,
                     ),
                   ),
@@ -1578,10 +1633,12 @@ class _secondPageState extends State<secondPage> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => ChatPage(
+                      id: widget.id,
                       firstName: widget.firstName,
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      password: widget.password,
                       isAdmin: widget.isAdmin,
                     ),
                   ),
@@ -1624,10 +1681,11 @@ class _secondPageState extends State<secondPage> {
             } else if (_currentIndex == 3) {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => secondPage(firstName: widget.firstName,
+                MaterialPageRoute(builder: (context) => secondPage(id: widget.id, firstName: widget.firstName,
                   lastName: widget.lastName,
                   email: widget.email,
                   username: widget.username,
+                  password: widget.password,
                   isAdmin: widget.isAdmin,
                   type: " ",)),
               );
@@ -1687,10 +1745,11 @@ class _secondPageState extends State<secondPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => secondPage(firstName: widget.firstName,
+                      builder: (context) => secondPage(id: widget.id, firstName: widget.firstName,
                         lastName: widget.lastName,
                         email: widget.email,
                         username: widget.username,
+                        password: widget.password,
                         isAdmin: widget.isAdmin,
                         type: "greek",),
                     ),
@@ -1718,10 +1777,11 @@ class _secondPageState extends State<secondPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => secondPage(firstName: widget.firstName,
+                      builder: (context) => secondPage(id: widget.id, firstName: widget.firstName,
                         lastName: widget.lastName,
                         email: widget.email,
                         username: widget.username,
+                        password: widget.password,
                         isAdmin: widget.isAdmin,
                         type: "greek",),
                     ),
@@ -1792,10 +1852,12 @@ class _secondPageState extends State<secondPage> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => MainPage(
+                      id: widget.id,
                       firstName: widget.firstName,
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      password: widget.password,
                       isAdmin: widget.isAdmin,
                     ),
                   ),
@@ -1810,10 +1872,12 @@ class _secondPageState extends State<secondPage> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => ChatPage(
+                      id: widget.id,
                       firstName: widget.firstName,
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      password: widget.password,
                       isAdmin: widget.isAdmin,
                     ),
                   ),
@@ -1856,10 +1920,11 @@ class _secondPageState extends State<secondPage> {
             } else if (_currentIndex == 3) {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => secondPage(firstName: widget.firstName,
+                MaterialPageRoute(builder: (context) => secondPage(id: widget.id, firstName: widget.firstName,
                   lastName: widget.lastName,
                   email: widget.email,
                   username: widget.username,
+                  password: widget.password,
                   isAdmin: widget.isAdmin,
                   type: " ",)),
               );
@@ -1919,10 +1984,11 @@ class _secondPageState extends State<secondPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => secondPage(firstName: widget.firstName,
+                      builder: (context) => secondPage(id: widget.id, firstName: widget.firstName,
                         lastName: widget.lastName,
                         email: widget.email,
                         username: widget.username,
+                        password: widget.password,
                         isAdmin: widget.isAdmin,
                         type: " ",),
                     ),
@@ -1960,10 +2026,11 @@ class _secondPageState extends State<secondPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => secondPage(firstName: widget.firstName,
+                      builder: (context) => secondPage(id: widget.id, firstName: widget.firstName,
                         lastName: widget.lastName,
                         email: widget.email,
                         username: widget.username,
+                        password: widget.password,
                         isAdmin: widget.isAdmin,
                         type: " ",),
                     ),
@@ -2024,10 +2091,12 @@ class _secondPageState extends State<secondPage> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => MainPage(
+                      id: widget.id,
                       firstName: widget.firstName,
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      password: widget.password,
                       isAdmin: widget.isAdmin,
                     ),
                   ),
@@ -2042,10 +2111,12 @@ class _secondPageState extends State<secondPage> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => ChatPage(
+                      id: widget.id,
                       firstName: widget.firstName,
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      password: widget.password,
                       isAdmin: widget.isAdmin,
                     ),
                   ),
@@ -2088,10 +2159,11 @@ class _secondPageState extends State<secondPage> {
             } else if (_currentIndex == 3) {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => secondPage(firstName: widget.firstName,
+                MaterialPageRoute(builder: (context) => secondPage(id: widget.id, firstName: widget.firstName,
                   lastName: widget.lastName,
                   email: widget.email,
                   username: widget.username,
+                  password: widget.password,
                   isAdmin: widget.isAdmin,
                   type: " ",)),
               );
@@ -2151,10 +2223,11 @@ class _secondPageState extends State<secondPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => secondPage(firstName: widget.firstName,
+                      builder: (context) => secondPage(id: widget.id, firstName: widget.firstName,
                         lastName: widget.lastName,
                         email: widget.email,
                         username: widget.username,
+                        password: widget.password,
                         isAdmin: widget.isAdmin,
                         type: " ",),
                     ),
@@ -2192,10 +2265,11 @@ class _secondPageState extends State<secondPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => secondPage(firstName: widget.firstName,
+                      builder: (context) => secondPage(id: widget.id, firstName: widget.firstName,
                         lastName: widget.lastName,
                         email: widget.email,
                         username: widget.username,
+                        password: widget.password,
                         isAdmin: widget.isAdmin,
                         type: " ",),
                     ),
@@ -2256,10 +2330,12 @@ class _secondPageState extends State<secondPage> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => MainPage(
+                      id: widget.id,
                       firstName: widget.firstName,
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      password: widget.password,
                       isAdmin: widget.isAdmin,
                     ),
                   ),
@@ -2274,10 +2350,12 @@ class _secondPageState extends State<secondPage> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => ChatPage(
+                      id: widget.id,
                       firstName: widget.firstName,
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      password: widget.password,
                       isAdmin: widget.isAdmin,
                     ),
                   ),
@@ -2320,10 +2398,11 @@ class _secondPageState extends State<secondPage> {
             } else if (_currentIndex == 3) {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => secondPage(firstName: widget.firstName,
+                MaterialPageRoute(builder: (context) => secondPage(id: widget.id, firstName: widget.firstName,
                   lastName: widget.lastName,
                   email: widget.email,
                   username: widget.username,
+                  password: widget.password,
                   isAdmin: widget.isAdmin,
                   type: " ",)),
               );
@@ -2383,10 +2462,11 @@ class _secondPageState extends State<secondPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => secondPage(firstName: widget.firstName,
+                      builder: (context) => secondPage(id: widget.id, firstName: widget.firstName,
                         lastName: widget.lastName,
                         email: widget.email,
                         username: widget.username,
+                        password: widget.password,
                         isAdmin: widget.isAdmin,
                         type: " ",),
                     ),
@@ -2424,10 +2504,11 @@ class _secondPageState extends State<secondPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => secondPage(firstName: widget.firstName,
+                      builder: (context) => secondPage(id: widget.id, firstName: widget.firstName,
                         lastName: widget.lastName,
                         email: widget.email,
                         username: widget.username,
+                        password: widget.password,
                         isAdmin: widget.isAdmin,
                         type: " ",),
                     ),
@@ -2488,10 +2569,12 @@ class _secondPageState extends State<secondPage> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => MainPage(
+                      id: widget.id,
                       firstName: widget.firstName,
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      password: widget.password,
                       isAdmin: widget.isAdmin,
                     ),
                   ),
@@ -2506,10 +2589,12 @@ class _secondPageState extends State<secondPage> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => ChatPage(
+                      id: widget.id,
                       firstName: widget.firstName,
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      password: widget.password,
                       isAdmin: widget.isAdmin,
                     ),
                   ),
@@ -2552,10 +2637,11 @@ class _secondPageState extends State<secondPage> {
             } else if (_currentIndex == 3) {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => secondPage(firstName: widget.firstName,
+                MaterialPageRoute(builder: (context) => secondPage(id: widget.id, firstName: widget.firstName,
                   lastName: widget.lastName,
                   email: widget.email,
                   username: widget.username,
+                  password: widget.password,
                   isAdmin: widget.isAdmin,
                   type: " ",)),
               );

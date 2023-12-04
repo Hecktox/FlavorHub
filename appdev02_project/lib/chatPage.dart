@@ -5,18 +5,22 @@ import 'package:appdev02_project/messages.dart';
 import 'package:appdev02_project/admin.dart';
 
 class ChatPage extends StatefulWidget {
+  final int id;
   final String username;
   final String email;
   final String firstName;
   final String lastName;
+  final String password;
   final bool isAdmin;
 
   const ChatPage({
     Key? key,
+    required this.id,
     required this.email,
     required this.username,
     required this.firstName,
     required this.lastName,
+    required this.password,
     required this.isAdmin,
   }) : super(key: key);
 
@@ -98,10 +102,12 @@ void initState() {
                   context,
                   MaterialPageRoute(
                     builder: (context) => MainPage(
+                      id: widget.id,
                       firstName: widget.firstName,
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      password: widget.password,
                       isAdmin: widget.isAdmin,
                     ),
                   ),
@@ -116,10 +122,12 @@ void initState() {
                   context,
                   MaterialPageRoute(
                     builder: (context) => ChatPage(
+                      id: widget.id,
                       firstName: widget.firstName,
                       lastName: widget.lastName,
                       email: widget.email,
                       username: widget.username,
+                      password: widget.password,
                       isAdmin: widget.isAdmin,
                     ),
                   ),
