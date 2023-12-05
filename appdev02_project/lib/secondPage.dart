@@ -3,6 +3,7 @@ import 'login.dart';
 import 'firstPage.dart';
 import 'settings.dart';
 import 'chatPage.dart';
+import 'thirdPage.dart';
 
 class secondPage extends StatefulWidget {
   final int id;
@@ -85,7 +86,7 @@ class _secondPageState extends State<secondPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => secondPage(
+                          builder: (context) => ThirdPage(
                             id: widget.id,
                             firstName: widget.firstName,
                             lastName: widget.lastName,
@@ -93,7 +94,7 @@ class _secondPageState extends State<secondPage> {
                             username: widget.username,
                             password: widget.password,
                             isAdmin: widget.isAdmin,
-                            type: " ",
+                            type: "almendra",
                           ),
                         ),
                       );
@@ -129,7 +130,7 @@ class _secondPageState extends State<secondPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => secondPage(
+                          builder: (context) => ThirdPage(
                             id: widget.id,
                             firstName: widget.firstName,
                             lastName: widget.lastName,
@@ -137,7 +138,7 @@ class _secondPageState extends State<secondPage> {
                             username: widget.username,
                             password: widget.password,
                             isAdmin: widget.isAdmin,
-                            type: " ",
+                            type: "pan",
                           ),
                         ),
                       );
@@ -180,7 +181,7 @@ class _secondPageState extends State<secondPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => secondPage(
+                          builder: (context) => ThirdPage(
                             id: widget.id,
                             firstName: widget.firstName,
                             lastName: widget.lastName,
@@ -188,7 +189,7 @@ class _secondPageState extends State<secondPage> {
                             username: widget.username,
                             password: widget.password,
                             isAdmin: widget.isAdmin,
-                            type: " ",
+                            type: "migas",
                           ),
                         ),
                       );
@@ -224,7 +225,7 @@ class _secondPageState extends State<secondPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => secondPage(
+                          builder: (context) => ThirdPage(
                             id: widget.id,
                             firstName: widget.firstName,
                             lastName: widget.lastName,
@@ -232,7 +233,7 @@ class _secondPageState extends State<secondPage> {
                             username: widget.username,
                             password: widget.password,
                             isAdmin: widget.isAdmin,
-                            type: " ",
+                            type: "bocadillo",
                           ),
                         ),
                       );
@@ -275,7 +276,7 @@ class _secondPageState extends State<secondPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => secondPage(
+                          builder: (context) => ThirdPage(
                             id: widget.id,
                             firstName: widget.firstName,
                             lastName: widget.lastName,
@@ -283,7 +284,7 @@ class _secondPageState extends State<secondPage> {
                             username: widget.username,
                             password: widget.password,
                             isAdmin: widget.isAdmin,
-                            type: " ",
+                            type: "huevos",
                           ),
                         ),
                       );
@@ -319,7 +320,7 @@ class _secondPageState extends State<secondPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => secondPage(
+                          builder: (context) => ThirdPage(
                             id: widget.id,
                             firstName: widget.firstName,
                             lastName: widget.lastName,
@@ -327,7 +328,7 @@ class _secondPageState extends State<secondPage> {
                             username: widget.username,
                             password: widget.password,
                             isAdmin: widget.isAdmin,
-                            type: " ",
+                            type: "gazpacho",
                           ),
                         ),
                       );
@@ -1984,13 +1985,13 @@ class _secondPageState extends State<secondPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => secondPage(id: widget.id, firstName: widget.firstName,
+                      builder: (context) => ThirdPage(id: widget.id, firstName: widget.firstName,
                         lastName: widget.lastName,
                         email: widget.email,
                         username: widget.username,
                         password: widget.password,
                         isAdmin: widget.isAdmin,
-                        type: " ",),
+                        type: "almendra",),
                     ),
                   );
                 },
@@ -2026,13 +2027,13 @@ class _secondPageState extends State<secondPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => secondPage(id: widget.id, firstName: widget.firstName,
+                      builder: (context) => ThirdPage(id: widget.id, firstName: widget.firstName,
                         lastName: widget.lastName,
                         email: widget.email,
                         username: widget.username,
                         password: widget.password,
                         isAdmin: widget.isAdmin,
-                        type: " ",),
+                        type: "pan",),
                     ),
                   );
                 },
@@ -2223,13 +2224,13 @@ class _secondPageState extends State<secondPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => secondPage(id: widget.id, firstName: widget.firstName,
+                      builder: (context) => ThirdPage(id: widget.id, firstName: widget.firstName,
                         lastName: widget.lastName,
                         email: widget.email,
                         username: widget.username,
                         password: widget.password,
                         isAdmin: widget.isAdmin,
-                        type: " ",),
+                        type: "bocadillo",),
                     ),
                   );
                 },
@@ -2265,13 +2266,13 @@ class _secondPageState extends State<secondPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => secondPage(id: widget.id, firstName: widget.firstName,
+                      builder: (context) => ThirdPage(id: widget.id, firstName: widget.firstName,
                         lastName: widget.lastName,
                         email: widget.email,
                         username: widget.username,
                         password: widget.password,
                         isAdmin: widget.isAdmin,
-                        type: " ",),
+                        type: "migas",),
                     ),
                   );
                 },
@@ -2462,13 +2463,13 @@ class _secondPageState extends State<secondPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => secondPage(id: widget.id, firstName: widget.firstName,
+                      builder: (context) => ThirdPage(id: widget.id, firstName: widget.firstName,
                         lastName: widget.lastName,
                         email: widget.email,
                         username: widget.username,
                         password: widget.password,
                         isAdmin: widget.isAdmin,
-                        type: " ",),
+                        type: "huevos",),
                     ),
                   );
                 },
@@ -2504,13 +2505,13 @@ class _secondPageState extends State<secondPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => secondPage(id: widget.id, firstName: widget.firstName,
+                      builder: (context) => ThirdPage(id: widget.id, firstName: widget.firstName,
                         lastName: widget.lastName,
                         email: widget.email,
                         username: widget.username,
                         password: widget.password,
                         isAdmin: widget.isAdmin,
-                        type: " ",),
+                        type: "gazpacho",),
                     ),
                   );
                 },
