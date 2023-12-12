@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'chatPage.dart';
 import 'settings.dart';
 import 'firstPage.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class ThirdPage extends StatefulWidget {
   final int id;
@@ -53,6 +54,9 @@ class _ThirdPageState extends State<ThirdPage> {
   }
 
   Scaffold buildAlmendraPage() {
+    String videoUrl = "https://www.youtube.com/watch?v=0YVopYnTRRE";
+    String videoId = YoutubePlayer.convertUrlToId(videoUrl) ?? ""; // Add null check
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -62,39 +66,19 @@ class _ThirdPageState extends State<ThirdPage> {
       ),
       body: ListView(
         children: [
-          Container(
-            width: double.infinity,
-            height: 200,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('asset/croissantalmendra.jpg'),
-                fit: BoxFit.cover,
+          YoutubePlayer(
+            controller: YoutubePlayerController(
+              initialVideoId: videoId, // Use the extracted videoId
+              flags: YoutubePlayerFlags(
+                autoPlay: false,
+                mute: false,
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(
-              "Ingredients:",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Text(
-              "1 package (about 1/4 ounce) active dry yeast\n"
-                  "1/4 cup warm water (110°F/43°C)\n"
-                  "1 cup warm milk (110°F/43°C)\n"
-                  "1/4 cup granulated sugar\n"
-                  "3 1/4 cups all-purpose flour, divided\n"
-                  "1 teaspoon salt\n"
-                  "1 cup unsalted butter, cold\n"
-                  "1 1/4 cups almond flour\n"
-                  "1 cup powdered sugar\n"
-                  "1 teaspoon almond extract\n"
-                  "1/2 cup sliced almonds (for topping)\n"
-                  "Apricot jam (for glazing)",
-              style: TextStyle(fontSize: 16),
+            showVideoProgressIndicator: true,
+            progressIndicatorColor: Colors.amber,
+            progressColors: ProgressBarColors(
+              playedColor: Colors.amber,
+              handleColor: Colors.amberAccent,
             ),
           ),
           Padding(
@@ -190,8 +174,9 @@ class _ThirdPageState extends State<ThirdPage> {
     );
   }
 
-
   Scaffold buildPanPage() {
+    String videoUrl = "https://www.youtube.com/watch?v=n7f0JoGSKug";
+    String videoId = YoutubePlayer.convertUrlToId(videoUrl) ?? "";
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -201,15 +186,19 @@ class _ThirdPageState extends State<ThirdPage> {
       ),
       body: ListView(
         children: [
-          Container(
-            width: double.infinity,
-            height: 200,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('asset/panTumaca.png'),
-                // Replace with your actual image asset
-                fit: BoxFit.cover,
+          YoutubePlayer(
+            controller: YoutubePlayerController(
+              initialVideoId: videoId, // Use the extracted videoId
+              flags: YoutubePlayerFlags(
+                autoPlay: false,
+                mute: false,
               ),
+            ),
+            showVideoProgressIndicator: true,
+            progressIndicatorColor: Colors.amber,
+            progressColors: ProgressBarColors(
+              playedColor: Colors.amber,
+              handleColor: Colors.amberAccent,
             ),
           ),
           Padding(
@@ -330,6 +319,8 @@ class _ThirdPageState extends State<ThirdPage> {
   }
 
   Scaffold buildBocadilloPage() {
+    String videoUrl = "https://www.youtube.com/watch?v=SSeV18XigiU";
+    String videoId = YoutubePlayer.convertUrlToId(videoUrl) ?? "";
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -465,6 +456,8 @@ class _ThirdPageState extends State<ThirdPage> {
 
 
   Scaffold buildMigasPage() {
+    String videoUrl = "https://www.youtube.com/watch?v=zBDkSuY_YUM";
+    String videoId = YoutubePlayer.convertUrlToId(videoUrl) ?? "";
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -474,15 +467,19 @@ class _ThirdPageState extends State<ThirdPage> {
       ),
       body: ListView(
         children: [
-          Container(
-            width: double.infinity,
-            height: 200,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('asset/migas.jpg'),
-                // Replace with your actual image asset
-                fit: BoxFit.cover,
+          YoutubePlayer(
+            controller: YoutubePlayerController(
+              initialVideoId: videoId, // Use the extracted videoId
+              flags: YoutubePlayerFlags(
+                autoPlay: false,
+                mute: false,
               ),
+            ),
+            showVideoProgressIndicator: true,
+            progressIndicatorColor: Colors.amber,
+            progressColors: ProgressBarColors(
+              playedColor: Colors.amber,
+              handleColor: Colors.amberAccent,
             ),
           ),
           Padding(
@@ -605,6 +602,8 @@ class _ThirdPageState extends State<ThirdPage> {
   }
 
   Scaffold buildHuevosPage() {
+    String videoUrl = "https://www.youtube.com/watch?v=4a9_v2MWEcI";
+    String videoId = YoutubePlayer.convertUrlToId(videoUrl) ?? "";
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -614,15 +613,19 @@ class _ThirdPageState extends State<ThirdPage> {
       ),
       body: ListView(
         children: [
-          Container(
-            width: double.infinity,
-            height: 200,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('asset/huevosrotos.jpg'),
-                // Replace with your actual image asset
-                fit: BoxFit.cover,
+          YoutubePlayer(
+            controller: YoutubePlayerController(
+              initialVideoId: videoId, // Use the extracted videoId
+              flags: YoutubePlayerFlags(
+                autoPlay: false,
+                mute: false,
               ),
+            ),
+            showVideoProgressIndicator: true,
+            progressIndicatorColor: Colors.amber,
+            progressColors: ProgressBarColors(
+              playedColor: Colors.amber,
+              handleColor: Colors.amberAccent,
             ),
           ),
           Padding(
@@ -744,6 +747,8 @@ class _ThirdPageState extends State<ThirdPage> {
 
 
   Scaffold buildGazpachoPage() {
+    String videoUrl = "https://www.youtube.com/watch?v=p189MYNRDSw";
+    String videoId = YoutubePlayer.convertUrlToId(videoUrl) ?? "";
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -753,15 +758,19 @@ class _ThirdPageState extends State<ThirdPage> {
       ),
       body: ListView(
         children: [
-          Container(
-            width: double.infinity,
-            height: 200,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('asset/gazpacho.jpg'),
-                // Replace with your actual image asset
-                fit: BoxFit.cover,
+          YoutubePlayer(
+            controller: YoutubePlayerController(
+              initialVideoId: videoId, // Use the extracted videoId
+              flags: YoutubePlayerFlags(
+                autoPlay: false,
+                mute: false,
               ),
+            ),
+            showVideoProgressIndicator: true,
+            progressIndicatorColor: Colors.amber,
+            progressColors: ProgressBarColors(
+              playedColor: Colors.amber,
+              handleColor: Colors.amberAccent,
             ),
           ),
           Padding(
