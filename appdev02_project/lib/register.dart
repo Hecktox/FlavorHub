@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'db.dart'; // Import the database class (Mydb)
+import 'package:appdev02_project/login.dart';
+import 'package:appdev02_project/db.dart'; // Import the database class (Mydb)
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -136,6 +137,32 @@ class _RegisterPageState extends State<RegisterPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            Row(
+              children: [
+                IconButton(
+                  icon: Icon(Icons.arrow_back), // Back button icon
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      PageRouteBuilder(
+                        pageBuilder: (context, animation, secondaryAnimation) => LoginPage(),
+                        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                          const begin = Offset(-1.0, 0.0); // Start position of the LoginPage (from the left)
+                          const end = Offset.zero; // End position of the LoginPage
+                          const curve = Curves.easeInOut; // Transition curve
+                          var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+                          var offsetAnimation = animation.drive(tween);
+                          return SlideTransition(
+                            position: offsetAnimation,
+                            child: child,
+                          );
+                        },
+                      ),
+                    );
+                  }, // Call _navigateBack function on button press
+                ),
+                Text('Back'), // Optional text label for the back button
+              ],
+            ),
             Container(
               alignment: Alignment.center,
               margin: EdgeInsets.only(top: 50),

@@ -1,7 +1,27 @@
 import 'package:flutter/material.dart';
-import 'db.dart';
+import 'package:appdev02_project/db.dart';
+import 'package:appdev02_project/admin.dart';
 
 class RegisterPage extends StatefulWidget {
+  final int id;
+  final String username;
+  final String email;
+  final String firstName;
+  final String lastName;
+  final String password;
+  final bool isAdmin;
+
+  const RegisterPage({
+    Key? key,
+    required this.id,
+    required this.email,
+    required this.username,
+    required this.firstName,
+    required this.lastName,
+    required this.password,
+    required this.isAdmin,
+  }) : super(key: key);
+
   @override
   _RegisterPageState createState() => _RegisterPageState();
 }
@@ -14,15 +34,70 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmPasswordController =
-  TextEditingController();
+      TextEditingController();
+
+  TextEditingController masterKeyController = TextEditingController();
 
   bool isConfirmPasswordEnabled =
-  false; // Flag to enable/disable "Confirm Password" field
+      false; // Flag to enable/disable "Confirm Password" field
 
   @override
   void initState() {
     super.initState();
     database.open(); // Open the database
+  }
+
+  Future<void> showMasterKeyDialog(
+    BuildContext context,
+    Function onConfirm,
+  ) async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Enter Master Key to Confirm'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              TextField(
+                controller: masterKeyController,
+                decoration: InputDecoration(
+                  labelText: 'Master Key',
+                  border: OutlineInputBorder(),
+                ),
+                obscureText: true, // Hide entered text
+              ),
+            ],
+          ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () {
+                String masterKey = masterKeyController.text;
+                if (masterKey == '123') {
+                  onConfirm(); // Call the provided function if master key matches
+                  masterKeyController.clear();
+                  Navigator.of(context).pop();
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Incorrect Master Key'),
+                    ),
+                  );
+                }
+              },
+              child: Text('Confirm'),
+            ),
+          ],
+        );
+      },
+    );
   }
 
   @override
@@ -81,52 +156,54 @@ class _RegisterPageState extends State<RegisterPage> {
         },
       );
     } else {
-      int userId = await database.insertUser(
-        firstName,
-        lastName,
-        email,
-        username,
-        password,
-        isAdmin: true, // Set isAdmin to true for admin users
-      );
+      showMasterKeyDialog(context, () async {
+        int userId = await database.insertUser(
+          firstName,
+          lastName,
+          email,
+          username,
+          password,
+          isAdmin: true, // Set isAdmin to true for admin users
+        );
 
-      if (userId > 0) {
-        showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            return AlertDialog(
-              title: Text('Success'),
-              content: Text('Registration successful! User ID: $userId'),
-              actions: <Widget>[
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  child: Text('OK'),
-                ),
-              ],
-            );
-          },
-        );
-      } else {
-        showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            return AlertDialog(
-              title: Text('Error'),
-              content: Text('Failed to register. Please try again.'),
-              actions: <Widget>[
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  child: Text('OK'),
-                ),
-              ],
-            );
-          },
-        );
-      }
+        if (userId > 0) {
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: Text('Success'),
+                content: Text('Registration successful! User ID: $userId'),
+                actions: <Widget>[
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: Text('OK'),
+                  ),
+                ],
+              );
+            },
+          );
+        } else {
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: Text('Error'),
+                content: Text('Failed to register. Please try again.'),
+                actions: <Widget>[
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: Text('OK'),
+                  ),
+                ],
+              );
+            },
+          );
+        }
+      });
     }
   }
 
@@ -136,6 +213,45 @@ class _RegisterPageState extends State<RegisterPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            Row(
+              children: [
+                IconButton(
+                  icon: Icon(Icons.arrow_back), // Back button icon
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      PageRouteBuilder(
+                        pageBuilder: (context, animation, secondaryAnimation) =>
+                            AdminPage(
+                          id: widget.id,
+                          firstName: widget.firstName,
+                          lastName: widget.lastName,
+                          email: widget.email,
+                          username: widget.username,
+                          password: widget.password,
+                          isAdmin: widget.isAdmin,
+                        ),
+                        transitionsBuilder:
+                            (context, animation, secondaryAnimation, child) {
+                          const begin = Offset(-1.0,
+                              0.0); // Start position of the LoginPage (from the left)
+                          const end =
+                              Offset.zero; // End position of the LoginPage
+                          const curve = Curves.easeInOut; // Transition curve
+                          var tween = Tween(begin: begin, end: end)
+                              .chain(CurveTween(curve: curve));
+                          var offsetAnimation = animation.drive(tween);
+                          return SlideTransition(
+                            position: offsetAnimation,
+                            child: child,
+                          );
+                        },
+                      ),
+                    );
+                  }, // Call _navigateBack function on button press
+                ),
+                Text('Back'), // Optional text label for the back button
+              ],
+            ),
             Container(
               alignment: Alignment.center,
               margin: EdgeInsets.only(top: 50),
@@ -221,7 +337,6 @@ class _RegisterPageState extends State<RegisterPage> {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: _register,
-              // Call the _register function when the button is pressed
               style: ElevatedButton.styleFrom(
                 primary: Colors.black,
                 onPrimary: Colors.white,

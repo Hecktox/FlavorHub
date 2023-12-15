@@ -198,6 +198,13 @@ class _MainPageState extends State<MainPage> {
                 context,
                 MaterialPageRoute(
                   builder: (context) => AdminPage(
+                    id: widget.id,
+                    firstName: widget.firstName,
+                    lastName: widget.lastName,
+                    email: widget.email,
+                    username: widget.username,
+                    password: widget.password,
+                    isAdmin: widget.isAdmin,
                   ),
                 ),
               );

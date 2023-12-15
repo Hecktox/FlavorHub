@@ -1,10 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart'; // For text input fields
+import 'package:flutter/services.dart';
 import 'package:appdev02_project/db.dart';
 import 'package:appdev02_project/registerAdmin.dart';
+import 'package:appdev02_project/firstPage.dart';
 
 class AdminPage extends StatefulWidget {
-  const AdminPage({Key? key});
+  final int id;
+  final String username;
+  final String email;
+  final String firstName;
+  final String lastName;
+  final String password;
+  final bool isAdmin;
+
+  const AdminPage({
+    Key? key,
+    required this.id,
+    required this.email,
+    required this.username,
+    required this.firstName,
+    required this.lastName,
+    required this.password,
+    required this.isAdmin,
+  }) : super(key: key);
 
   @override
   State<AdminPage> createState() => _AdminPage();
@@ -198,35 +216,61 @@ class _AdminPage extends State<AdminPage> {
     });
   }
 
-  // Function to handle the registration of admin users
-  void registerAdmin() async {
-    // Show the master key confirmation dialog
-    print("Showing master key dialog");
-    await showMasterKeyDialog(context, () {
-      // If the master key is correct, navigate to the registration page for admin users
-      print("Master key confirmed. Navigating to RegisterPage.");
-      Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (context) => RegisterPage(),
-        ),
-      );
-    });
-    print("Exited registerAdmin function");
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "Admin Page",
-          style: TextStyle(color: Colors.white),
-        ),
-        backgroundColor: Colors.black,
-        centerTitle: true,
-      ),
       body: Column(
         children: [
+          Row(
+            children: [
+              IconButton(
+                icon: Icon(Icons.arrow_back), // Back button icon
+                onPressed: () {
+                  Navigator.of(context).push(
+                    PageRouteBuilder(
+                      pageBuilder: (context, animation, secondaryAnimation) =>
+                          MainPage(
+                            id: widget.id,
+                            firstName: widget.firstName,
+                            lastName: widget.lastName,
+                            email: widget.email,
+                            username: widget.username,
+                            password: widget.password,
+                            isAdmin: widget.isAdmin,
+                          ),
+                      transitionsBuilder:
+                          (context, animation, secondaryAnimation, child) {
+                        const begin = Offset(-1.0,
+                            0.0); // Start position of the LoginPage (from the left)
+                        const end =
+                            Offset.zero; // End position of the LoginPage
+                        const curve = Curves.easeInOut; // Transition curve
+                        var tween = Tween(begin: begin, end: end)
+                            .chain(CurveTween(curve: curve));
+                        var offsetAnimation = animation.drive(tween);
+                        return SlideTransition(
+                          position: offsetAnimation,
+                          child: child,
+                        );
+                      },
+                    ),
+                  );
+                }, // Call _navigateBack function on button press
+              ),
+              Text('Back'), // Optional text label for the back button
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 20.0),
+            child: Text(
+              'Admin Page',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          SizedBox(height: 20),
           TextField(
             controller: firstName,
             decoration: InputDecoration(
@@ -446,7 +490,35 @@ class _AdminPage extends State<AdminPage> {
                   ),
           ),
           ElevatedButton(
-            onPressed: registerAdmin, // Call the registerAdmin function
+            onPressed: () {
+              Navigator.of(context).push(
+                PageRouteBuilder(
+                  pageBuilder: (context, animation, secondaryAnimation) =>
+                      RegisterPage(
+                    id: widget.id,
+                    firstName: widget.firstName,
+                    lastName: widget.lastName,
+                    email: widget.email,
+                    username: widget.username,
+                    password: widget.password,
+                    isAdmin: widget.isAdmin,
+                  ),
+                  transitionsBuilder:
+                      (context, animation, secondaryAnimation, child) {
+                    const begin = Offset(1.0, 0.0);
+                    const end = Offset.zero;
+                    const curve = Curves.easeInOut;
+                    var tween = Tween(begin: begin, end: end)
+                        .chain(CurveTween(curve: curve));
+                    var offsetAnimation = animation.drive(tween);
+                    return SlideTransition(
+                      position: offsetAnimation,
+                      child: child,
+                    );
+                  },
+                ),
+              );
+            }, // Call the registerAdmin function
             style: ElevatedButton.styleFrom(
               primary: Colors.green,
               shape: RoundedRectangleBorder(
