@@ -33,6 +33,7 @@ dependencies:
   http: ^0.13.3
   dialog_flowtter:
   youtube_player_flutter: ^8.1.2
+  image_picker: ^1.0.5
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -105,6 +106,7 @@ flutter:
      - asset/in4.jpg
      - asset/in5.jpg
      - asset/in6.jpg
+     - asset/profile_image.jpg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

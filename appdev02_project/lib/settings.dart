@@ -4,6 +4,8 @@ import 'package:appdev02_project/firstPage.dart';
 import 'package:appdev02_project/admin.dart';
 import 'package:appdev02_project/db.dart';
 import 'package:appdev02_project/login.dart';
+import 'package:image_picker/image_picker.dart';
+import 'dart:io';
 
 class SettingsPage extends StatefulWidget {
   final int id;
@@ -27,12 +29,12 @@ class SettingsPage extends StatefulWidget {
 
   @override
   State<SettingsPage> createState() => _SettingsPageState(
-    username: username,
-    email: email,
-    firstName: firstName,
-    lastName: lastName,
-    password: password,
-  );
+        username: username,
+        email: email,
+        firstName: firstName,
+        lastName: lastName,
+        password: password,
+      );
 }
 
 class _SettingsPageState extends State<SettingsPage> {
@@ -41,6 +43,9 @@ class _SettingsPageState extends State<SettingsPage> {
   late TextEditingController firstNameController;
   late TextEditingController lastNameController;
   late TextEditingController passwordController;
+
+  File? _imageFile;
+  final ImagePicker _picker = ImagePicker();
 
   Mydb mydb = Mydb();
   bool isEditing = false;
@@ -137,24 +142,148 @@ class _SettingsPageState extends State<SettingsPage> {
     });
   }
 
+  Future<void> _pickImage() async {
+    final ImagePicker _picker = ImagePicker();
+    try {
+      final XFile? pickedFile = await _picker.pickImage(source: ImageSource.gallery);
+
+      if (pickedFile != null) {
+        setState(() {
+          _imageFile = File(pickedFile.path);
+        });
+      }
+    } catch (e) {
+      print('Error picking image: $e');
+    }
+  }
+
+  Future<void> _takePhoto() async {
+    try {
+      final XFile? capturedFile = await _picker.pickImage(source: ImageSource.camera);
+
+      if (capturedFile != null) {
+        setState(() {
+          _imageFile = File(capturedFile.path);
+        });
+      }
+    } catch (e) {
+      print('Error capturing photo: $e');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: Text(
-          "Settings",
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-        ),
-      ),
       body: Container(
         color: Colors.white,
         child: ListView(
           padding: EdgeInsets.all(16.0),
           children: [
+            Row(
+              children: [
+                IconButton(
+                  icon: Icon(Icons.arrow_back), // Back button icon
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      PageRouteBuilder(
+                        pageBuilder: (context, animation, secondaryAnimation) =>
+                            MainPage(
+                              id: widget.id,
+                              firstName: widget.firstName,
+                              lastName: widget.lastName,
+                              email: widget.email,
+                              username: widget.username,
+                              password: widget.password,
+                              isAdmin: widget.isAdmin,
+                            ),
+                        transitionsBuilder:
+                            (context, animation, secondaryAnimation, child) {
+                          const begin = Offset(-1.0,
+                              0.0); // Start position of the LoginPage (from the left)
+                          const end =
+                              Offset.zero; // End position of the LoginPage
+                          const curve = Curves.easeInOut; // Transition curve
+                          var tween = Tween(begin: begin, end: end)
+                              .chain(CurveTween(curve: curve));
+                          var offsetAnimation = animation.drive(tween);
+                          return SlideTransition(
+                            position: offsetAnimation,
+                            child: child,
+                          );
+                        },
+                      ),
+                    );
+                  }, // Call _navigateBack function on button press
+                ),
+                Text('Back'), // Optional text label for the back button
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20.0),
+              child: Center(
+                child: Text(
+                  'Settings',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 20),
+            Visibility(
+              visible: !isEditing,
+              child: Column(
+                children: [
+                  // CircleAvatar with larger size
+                  CircleAvatar(
+                    radius: 80, // Increase the radius
+                    backgroundColor: Colors.transparent,
+                    child: ClipOval(
+                      child: SizedBox(
+                        width: 160, // Increase the width
+                        height: 160, // Increase the height
+                        child: _imageFile != null
+                            ? Image.file(_imageFile!, fit: BoxFit.cover)
+                            : Image.asset('asset/profile_image.jpg', fit: BoxFit.cover),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 16), // Add spacing between the circle and buttons
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center, // Center the buttons
+                    children: [
+                      // Button to choose a photo
+                      ElevatedButton.icon(
+                        onPressed: _pickImage,
+                        icon: Icon(Icons.camera_alt),
+                        label: Text('Choose Photo'),
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.grey, // Set the background color to grey
+                          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                        ),
+                      ),
+                      SizedBox(width: 16), // Add spacing between buttons
+                      // Button to take a photo
+                      ElevatedButton.icon(
+                        onPressed: _takePhoto,
+                        icon: Icon(Icons.camera),
+                        label: Text('Take Photo'),
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.grey, // Set the background color to grey
+                          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 30),
             _buildEditableField(
                 "Username", usernameController, isEditing, Icons.person),
-            _buildEditableField("Email", emailController, isEditing, Icons.email),
+            _buildEditableField(
+                "Email", emailController, isEditing, Icons.email),
             _buildEditableField(
                 "First Name", firstNameController, isEditing, Icons.person),
             _buildEditableField(
@@ -163,61 +292,68 @@ class _SettingsPageState extends State<SettingsPage> {
             SizedBox(height: 20),
             isEditing
                 ? Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                ElevatedButton.icon(
-                  onPressed: _saveChanges,
-                  icon: Icon(Icons.save),
-                  label: Text(
-                    'Save Changes',
-                    style: TextStyle(fontSize: 16),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.blue,
-                    padding:
-                    EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  ),
-                ),
-                ElevatedButton.icon(
-                  onPressed: _cancelEditing, // Bind the cancel function
-                  icon: Icon(Icons.cancel), // Add a cancel icon
-                  label: Text(
-                    'Cancel',
-                    style: TextStyle(fontSize: 16),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.red, // Choose a color for the cancel button
-                    padding:
-                    EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  ),
-                ),
-              ],
-            )
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ElevatedButton.icon(
+                        onPressed: _saveChanges,
+                        icon: Icon(Icons.save),
+                        label: Text(
+                          'Save Changes',
+                          style: TextStyle(fontSize: 16),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.blue,
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 10),
+                        ),
+                      ),
+                      ElevatedButton.icon(
+                        onPressed: _cancelEditing, // Bind the cancel function
+                        icon: Icon(Icons.cancel), // Add a cancel icon
+                        label: Text(
+                          'Cancel',
+                          style: TextStyle(fontSize: 16),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors
+                              .red, // Choose a color for the cancel button
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 10),
+                        ),
+                      ),
+                    ],
+                  )
                 : ElevatedButton.icon(
-              onPressed: _startEditing,
-              icon: Icon(Icons.edit),
-              label: Text(
-                'Edit',
-                style: TextStyle(fontSize: 16),
-              ),
-              style: ElevatedButton.styleFrom(
-                primary: Colors.green,
-                padding:
-                EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              ),
-            ),
+                    onPressed: _startEditing,
+                    icon: Icon(Icons.edit),
+                    label: Text(
+                      'Edit Profile',
+                      style: TextStyle(fontSize: 16),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.green,
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    ),
+                  ),
+            SizedBox(height: 20),
             Visibility(
               visible: !isEditing, // Condition to show or hide the button
               child: ElevatedButton.icon(
                 onPressed: () {
                   Navigator.of(context).push(
                     PageRouteBuilder(
-                      pageBuilder: (context, animation, secondaryAnimation) => LoginPage(),
-                      transitionsBuilder: (context, animation, secondaryAnimation, child) {
-                        const begin = Offset(0.0, 1.0); // Start position of the LoginPage (from the bottom)
-                        const end = Offset.zero; // End position of the LoginPage
+                      pageBuilder: (context, animation, secondaryAnimation) =>
+                          LoginPage(),
+                      transitionsBuilder:
+                          (context, animation, secondaryAnimation, child) {
+                        const begin = Offset(0.0,
+                            1.0); // Start position of the LoginPage (from the bottom)
+                        const end =
+                            Offset.zero; // End position of the LoginPage
                         const curve = Curves.easeInOut; // Transition curve
-                        var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+                        var tween = Tween(begin: begin, end: end)
+                            .chain(CurveTween(curve: curve));
                         var offsetAnimation = animation.drive(tween);
                         return SlideTransition(
                           position: offsetAnimation,
@@ -233,11 +369,12 @@ class _SettingsPageState extends State<SettingsPage> {
                   style: TextStyle(fontSize: 16),
                 ),
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.orange, // Choose a color for the logout button
+                  primary: Colors.red,
+                  // Choose a color for the logout button
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -249,8 +386,11 @@ class _SettingsPageState extends State<SettingsPage> {
               accountName: Text("${widget.firstName} ${widget.lastName}"),
               accountEmail: Text(widget.email),
               currentAccountPicture: CircleAvatar(
-                backgroundImage: AssetImage('assets/profile_image.jpg'),
-                // Replace with the user's actual image
+                backgroundColor: Colors.orange,
+                child: Text(
+                  widget.firstName[0] + widget.lastName[0],
+                  style: TextStyle(fontSize: 40),
+                ),
               ),
             ),
             ListTile(
@@ -348,8 +488,8 @@ class _SettingsPageState extends State<SettingsPage> {
         ),
         isEditing
             ? TextFormField(
-          controller: controller,
-        )
+                controller: controller,
+              )
             : Text(controller.text),
         SizedBox(height: 10),
       ],
