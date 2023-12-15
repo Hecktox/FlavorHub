@@ -869,23 +869,23 @@ class _secondPageState extends State<secondPage> {
             if (_currentIndex == 0) {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => buildGreekPage()),
+                MaterialPageRoute(builder: (context) => buildBulgarianPage()),
               );
             }
             else if (_currentIndex == 1) {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => BreakfastPageGreek()),
+                MaterialPageRoute(builder: (context) => BreakfastPageBulgaria()),
               );
             } else if (_currentIndex == 2) {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => LunchPageGreek()),
+                MaterialPageRoute(builder: (context) => LunchPageBulgaria()),
               );
             } else if (_currentIndex == 3) {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => DinnerPageGreek()),
+                MaterialPageRoute(builder: (context) => DinnerPageBulgaria()),
               );
             } else if (_currentIndex == 3) {
               Navigator.push(
@@ -922,6 +922,7 @@ class _secondPageState extends State<secondPage> {
       ),
     );
   }
+
   Scaffold buildIndiaPage() {
     int _currentIndex = 0;
 
@@ -1304,23 +1305,23 @@ class _secondPageState extends State<secondPage> {
             if (_currentIndex == 0) {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => buildGreekPage()),
+                MaterialPageRoute(builder: (context) => buildIndiaPage()),
               );
             }
             else if (_currentIndex == 1) {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => BreakfastPageGreek()),
+                MaterialPageRoute(builder: (context) => BreakfastPageIndia()),
               );
             } else if (_currentIndex == 2) {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => LunchPageGreek()),
+                MaterialPageRoute(builder: (context) => LunchPageIndia()),
               );
             } else if (_currentIndex == 3) {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => DinnerPageGreek()),
+                MaterialPageRoute(builder: (context) => DinnerPageIndia()),
               );
             } else if (_currentIndex == 3) {
               Navigator.push(
@@ -3285,7 +3286,7 @@ class _secondPageState extends State<secondPage> {
                   height: 100,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('asset/bul1 .jpg'),
+                      image: AssetImage('asset/bul1.jpg'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -3327,7 +3328,7 @@ class _secondPageState extends State<secondPage> {
                   height: 100,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('asset/mek .jpg'),
+                      image: AssetImage('asset/mek.jpg'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -3524,7 +3525,7 @@ class _secondPageState extends State<secondPage> {
                   height: 100,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('asset/bul2 .jpg'),
+                      image: AssetImage('asset/bul2.jpg'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -3556,7 +3557,7 @@ class _secondPageState extends State<secondPage> {
                   height: 100,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('asset/bul3 .jpg'),
+                      image: AssetImage('asset/bul3.jpg'),
                       fit: BoxFit.cover,
                     ),
                   ),
