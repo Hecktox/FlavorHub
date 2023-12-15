@@ -93,6 +93,18 @@ flutter:
      - asset/panTumaca.png
      - asset/logo.png
      - assets/
+     - asset/bul1.jpg
+     - asset/bul2.jpg
+     - asset/bul3.jpg
+     - asset/gsalad.jpg
+     - asset/mek.jpg
+     - asset/tara.jpg
+     - asset/in1.jpg
+     - asset/in2.jpg
+     - asset/in3.jpg
+     - asset/in4.jpg
+     - asset/in5.jpg
+     - asset/in6.jpg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

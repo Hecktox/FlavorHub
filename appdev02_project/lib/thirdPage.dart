@@ -57,6 +57,30 @@ class _ThirdPageState extends State<ThirdPage> {
       return buildPorcsticksPage();
     }else if (widget.type == "gyro") {
       return buildGyroPage();
+    }else if (widget.type == "banista ") {
+      return buildGyroPage();
+    }else if (widget.type == "mek") {
+      return buildbanistaPage();
+    }else if (widget.type == "gyu") {
+      return buildgyuPage();
+    }else if (widget.type == "shk") {
+      return buildshkPage();
+    }else if (widget.type == "tara") {
+      return buildtaraPage();
+    }else if (widget.type == "gsalad") {
+      return buildgsaladPage();
+    }else if (widget.type == "upma") {
+      return buildupmaPage();
+    }else if (widget.type == "breadu") {
+      return buildbreaduPage();
+    }else if (widget.type == "para") {
+      return buildparaPage();
+    }else if (widget.type == "sam") {
+      return buildsamPage();
+    }else if (widget.type == "pani") {
+      return buildpaniPage();
+    }else if (widget.type == "kac") {
+      return buildkacPage();
     }
 
     // Add a default return statement
@@ -1747,6 +1771,1998 @@ class _ThirdPageState extends State<ThirdPage> {
                   "Enjoy your homemade Greek gyro! Feel free to customize the toppings to suit your taste preferences.",
               style: TextStyle(fontSize: 16),
             ),
+          ),
+        ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text("${widget.firstName} ${widget.lastName}"),
+              accountEmail: Text(widget.email),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.orange,
+                child: Text(
+                  widget.firstName[0] + widget.lastName[0],
+                  style: TextStyle(fontSize: 40),
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Settings'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        MainPage(
+                          id: widget.id,
+                          firstName: widget.firstName,
+                          lastName: widget.lastName,
+                          email: widget.email,
+                          username: widget.username,
+                          password: widget.password,
+                          isAdmin: widget.isAdmin,
+                        ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.chat),
+              title: Text('IA Help'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        ChatPage(
+                          id: widget.id,
+                          firstName: widget.firstName,
+                          lastName: widget.lastName,
+                          email: widget.email,
+                          username: widget.username,
+                          password: widget.password,
+                          isAdmin: widget.isAdmin,
+                        ),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+  Scaffold buildbanistaPage() {
+    String videoUrl = "https://www.youtube.com/watch?v=9X7VGxL7YDg";
+    String videoId = YoutubePlayer.convertUrlToId(videoUrl) ?? ""; // Add null check
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Banista with cheese",
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+      ),
+      body: ListView(
+        children: [
+          YoutubePlayer(
+            controller: YoutubePlayerController(
+              initialVideoId: videoId, // Use the extracted videoId
+              flags: YoutubePlayerFlags(
+                autoPlay: false,
+                mute: false,
+              ),
+            ),
+            showVideoProgressIndicator: true,
+            progressIndicatorColor: Colors.amber,
+            progressColors: ProgressBarColors(
+              playedColor: Colors.amber,
+              handleColor: Colors.amberAccent,
+            ),
+          ),
+    Padding(
+    padding: const EdgeInsets.all(16.0),
+    child: Text(
+    "Ingredients:",
+    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+    ),
+    ),
+    Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+    child: Text(
+    "Spanakopita Recipe:\n"
+    "Ingredients:\n"
+    "- 1 package (about 10 sheets) phyllo dough, thawed\n"
+    "- 200g feta cheese, crumbled\n"
+    "- 200g Bulgarian white cheese (or substitute with another feta-like cheese), crumbled\n"
+    "- 3 large eggs\n"
+    "- 1 cup plain yogurt\n"
+    "- 1/2 cup unsalted butter, melted\n"
+    "- Salt to taste\n"
+    "- Optional: 1/4 cup vegetable oil for brushing the pan",
+    style: TextStyle(fontSize: 16),
+    ),
+
+    ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              "Instructions:",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+    child: Text(
+    "Continue with the Banitsa Recipe:\n"
+    "Preheat the Oven:\n"
+    "Preheat your oven to 375°F (190°C).\n\n"
+
+    "Prepare the Filling:\n"
+    "In a mixing bowl, combine the crumbled feta cheese, Bulgarian white cheese, and eggs. Mix well.\n"
+    "Add the plain yogurt to the mixture and stir until well combined. Season with salt to taste.\n\n"
+
+    "Assemble the Banitsa:\n"
+    "1. Lay out one sheet of phyllo dough on a clean surface.\n"
+    "2. Brush it lightly with melted butter.\n"
+    "3. Add another sheet on top and repeat the process until you have about 5-6 layers.\n\n"
+
+    "Add the Filling:\n"
+    "Spread a portion of the cheese mixture evenly over the layered phyllo dough.\n\n"
+
+    "Roll and Repeat:\n"
+    "Roll the phyllo dough into a log or cylinder shape, starting from one end.\n"
+    "Place the rolled Banitsa in a spiral shape in a greased baking dish.\n\n"
+
+    "Repeat the Process:\n"
+    "Repeat the layering and rolling process with the remaining phyllo dough and cheese mixture until the baking dish is filled.\n\n"
+
+    "Bake:\n"
+    "1. Brush the top of the Banitsa with more melted butter.\n"
+    "2. Optionally, you can drizzle some vegetable oil over the top for a golden finish.\n"
+    "3. Bake in the preheated oven for about 30-40 minutes or until the top is golden brown and crispy.\n\n"
+
+    "Serve:\n"
+    "Allow the Banitsa to cool for a few minutes before slicing and serving.\n"
+    "Enjoy your homemade Banitsa with Cheese! It's a delightful dish that's often enjoyed as a breakfast or snack in Bulgarian cuisine.",
+    style: TextStyle(fontSize: 16),
+    ),
+          ),
+    ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text("${widget.firstName} ${widget.lastName}"),
+              accountEmail: Text(widget.email),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.orange,
+                child: Text(
+                  widget.firstName[0] + widget.lastName[0],
+                  style: TextStyle(fontSize: 40),
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Settings'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        MainPage(
+                          id: widget.id,
+                          firstName: widget.firstName,
+                          lastName: widget.lastName,
+                          email: widget.email,
+                          username: widget.username,
+                          password: widget.password,
+                          isAdmin: widget.isAdmin,
+                        ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.chat),
+              title: Text('IA Help'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        ChatPage(
+                          id: widget.id,
+                          firstName: widget.firstName,
+                          lastName: widget.lastName,
+                          email: widget.email,
+                          username: widget.username,
+                          password: widget.password,
+                          isAdmin: widget.isAdmin,
+                        ),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+  Scaffold buildgyuPage() {
+    String videoUrl = "https://www.youtube.com/watch?v=s0RTFyhJ2Hk";
+    String videoId = YoutubePlayer.convertUrlToId(videoUrl) ?? ""; // Add null check
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Banista with cheese",
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+      ),
+      body: ListView(
+        children: [
+          YoutubePlayer(
+            controller: YoutubePlayerController(
+              initialVideoId: videoId, // Use the extracted videoId
+              flags: YoutubePlayerFlags(
+                autoPlay: false,
+                mute: false,
+              ),
+            ),
+            showVideoProgressIndicator: true,
+            progressIndicatorColor: Colors.amber,
+            progressColors: ProgressBarColors(
+              playedColor: Colors.amber,
+              handleColor: Colors.amberAccent,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              "Ingredients:",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Text(
+                  "- 1 package (about 10 sheets) phyllo dough, thawed\n"
+                  "- 200g feta cheese, crumbled\n"
+                  "- 200g Bulgarian white cheese (or substitute with another feta-like cheese), crumbled\n"
+                  "- 3 large eggs\n"
+                  "- 1 cup plain yogurt\n"
+                  "- 1/2 cup unsalted butter, melted\n"
+                  "- Salt to taste\n"
+                  "- Optional: 1/4 cup vegetable oil for brushing the pan",
+              style: TextStyle(fontSize: 16),
+            ),
+
+
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              "Instructions:",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Text(
+              "Continue with the Banitsa Recipe:\n"
+                  "Preheat the Oven:\n"
+                  "Preheat your oven to 375°F (190°C).\n\n"
+
+                  "Prepare the Filling:\n"
+                  "In a mixing bowl, combine the crumbled feta cheese, Bulgarian white cheese, and eggs. Mix well.\n"
+                  "Add the plain yogurt to the mixture and stir until well combined. Season with salt to taste.\n\n"
+
+                  "Assemble the Banitsa:\n"
+                  "1. Lay out one sheet of phyllo dough on a clean surface.\n"
+                  "2. Brush it lightly with melted butter.\n"
+                  "3. Add another sheet on top and repeat the process until you have about 5-6 layers.\n\n"
+
+                  "Add the Filling:\n"
+                  "Spread a portion of the cheese mixture evenly over the layered phyllo dough.\n\n"
+
+                  "Roll and Repeat:\n"
+                  "Roll the phyllo dough into a log or cylinder shape, starting from one end.\n"
+                  "Place the rolled Banitsa in a spiral shape in a greased baking dish.\n\n"
+
+                  "Repeat the Process:\n"
+                  "Repeat the layering and rolling process with the remaining phyllo dough and cheese mixture until the baking dish is filled.\n\n"
+
+                  "Bake:\n"
+                  "1. Brush the top of the Banitsa with more melted butter.\n"
+                  "2. Optionally, you can drizzle some vegetable oil over the top for a golden finish.\n"
+                  "3. Bake in the preheated oven for about 30-40 minutes or until the top is golden brown and crispy.\n\n"
+
+                  "Serve:\n"
+                  "Allow the Banitsa to cool for a few minutes before slicing and serving.\n"
+                  "Enjoy your homemade Banitsa with Cheese! It's a delightful dish that's often enjoyed as a breakfast or snack in Bulgarian cuisine.",
+              style: TextStyle(fontSize: 16),
+            ),
+
+          ),
+        ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text("${widget.firstName} ${widget.lastName}"),
+              accountEmail: Text(widget.email),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.orange,
+                child: Text(
+                  widget.firstName[0] + widget.lastName[0],
+                  style: TextStyle(fontSize: 40),
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Settings'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        MainPage(
+                          id: widget.id,
+                          firstName: widget.firstName,
+                          lastName: widget.lastName,
+                          email: widget.email,
+                          username: widget.username,
+                          password: widget.password,
+                          isAdmin: widget.isAdmin,
+                        ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.chat),
+              title: Text('IA Help'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        ChatPage(
+                          id: widget.id,
+                          firstName: widget.firstName,
+                          lastName: widget.lastName,
+                          email: widget.email,
+                          username: widget.username,
+                          password: widget.password,
+                          isAdmin: widget.isAdmin,
+                        ),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+  Scaffold buildshkPage() {
+    String videoUrl = "https://www.youtube.com/watch?v=BY3lxizsxbk";
+    String videoId = YoutubePlayer.convertUrlToId(videoUrl) ?? ""; // Add null check
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Shkembe",
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+      ),
+      body: ListView(
+        children: [
+          YoutubePlayer(
+            controller: YoutubePlayerController(
+              initialVideoId: videoId, // Use the extracted videoId
+              flags: YoutubePlayerFlags(
+                autoPlay: false,
+                mute: false,
+              ),
+            ),
+            showVideoProgressIndicator: true,
+            progressIndicatorColor: Colors.amber,
+            progressColors: ProgressBarColors(
+              playedColor: Colors.amber,
+              handleColor: Colors.amberAccent,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              "Ingredients:",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Text(
+              "Vegetable Ratatouille Recipe:\n"
+                  "Ingredients:\n"
+                  "- 1 large onion, finely chopped\n"
+                  "- 2-3 cloves of garlic, minced\n"
+                  "- 2 large potatoes, peeled and diced\n"
+                  "- 2 carrots, peeled and sliced\n"
+                  "- 1 red bell pepper, chopped\n"
+                  "- 1 green bell pepper, chopped\n"
+                  "- 1 zucchini, sliced\n"
+                  "- 1 eggplant, diced\n"
+                  "- 3 ripe tomatoes, chopped (or 1 can of diced tomatoes)\n"
+                  "- 1/2 cup green beans, chopped\n"
+                  "- 1/2 cup peas (fresh or frozen)\n"
+                  "- 1/4 cup vegetable oil\n"
+                  "- 1 cup vegetable or chicken broth\n"
+                  "- 1 teaspoon sweet paprika\n"
+                  "- 1 teaspoon dried thyme\n"
+                  "- Salt and pepper to taste\n"
+                  "- Fresh parsley for garnish",
+              style: TextStyle(fontSize: 16),
+            ),
+
+
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              "Instructions:",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Text(
+              "Bulgarian Gyuvetch Recipe:\n"
+                  "Ingredients:\n"
+                  "- 1 large onion, finely chopped\n"
+                  "- 2-3 cloves of garlic, minced\n"
+                  "- 2 large potatoes, peeled and diced\n"
+                  "- 2 carrots, peeled and sliced\n"
+                  "- 1 red bell pepper, chopped\n"
+                  "- 1 green bell pepper, chopped\n"
+                  "- 1 zucchini, sliced\n"
+                  "- 1 eggplant, diced\n"
+                  "- 3 ripe tomatoes, chopped (or 1 can of diced tomatoes)\n"
+                  "- 1/2 cup green beans, chopped\n"
+                  "- 1/2 cup peas (fresh or frozen)\n"
+                  "- 1/4 cup vegetable oil\n"
+                  "- 1 cup vegetable or chicken broth\n"
+                  "- 1 teaspoon sweet paprika\n"
+                  "- 1 teaspoon dried thyme\n"
+                  "- Salt and pepper to taste\n"
+                  "- Fresh parsley for garnish\n\n"
+
+                  "Instructions:\n"
+                  "Prepare the Vegetables:\n"
+                  "- Wash, peel, and chop all the vegetables according to the specifications mentioned.\n\n"
+
+                  "Sauté Onions and Garlic:\n"
+                  "- In a large pot or Dutch oven, heat the vegetable oil over medium heat.\n"
+                  "- Add the chopped onion and sauté until translucent.\n"
+                  "- Add minced garlic and sauté for an additional minute.\n\n"
+
+                  "Add Vegetables:\n"
+                  "- Add all the chopped vegetables to the pot. Stir and cook for about 5-7 minutes until they start to soften.\n\n"
+
+                  "Seasoning:\n"
+                  "- Season the vegetables with sweet paprika, dried thyme, salt, and pepper. Mix well to coat the vegetables evenly with the spices.\n\n"
+
+                  "Add Broth:\n"
+                  "- Pour in the vegetable or chicken broth. Stir to combine.\n\n"
+
+                  "Simmer:\n"
+                  "- Bring the mixture to a simmer, then reduce the heat to low. Cover the pot and let it simmer for about 30-40 minutes or until the vegetables are tender.\n\n"
+
+                  "Adjust Seasoning:\n"
+                  "- Taste and adjust the seasoning if needed. Add more salt or pepper according to your preference.\n\n"
+
+                  "Serve:\n"
+                  "- Once the Gyuvetch is ready, garnish it with fresh parsley.\n"
+                  "- Serve the stew hot on its own or with a side of bread.\n"
+                  "Bulgarian Gyuvetch is a hearty and flavorful dish that's perfect for colder weather. It can be enjoyed on its own or paired with a dollop of yogurt.",
+              style: TextStyle(fontSize: 16),
+            ),
+          ),
+        ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text("${widget.firstName} ${widget.lastName}"),
+              accountEmail: Text(widget.email),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.orange,
+                child: Text(
+                  widget.firstName[0] + widget.lastName[0],
+                  style: TextStyle(fontSize: 40),
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Settings'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        MainPage(
+                          id: widget.id,
+                          firstName: widget.firstName,
+                          lastName: widget.lastName,
+                          email: widget.email,
+                          username: widget.username,
+                          password: widget.password,
+                          isAdmin: widget.isAdmin,
+                        ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.chat),
+              title: Text('IA Help'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        ChatPage(
+                          id: widget.id,
+                          firstName: widget.firstName,
+                          lastName: widget.lastName,
+                          email: widget.email,
+                          username: widget.username,
+                          password: widget.password,
+                          isAdmin: widget.isAdmin,
+                        ),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+  Scaffold buildtaraPage() {
+    String videoUrl = "https://www.youtube.com/watch?v=8I4SxE7_89E";
+    String videoId = YoutubePlayer.convertUrlToId(videoUrl) ?? ""; // Add null check
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Tarator",
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+      ),
+      body: ListView(
+        children: [
+          YoutubePlayer(
+            controller: YoutubePlayerController(
+              initialVideoId: videoId, // Use the extracted videoId
+              flags: YoutubePlayerFlags(
+                autoPlay: false,
+                mute: false,
+              ),
+            ),
+            showVideoProgressIndicator: true,
+            progressIndicatorColor: Colors.amber,
+            progressColors: ProgressBarColors(
+              playedColor: Colors.amber,
+              handleColor: Colors.amberAccent,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              "Ingredients:",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Text(
+              "Tripe Soup Recipe:\n"
+                  "Ingredients:\n"
+                  "- 1 pound (about 450g) tripe, cleaned and cut into small pieces\n"
+                  "- 1 onion, finely chopped\n"
+                  "- 2 cloves garlic, minced\n"
+                  "- 1 tablespoon vegetable oil\n"
+                  "- 1 tablespoon paprika\n"
+                  "- 1 tablespoon white vinegar\n"
+                  "- Salt and pepper to taste\n"
+                  "- 1 teaspoon dried mint\n"
+                  "- 1 teaspoon red pepper flakes (optional)\n"
+                  "- 6 cups (1.5 liters) water\n"
+                  "- 1 cup yogurt (optional, for serving)\n"
+                  "- Chopped fresh parsley for garnish",
+              style: TextStyle(fontSize: 16),
+            ),
+
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              "Instructions:",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Text(
+              "Shkembe Chorba Recipe:\n"
+                  "Ingredients:\n"
+                  "- 1 pound (about 450g) tripe, cleaned and cut into small pieces\n"
+                  "- 1 onion, finely chopped\n"
+                  "- 2 cloves garlic, minced\n"
+                  "- 1 tablespoon vegetable oil\n"
+                  "- 1 tablespoon paprika\n"
+                  "- 1 tablespoon white vinegar\n"
+                  "- Salt and pepper to taste\n"
+                  "- 1 teaspoon dried mint\n"
+                  "- 1 teaspoon red pepper flakes (optional)\n"
+                  "- 6 cups (1.5 liters) water\n"
+                  "- 1 cup yogurt (optional, for serving)\n"
+                  "- Chopped fresh parsley for garnish\n\n"
+
+                  "Instructions:\n"
+                  "Prepare the Tripe:\n"
+                  "- Clean the tripe thoroughly and cut it into small, bite-sized pieces.\n\n"
+
+                  "Boil the Tripe:\n"
+                  "- In a large pot, bring water to a boil.\n"
+                  "- Add the tripe pieces and cook for about 10-15 minutes. Drain the tripe and set aside.\n\n"
+
+                  "Saute Onion and Garlic:\n"
+                  "- In a separate pan, heat the vegetable oil over medium heat.\n"
+                  "- Add chopped onion and cook until softened.\n"
+                  "- Add minced garlic and cook for an additional minute.\n\n"
+
+                  "Add Paprika:\n"
+                  "- Stir in the paprika, and cook for a couple of minutes, allowing the flavors to meld.\n\n"
+
+                  "Combine Tripe and Onion Mixture:\n"
+                  "- Add the pre-cooked tripe to the onion mixture and stir well.\n\n"
+
+                  "Add Water:\n"
+                  "- Pour in the water and bring the mixture to a simmer.\n\n"
+
+                  "Season:\n"
+                  "- Season with salt, pepper, and red pepper flakes (if using). Adjust the seasoning according to your taste.\n\n"
+
+                  "Simmer:\n"
+                  "- Let the soup simmer for about 1.5 to 2 hours or until the tripe is tender.\n\n"
+
+                  "Finish and Serve:\n"
+                  "- Stir in the white vinegar and dried mint. Allow the flavors to meld for an additional 10 minutes.\n"
+                  "- Adjust the seasoning if needed.\n\n"
+
+                  "Serve:\n"
+                  "- Ladle the Shkembe Chorba into bowls.\n"
+                  "- Optionally, you can serve it with a dollop of yogurt and garnish with chopped fresh parsley.\n"
+                  "Shkembe Chorba is a distinctive and acquired taste, and it's often enjoyed with a side of bread. It's worth noting that this soup is traditionally eaten as a remedy for a hangover in Bulgaria.",
+              style: TextStyle(fontSize: 16),
+            ),
+
+          ),
+        ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text("${widget.firstName} ${widget.lastName}"),
+              accountEmail: Text(widget.email),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.orange,
+                child: Text(
+                  widget.firstName[0] + widget.lastName[0],
+                  style: TextStyle(fontSize: 40),
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Settings'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        MainPage(
+                          id: widget.id,
+                          firstName: widget.firstName,
+                          lastName: widget.lastName,
+                          email: widget.email,
+                          username: widget.username,
+                          password: widget.password,
+                          isAdmin: widget.isAdmin,
+                        ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.chat),
+              title: Text('IA Help'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        ChatPage(
+                          id: widget.id,
+                          firstName: widget.firstName,
+                          lastName: widget.lastName,
+                          email: widget.email,
+                          username: widget.username,
+                          password: widget.password,
+                          isAdmin: widget.isAdmin,
+                        ),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+  Scaffold buildgsaladPage() {
+    String videoUrl = "https://www.youtube.com/watch?v=by_RNRyzr30";
+    String videoId = YoutubePlayer.convertUrlToId(videoUrl) ?? ""; // Add null check
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Shopska Salad",
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+      ),
+      body: ListView(
+        children: [
+          YoutubePlayer(
+            controller: YoutubePlayerController(
+              initialVideoId: videoId, // Use the extracted videoId
+              flags: YoutubePlayerFlags(
+                autoPlay: false,
+                mute: false,
+              ),
+            ),
+            showVideoProgressIndicator: true,
+            progressIndicatorColor: Colors.amber,
+            progressColors: ProgressBarColors(
+              playedColor: Colors.amber,
+              handleColor: Colors.amberAccent,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              "Ingredients:",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Text(
+              "Greek Salad Recipe:\n"
+                  "Ingredients:\n"
+                  "- 4 large tomatoes, diced\n"
+                  "- 1 cucumber, diced\n"
+                  "- 1 red or green bell pepper, diced\n"
+                  "- 1 red onion, thinly sliced\n"
+                  "- 200g feta cheese, crumbled\n"
+                  "- Kalamata olives (optional)\n"
+                  "- Fresh parsley, finely chopped, for garnish",
+              style: TextStyle(fontSize: 16),
+            ),
+
+
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              "Instructions:",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Text(
+              "Shopska Salad Recipe:\n"
+                  "Ingredients:\n"
+                  "- 4 large tomatoes, diced\n"
+                  "- 1 cucumber, diced\n"
+                  "- 1 red or green bell pepper, diced\n"
+                  "- 1 red onion, thinly sliced\n"
+                  "- 200g feta cheese, crumbled\n"
+                  "- Kalamata olives (optional)\n"
+                  "- Fresh parsley, finely chopped, for garnish\n\n"
+
+                  "Instructions:\n"
+                  "Prepare the Vegetables:\n"
+                  "- Wash and dice the tomatoes, cucumber, and bell pepper.\n"
+                  "- Thinly slice the red onion.\n\n"
+
+                  "Assemble the Salad:\n"
+                  "- In a large salad bowl, combine the diced tomatoes, cucumber, bell pepper, and sliced red onion.\n"
+                  "- Toss the vegetables together until well mixed.\n\n"
+
+                  "Add Feta Cheese:\n"
+                  "- Crumble the feta cheese over the salad.\n\n"
+
+                  "Optional Olives:\n"
+                  "- If you like, you can add Kalamata olives to the salad for an extra burst of flavor.\n\n"
+
+                  "Make the Dressing:\n"
+                  "- In a small bowl, whisk together the extra-virgin olive oil and red wine vinegar.\n"
+                  "- Season the dressing with salt and pepper to taste.\n\n"
+
+                  "Dress the Salad:\n"
+                  "- Drizzle the dressing over the salad.\n\n"
+
+                  "Toss Gently:\n"
+                  "- Gently toss the salad to coat the vegetables and feta cheese evenly with the dressing.\n\n"
+
+                  "Garnish:\n"
+                  "- Garnish the Shopska Salad with finely chopped fresh parsley.\n\n"
+
+                  "Serve:\n"
+                  "- Serve the salad immediately as a side dish or on its own.\n"
+                  "Shopska Salad is a great accompaniment to grilled meats or as a light and refreshing appetizer. It's a staple in Bulgarian cuisine and is often enjoyed during the summer months.",
+              style: TextStyle(fontSize: 16),
+            ),
+          ),
+        ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text("${widget.firstName} ${widget.lastName}"),
+              accountEmail: Text(widget.email),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.orange,
+                child: Text(
+                  widget.firstName[0] + widget.lastName[0],
+                  style: TextStyle(fontSize: 40),
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Settings'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        MainPage(
+                          id: widget.id,
+                          firstName: widget.firstName,
+                          lastName: widget.lastName,
+                          email: widget.email,
+                          username: widget.username,
+                          password: widget.password,
+                          isAdmin: widget.isAdmin,
+                        ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.chat),
+              title: Text('IA Help'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        ChatPage(
+                          id: widget.id,
+                          firstName: widget.firstName,
+                          lastName: widget.lastName,
+                          email: widget.email,
+                          username: widget.username,
+                          password: widget.password,
+                          isAdmin: widget.isAdmin,
+                        ),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+  Scaffold buildupmaPage() {
+    String videoUrl = "https://www.youtube.com/watch?v=cAoYsLXUKGI";
+    String videoId = YoutubePlayer.convertUrlToId(videoUrl) ?? ""; // Add null check
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Rava Upma",
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+      ),
+      body: ListView(
+        children: [
+          YoutubePlayer(
+            controller: YoutubePlayerController(
+              initialVideoId: videoId, // Use the extracted videoId
+              flags: YoutubePlayerFlags(
+                autoPlay: false,
+                mute: false,
+              ),
+            ),
+            showVideoProgressIndicator: true,
+            progressIndicatorColor: Colors.amber,
+            progressColors: ProgressBarColors(
+              playedColor: Colors.amber,
+              handleColor: Colors.amberAccent,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              "Ingredients:",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Text(
+              "Upma Recipe:\n"
+                  "Ingredients:\n"
+                  "- 1 cup semolina (rava or sooji)\n"
+                  "- 2 tablespoons ghee or oil\n"
+                  "- 1 teaspoon mustard seeds\n"
+                  "- 1 teaspoon urad dal (black gram)\n"
+                  "- 1 teaspoon chana dal (split chickpeas)\n"
+                  "- 1 medium-sized onion, finely chopped\n"
+                  "- 1-2 green chilies, finely chopped\n"
+                  "- 1-inch piece of ginger, finely chopped\n"
+                  "- A handful of cashew nuts (optional)\n"
+                  "- A few curry leaves\n"
+                  "- 2 1/2 cups water\n"
+                  "- Salt to taste\n"
+                  "- Fresh coriander leaves for garnish (optional)\n"
+                  "- Lemon wedges for serving (optional)",
+              style: TextStyle(fontSize: 16),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              "Instructions:",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Text(
+                  "Roast Semolina:\n"
+                  "- Dry roast the semolina in a pan over medium heat until it turns light brown and you can smell a nutty aroma. Keep stirring to prevent it from burning. Once roasted, set it aside.\n\n"
+
+                  "Prepare the Tempering:\n"
+                  "- In the same pan, heat ghee or oil over medium heat.\n"
+                  "- Add mustard seeds and let them splutter.\n"
+                  "- Add urad dal and chana dal. Stir until they turn golden brown.\n\n"
+
+                  "Sauté Aromatics:\n"
+                  "- Add chopped onions, green chilies, and ginger. Sauté until the onions become translucent.\n\n"
+
+                  "Add Cashew Nuts and Curry Leaves:\n"
+                  "- If using cashew nuts, add them to the pan and sauté until they turn golden.\n"
+                  "- Add curry leaves and stir for a few seconds.\n\n"
+
+                  "Add Water:\n"
+                  "- Carefully add water to the pan. Be cautious, as it may splutter.\n"
+                  "- Add salt to taste and bring the water to a boil.\n\n"
+
+                  "Add Roasted Semolina:\n"
+                  "- Once the water is boiling, reduce the heat to low and slowly add the roasted semolina, stirring continuously to avoid lumps.\n\n"
+
+                  "Cook and Simmer:\n"
+                  "- Cook the mixture on low heat, stirring continuously until the semolina absorbs the water and the mixture thickens. This should take about 3-5 minutes.\n\n"
+
+                  "Cover and Rest:\n"
+                  "- Cover the pan with a lid and let the upma rest for a couple of minutes. This helps it to fluff up.\n\n"
+
+                  "Fluff and Garnish:\n"
+                  "- After resting, fluff the Rava Upma with a fork.\n"
+                  "- Garnish with fresh coriander leaves if desired.\n\n"
+
+                  "Serve:\n"
+                  "- Serve hot with coconut chutney, pickle, or a side of yogurt. Optionally, you can serve it with lemon wedges for a tangy flavor.\n"
+                  "Rava Upma is versatile and can be customized with vegetables like peas, carrots, and tomatoes for added nutrition and flavor. Adjust the spice level according to your preference.",
+              style: TextStyle(fontSize: 16),
+            ),
+
+          ),
+        ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text("${widget.firstName} ${widget.lastName}"),
+              accountEmail: Text(widget.email),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.orange,
+                child: Text(
+                  widget.firstName[0] + widget.lastName[0],
+                  style: TextStyle(fontSize: 40),
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Settings'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        MainPage(
+                          id: widget.id,
+                          firstName: widget.firstName,
+                          lastName: widget.lastName,
+                          email: widget.email,
+                          username: widget.username,
+                          password: widget.password,
+                          isAdmin: widget.isAdmin,
+                        ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.chat),
+              title: Text('IA Help'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        ChatPage(
+                          id: widget.id,
+                          firstName: widget.firstName,
+                          lastName: widget.lastName,
+                          email: widget.email,
+                          username: widget.username,
+                          password: widget.password,
+                          isAdmin: widget.isAdmin,
+                        ),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+  Scaffold buildbreaduPage() {
+    String videoUrl = "https://www.youtube.com/watch?v=h8CWDeRInoM";
+    String videoId = YoutubePlayer.convertUrlToId(videoUrl) ?? ""; // Add null check
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Bread Upma",
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+      ),
+      body: ListView(
+        children: [
+          YoutubePlayer(
+            controller: YoutubePlayerController(
+              initialVideoId: videoId, // Use the extracted videoId
+              flags: YoutubePlayerFlags(
+                autoPlay: false,
+                mute: false,
+              ),
+            ),
+            showVideoProgressIndicator: true,
+            progressIndicatorColor: Colors.amber,
+            progressColors: ProgressBarColors(
+              playedColor: Colors.amber,
+              handleColor: Colors.amberAccent,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              "Ingredients:",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Text(
+              "Bread Upma Recipe:\n"
+                  "Ingredients:\n"
+                  "- 4-5 slices of bread, cut into bite-sized pieces\n"
+                  "- 2 tablespoons oil or ghee\n"
+                  "- 1 teaspoon mustard seeds\n"
+                  "- 1 teaspoon cumin seeds\n"
+                  "- 1/2 cup finely chopped onions\n"
+                  "- 1/4 cup finely chopped tomatoes\n"
+                  "- 1/4 cup finely chopped bell peppers (optional)\n"
+                  "- 1/4 cup frozen peas\n"
+                  "- 1-2 green chilies, finely chopped\n"
+                  "- 1/2 teaspoon turmeric powder\n"
+                  "- 1/2 teaspoon red chili powder (adjust to taste)\n"
+                  "- Salt to taste\n"
+                  "- 1 tablespoon chopped coriander leaves for garnish\n"
+                  "- Lemon wedges for serving (optional)",
+              style: TextStyle(fontSize: 16),
+            ),
+
+
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              "Instructions:",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Text(
+                  "Prepare Bread:\n"
+                  "- Cut the bread slices into bite-sized pieces. You can use fresh or slightly stale bread.\n\n"
+
+                  "Tempering:\n"
+                  "- Heat oil or ghee in a pan over medium heat.\n"
+                  "- Add mustard seeds and cumin seeds. Allow them to splutter.\n\n"
+
+                  "Sauté Aromatics:\n"
+                  "- Add chopped onions and green chilies. Sauté until the onions become translucent.\n\n"
+
+                  "Add Vegetables:\n"
+                  "- Add chopped tomatoes, bell peppers (if using), and frozen peas. Cook until the vegetables are tender.\n\n"
+
+                  "Spices:\n"
+                  "- Add turmeric powder, red chili powder, and salt. Mix well.\n\n"
+
+                  "Add Bread Pieces:\n"
+                  "- Add the bite-sized bread pieces to the pan. Gently toss to coat the bread with the spices and vegetables.\n\n"
+
+                  "Cook:\n"
+                  "- Cook the mixture for 2-3 minutes, stirring occasionally. The bread should absorb the flavors and become slightly crisp.\n\n"
+
+                  "Garnish:\n"
+                  "- Garnish the Bread Upma with chopped coriander leaves.\n\n"
+
+                  "Serve:\n"
+                  "- Serve hot, optionally with lemon wedges on the side.\n\n"
+
+                  "Tips:\n"
+                  "- You can customize the recipe by adding other vegetables like carrots, corn, or beans.\n"
+                  "- Adjust the spice level according to your taste preferences.\n"
+                  "- You can also sprinkle a little chaat masala or garam masala for added flavor.\n"
+                  "Bread Upma is a quick and versatile dish that can be made with minimal ingredients. It's perfect for breakfast or as an evening snack.",
+              style: TextStyle(fontSize: 16),
+            ),
+
+          ),
+        ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text("${widget.firstName} ${widget.lastName}"),
+              accountEmail: Text(widget.email),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.orange,
+                child: Text(
+                  widget.firstName[0] + widget.lastName[0],
+                  style: TextStyle(fontSize: 40),
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Settings'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        MainPage(
+                          id: widget.id,
+                          firstName: widget.firstName,
+                          lastName: widget.lastName,
+                          email: widget.email,
+                          username: widget.username,
+                          password: widget.password,
+                          isAdmin: widget.isAdmin,
+                        ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.chat),
+              title: Text('IA Help'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        ChatPage(
+                          id: widget.id,
+                          firstName: widget.firstName,
+                          lastName: widget.lastName,
+                          email: widget.email,
+                          username: widget.username,
+                          password: widget.password,
+                          isAdmin: widget.isAdmin,
+                        ),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+  Scaffold buildparaPage() {
+    String videoUrl = "https://www.youtube.com/watch?v=G8BSGywfRMs";
+    String videoId = YoutubePlayer.convertUrlToId(videoUrl) ?? ""; // Add null check
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Paratha",
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+      ),
+      body: ListView(
+        children: [
+          YoutubePlayer(
+            controller: YoutubePlayerController(
+              initialVideoId: videoId, // Use the extracted videoId
+              flags: YoutubePlayerFlags(
+                autoPlay: false,
+                mute: false,
+              ),
+            ),
+            showVideoProgressIndicator: true,
+            progressIndicatorColor: Colors.amber,
+            progressColors: ProgressBarColors(
+              playedColor: Colors.amber,
+              handleColor: Colors.amberAccent,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              "Ingredients:",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Text(
+              "Whole Wheat Roti Recipe:\n"
+                  "Ingredients:\n"
+                  "- 2 cups whole wheat flour (atta)\n"
+                  "- Water (as needed)\n"
+                  "- Salt (to taste)\n"
+                  "- Ghee or oil (for cooking)",
+              style: TextStyle(fontSize: 16),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              "Instructions:",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Text(
+                  "Prepare the Dough:\n"
+                  "- In a mixing bowl, add the whole wheat flour and a pinch of salt.\n"
+                  "- Gradually add water and knead the flour to make a soft, smooth dough. The dough should not be too sticky or too dry. Let it rest for about 15-20 minutes.\n\n"
+
+                  "Divide the Dough:\n"
+                  "- After resting, divide the dough into small lemon-sized balls.\n\n"
+
+                  "Rolling the Parathas:\n"
+                  "- Take one dough ball, dust it with a little flour, and roll it into a small circle using a rolling pin. The thickness depends on your preference, but it's typically around 6-8 inches in diameter.\n\n"
+
+                  "Adding Ghee or Oil:\n"
+                  "- Brush the rolled-out dough circle with ghee or oil. This step enhances the flavor and helps the paratha become flaky.\n\n"
+
+                  "Fold and Roll:\n"
+                  "- Fold the oiled dough circle in half, creating a semi-circle.\n"
+                  "- Brush the semi-circle with ghee or oil and fold it again to form a triangle.\n\n"
+
+                  "Roll Again:\n"
+                  "- Dust the triangle with flour and roll it out gently to your desired thickness. Be careful not to press too hard, as you want the layers to remain separate.\n\n"
+
+                  "Cooking the Paratha:\n"
+                  "- Heat a griddle or flat pan over medium heat.\n"
+                  "- Place the rolled paratha on the hot pan and cook for about 1-2 minutes until bubbles start to appear on the surface.\n\n"
+
+                  "Flipping and Cooking:\n"
+                  "- Flip the paratha and cook the other side, applying ghee or oil on the cooked side. Press the edges with a spatula to ensure even cooking.\n\n"
+
+                  "Cook Until Golden Brown:\n"
+                  "- Continue cooking and flipping until both sides are golden brown.\n\n"
+
+                  "Repeat:\n"
+                  "- Repeat the process for the remaining dough balls.\n\n"
+
+                  "Serve:\n"
+                  "- Serve the parathas hot with yogurt, pickles, or any side dish of your choice.\n\n"
+
+                  "Variations:\n"
+                  "- You can add various stuffing options to the paratha, such as spiced potatoes, paneer (Indian cottage cheese), or even minced meat.\n"
+                  "- Experiment with different flours, like adding a small portion of gram flour (besan) for a unique flavor.\n"
+                  "Parathas are versatile and can be enjoyed with various accompaniments. Feel free to get creative and tailor them to your taste preferences!",
+              style: TextStyle(fontSize: 16),
+            ),
+
+          ),
+        ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text("${widget.firstName} ${widget.lastName}"),
+              accountEmail: Text(widget.email),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.orange,
+                child: Text(
+                  widget.firstName[0] + widget.lastName[0],
+                  style: TextStyle(fontSize: 40),
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Settings'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        MainPage(
+                          id: widget.id,
+                          firstName: widget.firstName,
+                          lastName: widget.lastName,
+                          email: widget.email,
+                          username: widget.username,
+                          password: widget.password,
+                          isAdmin: widget.isAdmin,
+                        ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.chat),
+              title: Text('IA Help'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        ChatPage(
+                          id: widget.id,
+                          firstName: widget.firstName,
+                          lastName: widget.lastName,
+                          email: widget.email,
+                          username: widget.username,
+                          password: widget.password,
+                          isAdmin: widget.isAdmin,
+                        ),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+  Scaffold buildsamPage() {
+    String videoUrl = "https://www.youtube.com/watch?v=3OZn-iCGf5s";
+    String videoId = YoutubePlayer.convertUrlToId(videoUrl) ?? ""; // Add null check
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Samosas",
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+      ),
+      body: ListView(
+        children: [
+          YoutubePlayer(
+            controller: YoutubePlayerController(
+              initialVideoId: videoId, // Use the extracted videoId
+              flags: YoutubePlayerFlags(
+                autoPlay: false,
+                mute: false,
+              ),
+            ),
+            showVideoProgressIndicator: true,
+            progressIndicatorColor: Colors.amber,
+            progressColors: ProgressBarColors(
+              playedColor: Colors.amber,
+              handleColor: Colors.amberAccent,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              "Ingredients:",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Text(
+              "Aloo Samosa Recipe:\n"
+                  "For the Dough:\n"
+                  "- 2 cups all-purpose flour\n"
+                  "- 1/4 cup ghee or vegetable oil\n"
+                  "- 1/2 teaspoon salt\n"
+                  "- Water (as needed)\n\n"
+
+                  "For the Filling:\n"
+                  "- 3 large potatoes, boiled, peeled, and mashed\n"
+                  "- 1 cup green peas (fresh or frozen)\n"
+                  "- 1 tablespoon vegetable oil\n"
+                  "- 1 teaspoon cumin seeds\n"
+                  "- 1 teaspoon mustard seeds\n"
+                  "- 1 tablespoon ginger, finely chopped\n"
+                  "- 1 tablespoon garlic, minced\n"
+                  "- 1-2 green chilies, finely chopped (adjust to taste)\n"
+                  "- 1 teaspoon ground coriander\n"
+                  "- 1 teaspoon ground cumin\n"
+                  "- 1/2 teaspoon turmeric powder\n"
+                  "- 1/2 teaspoon garam masala\n"
+                  "- Salt to taste\n"
+                  "- Fresh coriander leaves, chopped\n"
+                  "- Juice of half a lemon\n\n"
+
+                  "Other:\n"
+                  "- Oil for deep frying",
+              style: TextStyle(fontSize: 16),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              "Instructions:",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Text(
+                  "For the Dough:\n"
+                  "- In a large mixing bowl, combine the all-purpose flour, salt, and ghee or oil.\n"
+                  "- Gradually add water and knead the mixture to form a smooth, firm dough.\n"
+                  "- Cover the dough with a damp cloth and let it rest for at least 30 minutes.\n\n"
+
+                  "For the Filling:\n"
+                  "- Boil, peel, and mash the potatoes. Set aside.\n"
+                  "- In a pan, heat vegetable oil over medium heat.\n"
+                  "- Add cumin seeds and mustard seeds. When they splutter, add chopped ginger, minced garlic, and green chilies.\n"
+                  "- Sauté until the raw smell disappears, then add ground coriander, ground cumin, turmeric powder, and garam masala. Mix well.\n"
+                  "- Add green peas and cook for a few minutes.\n"
+                  "- Add the mashed potatoes, salt, and fresh coriander leaves. Mix thoroughly.\n"
+                  "- Stir in lemon juice for a touch of acidity.\n"
+                  "- Allow the filling to cool completely.\n\n"
+
+                  "Assembling and Frying Samosas:\n"
+                  "- Divide the dough into equal-sized portions and roll each portion into a ball.\n"
+                  "- Roll each ball into a thin oval or circle.\n"
+                  "- Cut the circle in half to form two semi-circles.\n"
+                  "- Create a cone shape by folding each semi-circle and sealing the edges with a little water.\n"
+                  "- Fill each cone with the prepared potato and pea filling.\n"
+                  "- Seal the open edge, pinching it together to form a triangular shape.\n"
+                  "- Heat oil for deep frying in a pan over medium heat.\n"
+                  "- Fry the samosas until they turn golden brown and crisp.\n"
+                  "- Remove the samosas and place them on paper towels to drain excess oil.\n"
+                  "- Serve hot with mint chutney or tamarind sauce.\n\n"
+
+                  "Enjoy your homemade samosas! Feel free to experiment with different fillings and get creative with the spices to suit your taste preferences.",
+              style: TextStyle(fontSize: 16),
+            ),
+
+          ),
+        ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text("${widget.firstName} ${widget.lastName}"),
+              accountEmail: Text(widget.email),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.orange,
+                child: Text(
+                  widget.firstName[0] + widget.lastName[0],
+                  style: TextStyle(fontSize: 40),
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Settings'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        MainPage(
+                          id: widget.id,
+                          firstName: widget.firstName,
+                          lastName: widget.lastName,
+                          email: widget.email,
+                          username: widget.username,
+                          password: widget.password,
+                          isAdmin: widget.isAdmin,
+                        ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.chat),
+              title: Text('IA Help'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        ChatPage(
+                          id: widget.id,
+                          firstName: widget.firstName,
+                          lastName: widget.lastName,
+                          email: widget.email,
+                          username: widget.username,
+                          password: widget.password,
+                          isAdmin: widget.isAdmin,
+                        ),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+  Scaffold buildpaniPage() {
+    String videoUrl = "https://www.youtube.com/watch?v=Lno88iU9J4w";
+    String videoId = YoutubePlayer.convertUrlToId(videoUrl) ?? ""; // Add null check
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Pani Puri",
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+      ),
+      body: ListView(
+        children: [
+          YoutubePlayer(
+            controller: YoutubePlayerController(
+              initialVideoId: videoId, // Use the extracted videoId
+              flags: YoutubePlayerFlags(
+                autoPlay: false,
+                mute: false,
+              ),
+            ),
+            showVideoProgressIndicator: true,
+            progressIndicatorColor: Colors.amber,
+            progressColors: ProgressBarColors(
+              playedColor: Colors.amber,
+              handleColor: Colors.amberAccent,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              "Ingredients:",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Text(
+              "Pani Puri Recipe:\n"
+                  "For the Puri:\n"
+                  "- 1 cup semolina (sooji)\n"
+                  "- 1/4 cup all-purpose flour (maida)\n"
+                  "- Water (as needed)\n"
+                  "- Oil for frying\n\n"
+
+                  "For the Pani (Spiced Water):\n"
+                  "- 1 cup mint leaves\n"
+                  "- 1/2 cup coriander leaves\n"
+                  "- 2-3 green chilies (adjust to taste)\n"
+                  "- 1-inch piece of ginger\n"
+                  "- 1 small onion, chopped\n"
+                  "- 1 small raw mango, peeled and chopped\n"
+                  "- 1 teaspoon roasted cumin powder\n"
+                  "- 1 teaspoon black salt\n"
+                  "- 1 teaspoon chaat masala\n"
+                  "- 1/2 teaspoon black pepper powder\n"
+                  "- 1/4 cup tamarind pulp\n"
+                  "- Salt to taste\n"
+                  "- 3-4 cups chilled water\n\n"
+
+                  "For the Filling:\n"
+                  "- Boiled and mashed potatoes\n"
+                  "- Cooked and seasoned chickpeas\n"
+                  "- Tamarind chutney\n"
+                  "- Sev (crispy chickpea noodles)",
+              style: TextStyle(fontSize: 16),
+            ),
+
+
+
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              "Instructions:",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+    child: Text(
+    "For the Puri:\n"
+    "Make the Dough:\n"
+    "- Mix semolina and all-purpose flour.\n"
+    "- Gradually add water and knead to form a smooth, firm dough.\n"
+    "- Cover and let it rest for 20-30 minutes.\n\n"
+
+    "Divide and Roll:\n"
+    "- Divide the dough into small balls.\n"
+    "- Roll each ball into a thin, small circle (approximately 2 inches in diameter).\n\n"
+
+    "Fry:\n"
+    "- Heat oil for frying in a pan.\n"
+    "- Fry the rolled puris until they puff up and turn golden brown.\n"
+    "- Remove and place on paper towels to drain excess oil.\n\n"
+
+    "For the Pani:\n"
+    "Blend Ingredients:\n"
+    "- In a blender, combine mint leaves, coriander leaves, green chilies, ginger, chopped onion, and raw mango.\n"
+    "- Blend into a smooth paste.\n\n"
+
+    "Prepare Spiced Water:\n"
+    "- In a large bowl, mix the paste with roasted cumin powder, black salt, chaat masala, black pepper powder, tamarind pulp, and salt.\n"
+    "- Add chilled water and mix well.\n"
+    "- Adjust the seasoning according to your taste.\n\n"
+
+    "Assembling Pani Puri:\n"
+    "Make a Hole:\n"
+    "- Take each fried puri and make a small hole in the center, large enough to fill the ingredients.\n\n"
+
+    "Fillings:\n"
+    "- Add mashed potatoes and seasoned chickpeas into each puri.\n\n"
+
+    "Tamarind Chutney:\n"
+    "- Drizzle tamarind chutney over the filling.\n\n"
+
+    "Sev:\n"
+    "- Top with sev for added crunch.\n\n"
+
+    "Pani:\n"
+    "- Dip the filled puri into the prepared spiced water.\n\n"
+
+    "Serve immediately and enjoy the burst of flavors!\n"
+    "Pani Puri is best when served immediately to maintain the crispiness of the puris. It's a fun and interactive snack that allows everyone to customize their puris according to their taste preferences.",
+    style: TextStyle(fontSize: 16),
+
+    ),
+          ),
+        ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text("${widget.firstName} ${widget.lastName}"),
+              accountEmail: Text(widget.email),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.orange,
+                child: Text(
+                  widget.firstName[0] + widget.lastName[0],
+                  style: TextStyle(fontSize: 40),
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Settings'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        MainPage(
+                          id: widget.id,
+                          firstName: widget.firstName,
+                          lastName: widget.lastName,
+                          email: widget.email,
+                          username: widget.username,
+                          password: widget.password,
+                          isAdmin: widget.isAdmin,
+                        ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.chat),
+              title: Text('IA Help'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        ChatPage(
+                          id: widget.id,
+                          firstName: widget.firstName,
+                          lastName: widget.lastName,
+                          email: widget.email,
+                          username: widget.username,
+                          password: widget.password,
+                          isAdmin: widget.isAdmin,
+                        ),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+  Scaffold buildkacPage() {
+    String videoUrl = "https://www.youtube.com/watch?v=lvI0so7aESw";
+    String videoId = YoutubePlayer.convertUrlToId(videoUrl) ?? ""; // Add null check
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Kachori",
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+      ),
+      body: ListView(
+        children: [
+          YoutubePlayer(
+            controller: YoutubePlayerController(
+              initialVideoId: videoId, // Use the extracted videoId
+              flags: YoutubePlayerFlags(
+                autoPlay: false,
+                mute: false,
+              ),
+            ),
+            showVideoProgressIndicator: true,
+            progressIndicatorColor: Colors.amber,
+            progressColors: ProgressBarColors(
+              playedColor: Colors.amber,
+              handleColor: Colors.amberAccent,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              "Ingredients:",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Text(
+              "Dal Kachori Recipe:\n"
+                  "For the Outer Covering:\n"
+                  "- 2 cups all-purpose flour (maida)\n"
+                  "- 1/4 cup semolina (sooji)\n"
+                  "- 1/4 cup ghee or oil\n"
+                  "- A pinch of baking soda\n"
+                  "- Salt to taste\n"
+                  "- Water (as needed)\n\n"
+
+                  "For the Filling:\n"
+                  "- 1 cup yellow moong dal (split yellow lentils)\n"
+                  "- 1 teaspoon fennel seeds\n"
+                  "- 1 teaspoon cumin seeds\n"
+                  "- 1/2 teaspoon asafoetida (hing)\n"
+                  "- 1 teaspoon ginger, grated\n"
+                  "- 1 green chili, finely chopped (adjust to taste)\n"
+                  "- 1/2 teaspoon turmeric powder\n"
+                  "- 1 teaspoon red chili powder (adjust to taste)\n"
+                  "- 1 teaspoon coriander powder\n"
+                  "- 1/2 teaspoon garam masala\n"
+                  "- 1 tablespoon oil\n"
+                  "- Salt to taste\n\n"
+
+                  "Other:\n"
+                  "- Oil for deep frying",
+              style: TextStyle(fontSize: 16),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              "Instructions:",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Text(
+                  "For the Outer Covering:\n"
+                  "Prepare the Dough:\n"
+                  "- In a mixing bowl, combine all-purpose flour, semolina, ghee or oil, baking soda, and salt.\n"
+                  "- Gradually add water and knead the mixture to form a smooth, firm dough.\n"
+                  "- Cover and let it rest for at least 15-20 minutes.\n\n"
+
+                  "For the Filling:\n"
+                  "Prepare Moong Dal:\n"
+                  "- Wash and soak the moong dal in water for about 2 hours.\n"
+                  "- Drain the water and grind the dal coarsely without adding any water.\n\n"
+
+                  "Prepare the Filling:\n"
+                  "- Heat oil in a pan. Add fennel seeds, cumin seeds, and asafoetida.\n"
+                  "- Add grated ginger and chopped green chili. Sauté for a minute.\n"
+                  "- Add the coarsely ground moong dal, turmeric powder, red chili powder, coriander powder, garam masala, and salt.\n"
+                  "- Cook the dal mixture until it becomes dry and the raw smell disappears.\n"
+                  "- Allow the filling to cool.\n\n"
+
+                  "Assembling and Frying Kachori:\n"
+                  "Divide Dough:\n"
+                  "- Divide the rested dough into small lemon-sized balls.\n"
+                  "- Roll Out:\n"
+                  "- Roll each ball into a small circle, about 3 inches in diameter.\n"
+                  "- Add Filling:\n"
+                  "- Place a spoonful of the moong dal filling in the center of the rolled-out dough.\n"
+                  "- Seal and Shape:\n"
+                  "- Carefully bring the edges together and seal to form a stuffed ball.\n"
+                  "- Flatten the ball slightly with your palms.\n"
+                  "- Roll Again:\n"
+                  "- Gently roll out the stuffed ball into a slightly thick disc, taking care not to let the filling come out.\n"
+                  "- Deep Fry:\n"
+                  "- Heat oil for deep frying in a pan over medium heat.\n"
+                  "- Once the oil is hot, gently slide the rolled kachori into the oil.\n"
+                  "- Fry until it puffs up and turns golden brown on both sides.\n"
+                  "- Remove and place on paper towels to drain excess oil.\n\n"
+
+                  "Serve:\n"
+                  "- Serve the khasta kachori hot with tamarind chutney or mint chutney.\n"
+                  "Enjoy your homemade Khasta Kachori, a delicious and crispy Indian snack!",
+              style: TextStyle(fontSize: 16),
+            ),
+
           ),
         ],
       ),
