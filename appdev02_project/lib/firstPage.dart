@@ -4,6 +4,7 @@ import 'package:appdev02_project/chatPage.dart';
 import 'package:appdev02_project/settings.dart';
 import 'package:appdev02_project/db.dart';
 import 'package:appdev02_project/admin.dart';
+import 'map.dart';
 
 class MainPage extends StatefulWidget {
   final int id;
@@ -192,6 +193,14 @@ class _MainPageState extends State<MainPage> {
               ),
             );
           }),
+          buildDrawerItem(Icon(Icons.map_rounded), 'Map', () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => MapPage(),
+              ),
+            );
+          }),
           if (widget.isAdmin)
             buildDrawerItem(Icon(Icons.admin_panel_settings), 'Admin Page', () {
               Navigator.push(
@@ -239,5 +248,4 @@ List<Country> countries = [
   Country(name: 'Greece', imagePath: 'asset/greek.png', route: 'greek'),
   Country(name: 'Bulgaria', imagePath: 'asset/bulgaria.png', route: 'bulgarian'),
   Country(name: 'India', imagePath: 'asset/india.png', route: 'india'),
-  Country(name: 'USA', imagePath: 'asset/usa.png', route: 'usa'),
 ];

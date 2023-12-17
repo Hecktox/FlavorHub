@@ -4,6 +4,7 @@ import 'firstPage.dart';
 import 'settings.dart';
 import 'chatPage.dart';
 import 'thirdPage.dart';
+import 'map.dart';
 
 class secondPage extends StatefulWidget {
   final int id;
@@ -418,6 +419,19 @@ class _secondPageState extends State<secondPage> {
                 );
               },
             ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
+                  ),
+                );
+              },
+            ),
+
           ],
         ),
       ),
@@ -850,6 +864,18 @@ class _secondPageState extends State<secondPage> {
                       password: widget.password,
                       isAdmin: widget.isAdmin,
                     ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
                   ),
                 );
               },
@@ -1290,6 +1316,18 @@ class _secondPageState extends State<secondPage> {
                 );
               },
             ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
@@ -1725,6 +1763,18 @@ class _secondPageState extends State<secondPage> {
                 );
               },
             ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
@@ -1977,6 +2027,18 @@ class _secondPageState extends State<secondPage> {
                 );
               },
             ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
@@ -2212,6 +2274,18 @@ class _secondPageState extends State<secondPage> {
                       password: widget.password,
                       isAdmin: widget.isAdmin,
                     ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
                   ),
                 );
               },
@@ -2455,6 +2529,18 @@ class _secondPageState extends State<secondPage> {
                 );
               },
             ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
@@ -2690,6 +2776,18 @@ class _secondPageState extends State<secondPage> {
                       password: widget.password,
                       isAdmin: widget.isAdmin,
                     ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
                   ),
                 );
               },
@@ -2933,6 +3031,18 @@ class _secondPageState extends State<secondPage> {
                 );
               },
             ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
@@ -3172,6 +3282,18 @@ class _secondPageState extends State<secondPage> {
                 );
               },
             ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
@@ -3406,6 +3528,18 @@ class _secondPageState extends State<secondPage> {
                       password: widget.password,
                       isAdmin: widget.isAdmin,
                     ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
                   ),
                 );
               },
@@ -3649,6 +3783,18 @@ class _secondPageState extends State<secondPage> {
                 );
               },
             ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
@@ -3884,6 +4030,18 @@ class _secondPageState extends State<secondPage> {
                       password: widget.password,
                       isAdmin: widget.isAdmin,
                     ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
                   ),
                 );
               },
@@ -4128,6 +4286,18 @@ class _secondPageState extends State<secondPage> {
                 );
               },
             ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
@@ -4367,6 +4537,18 @@ class _secondPageState extends State<secondPage> {
                 );
               },
             ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
@@ -4602,6 +4784,18 @@ class _secondPageState extends State<secondPage> {
                       password: widget.password,
                       isAdmin: widget.isAdmin,
                     ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
                   ),
                 );
               },

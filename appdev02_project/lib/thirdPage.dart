@@ -3,6 +3,7 @@ import 'chatPage.dart';
 import 'settings.dart';
 import 'firstPage.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+import 'map.dart';
 
 class ThirdPage extends StatefulWidget {
   final int id;
@@ -204,6 +205,18 @@ class _ThirdPageState extends State<ThirdPage> {
                 );
               },
             ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
@@ -348,6 +361,18 @@ class _ThirdPageState extends State<ThirdPage> {
                 );
               },
             ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
@@ -480,6 +505,18 @@ class _ThirdPageState extends State<ThirdPage> {
                           password: widget.password,
                           isAdmin: widget.isAdmin,
                         ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
                   ),
                 );
               },
@@ -631,6 +668,18 @@ class _ThirdPageState extends State<ThirdPage> {
                 );
               },
             ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
@@ -771,6 +820,18 @@ class _ThirdPageState extends State<ThirdPage> {
                           password: widget.password,
                           isAdmin: widget.isAdmin,
                         ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
                   ),
                 );
               },
@@ -928,6 +989,18 @@ class _ThirdPageState extends State<ThirdPage> {
                 );
               },
             ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
@@ -1071,6 +1144,18 @@ class _ThirdPageState extends State<ThirdPage> {
                           password: widget.password,
                           isAdmin: widget.isAdmin,
                         ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
                   ),
                 );
               },
@@ -1230,6 +1315,18 @@ class _ThirdPageState extends State<ThirdPage> {
                 );
               },
             ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
@@ -1381,6 +1478,18 @@ class _ThirdPageState extends State<ThirdPage> {
                 );
               },
             ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
@@ -1528,6 +1637,18 @@ class _ThirdPageState extends State<ThirdPage> {
                           password: widget.password,
                           isAdmin: widget.isAdmin,
                         ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
                   ),
                 );
               },
@@ -1687,6 +1808,18 @@ class _ThirdPageState extends State<ThirdPage> {
                 );
               },
             ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
@@ -1834,6 +1967,18 @@ class _ThirdPageState extends State<ThirdPage> {
                           password: widget.password,
                           isAdmin: widget.isAdmin,
                         ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
                   ),
                 );
               },
@@ -2005,6 +2150,18 @@ class _ThirdPageState extends State<ThirdPage> {
                 );
               },
             ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
@@ -2168,6 +2325,18 @@ class _ThirdPageState extends State<ThirdPage> {
                           password: widget.password,
                           isAdmin: widget.isAdmin,
                         ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
                   ),
                 );
               },
@@ -2366,6 +2535,18 @@ class _ThirdPageState extends State<ThirdPage> {
                 );
               },
             ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
@@ -2558,6 +2739,18 @@ class _ThirdPageState extends State<ThirdPage> {
                 );
               },
             ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
@@ -2731,6 +2924,18 @@ class _ThirdPageState extends State<ThirdPage> {
                           password: widget.password,
                           isAdmin: widget.isAdmin,
                         ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
                   ),
                 );
               },
@@ -2912,6 +3117,18 @@ class _ThirdPageState extends State<ThirdPage> {
                 );
               },
             ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
@@ -3089,6 +3306,18 @@ class _ThirdPageState extends State<ThirdPage> {
                 );
               },
             ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
@@ -3257,6 +3486,18 @@ class _ThirdPageState extends State<ThirdPage> {
                           password: widget.password,
                           isAdmin: widget.isAdmin,
                         ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
                   ),
                 );
               },
@@ -3437,6 +3678,18 @@ class _ThirdPageState extends State<ThirdPage> {
                           password: widget.password,
                           isAdmin: widget.isAdmin,
                         ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
                   ),
                 );
               },
@@ -3640,6 +3893,18 @@ class _ThirdPageState extends State<ThirdPage> {
                 );
               },
             ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
@@ -3826,6 +4091,18 @@ class _ThirdPageState extends State<ThirdPage> {
                           password: widget.password,
                           isAdmin: widget.isAdmin,
                         ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
                   ),
                 );
               },
