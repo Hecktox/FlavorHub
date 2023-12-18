@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'register.dart'; // Import the RegisterPage
+import 'register.dart';
 import 'firstPage.dart';
-import 'db.dart'; // Import the database class (Mydb)
+import 'db.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -9,22 +10,52 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final Mydb database = Mydb(); // Use Mydb class for database operations
+  final Mydb database = Mydb();
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController fNameController = TextEditingController();
   final TextEditingController lNameController = TextEditingController();
+  final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+  FlutterLocalNotificationsPlugin();
 
   @override
   void initState() {
     super.initState();
-    database.open(); // Open the database
+    database.open();
+    initializeNotifications();
+  }
+
+  void initializeNotifications() async {
+    const AndroidInitializationSettings initializationSettingsAndroid =
+    AndroidInitializationSettings('@mipmap/ic_launcher');
+    final InitializationSettings initializationSettings =
+    InitializationSettings(android: initializationSettingsAndroid);
+    await flutterLocalNotificationsPlugin.initialize(initializationSettings);
+  }
+
+  Future<void> showNotification() async {
+    const AndroidNotificationDetails androidPlatformChannelSpecifics =
+    AndroidNotificationDetails(
+      'Flavor app',
+      'Flavor app',
+      importance: Importance.max,
+      priority: Priority.high,
+    );
+    const NotificationDetails platformChannelSpecifics =
+    NotificationDetails(android: androidPlatformChannelSpecifics);
+    await flutterLocalNotificationsPlugin.show(
+      0,
+      'Login Successful',
+      'Welcome back! You have successfully logged in.',
+      platformChannelSpecifics,
+      payload: 'login_notification',
+    );
   }
 
   @override
   void dispose() {
-    database.db.close(); // Close the database when the widget is disposed
+    database.db.close();
     super.dispose();
   }
 
@@ -57,23 +88,24 @@ class _LoginPageState extends State<LoginPage> {
       );
 
       if (user != null) {
-        bool isAdmin = user['isAdmin'] == 1; // Check the isAdmin field
+        bool isAdmin = user['isAdmin'] == 1;
+        showNotification(); // Show notification on successful login
+
         Navigator.of(context).push(
           PageRouteBuilder(
-            pageBuilder: (context, animation, secondaryAnimation) =>
-                MainPage(
-                  id: user['user_id'],
-                  email: user['email'],
-                  username: usernameController.text,
-                  firstName: user['first_name'],
-                  lastName: user['last_name'],
-                  password: user['password'],
-                  isAdmin: isAdmin,
-                ),
+            pageBuilder: (context, animation, secondaryAnimation) => MainPage(
+              id: user['user_id'],
+              email: user['email'],
+              username: usernameController.text,
+              firstName: user['first_name'],
+              lastName: user['last_name'],
+              password: user['password'],
+              isAdmin: isAdmin,
+            ),
             transitionsBuilder: (context, animation, secondaryAnimation, child) {
-              const begin = Offset(0.0, -1.0); // Start position of the MainPage (from the top)
-              const end = Offset.zero; // End position of the MainPage
-              const curve = Curves.easeInOut; // Transition curve
+              const begin = Offset(0.0, -1.0);
+              const end = Offset.zero;
+              const curve = Curves.easeInOut;
               var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
               var offsetAnimation = animation.drive(tween);
               return SlideTransition(
