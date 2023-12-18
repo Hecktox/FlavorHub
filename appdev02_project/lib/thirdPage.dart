@@ -4,6 +4,9 @@ import 'settings.dart';
 import 'firstPage.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'map.dart';
+import 'Recipe.dart';
+import 'FavoriteRecipe.dart';
+
 
 class ThirdPage extends StatefulWidget {
   final int id;
@@ -93,6 +96,37 @@ class _ThirdPageState extends State<ThirdPage> {
   Scaffold buildAlmendraPage() {
     String videoUrl = "https://www.youtube.com/watch?v=0YVopYnTRRE";
     String videoId = YoutubePlayer.convertUrlToId(videoUrl) ?? ""; // Add null check
+    bool isFavorited = false;
+    List<Recipe> favoriteRecipes = [];
+    List<String> randomWords = [
+      'Pasta', 'Cake', 'Salad', 'Soup', 'Pizza',
+    ];
+
+    void _showNotification(BuildContext context) async {
+      // Show a notification
+      await showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('You liked this recipe'),
+            actions: <Widget>[
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => FavoriteRecipesPage(),
+                    ),
+                  );
+                },
+                child: Text('OK'),
+              ),
+            ],
+          );
+        },
+      );
+    }
 
     return Scaffold(
       appBar: AppBar(
@@ -220,6 +254,16 @@ class _ThirdPageState extends State<ThirdPage> {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          _showNotification(context);
+        },
+        child: Icon(
+          isFavorited ? Icons.star : Icons.star_border,
+        ),
+        backgroundColor: Colors.blue,
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 
@@ -4114,5 +4158,92 @@ class _ThirdPageState extends State<ThirdPage> {
   }
 }
 
+class FavoriteRecipesPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Favorite Recipes'),
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Container(
+            color: Colors.purple, // Example background color
+            padding: EdgeInsets.all(20.0),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => NewRecipePage(),
+                  ),
+                );
+              },
+              child: Container(
+                color: Colors.purple,
+                padding: EdgeInsets.all(20.0),
+                child: Text(
+                  'Croissant de Almendra',
+                  style: TextStyle(fontSize: 24, color: Colors.white),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _showNotification(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('You liked this recipe'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Close the dialog
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => NewRecipePage(),
+                  ),
+                ); // Navigate to NewRecipePage
+              },
+              child: Text('OK'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+}
 
 
+
+class NewRecipePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Croissant de Almendras Recipe'),
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Text(
+            '''Activate Yeast:
+  In a small bowl, dissolve the yeast in warm water and let it sit for 5-10 minutes until it becomes frothy.\n\n
+  Prepare Dough:
+  In a large bowl, combine warm milk, sugar, and the activated yeast mixture.
+  Gradually add 3 cups of flour and salt, mixing until a dough forms.
+  Turn the dough onto a floured surface and knead for about 5 minutes, gradually adding more flour until the dough is smooth and elastic.\n\n''',
+            style: TextStyle(fontSize: 24),
+          ),
+        ),
+      ),
+    );
+  }
+}
