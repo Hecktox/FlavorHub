@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'login.dart';
+import 'splash_screen.dart';
 
-void main() async{
+void main() async {
   runApp(MyApp());
 }
 
@@ -12,8 +12,7 @@ class MyApp extends StatelessWidget {
       title: 'Flavor Hub',
       theme: ThemeData(
       ),
-      home: LoginPage(),
+      home: SplashScreen(),
     );
   }
 }
-
