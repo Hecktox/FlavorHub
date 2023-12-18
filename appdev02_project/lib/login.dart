@@ -3,6 +3,8 @@ import 'register.dart';
 import 'firstPage.dart';
 import 'db.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:permission_handler/permission_handler.dart';
+
 
 class LoginPage extends StatefulWidget {
   @override
@@ -24,6 +26,7 @@ class _LoginPageState extends State<LoginPage> {
     super.initState();
     database.open();
     initializeNotifications();
+    requestNotificationPermission();
   }
 
   void initializeNotifications() async {
@@ -51,6 +54,32 @@ class _LoginPageState extends State<LoginPage> {
       platformChannelSpecifics,
       payload: 'login_notification',
     );
+  }
+
+  Future<void> requestNotificationPermission() async {
+    final status = await Permission.notification.request();
+    if (status.isGranted) {
+    } else {
+      // Handle the case when the user denies notification permission
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('Notification Permission Required'),
+            content: Text(
+                'Please allow notification permissions to receive notifications.'),
+            actions: <Widget>[
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text('OK'),
+              ),
+            ],
+          );
+        },
+      );
+    }
   }
 
   @override
@@ -89,7 +118,7 @@ class _LoginPageState extends State<LoginPage> {
 
       if (user != null) {
         bool isAdmin = user['isAdmin'] == 1;
-        showNotification(); // Show notification on successful login
+        showNotification();
 
         Navigator.of(context).push(
           PageRouteBuilder(
